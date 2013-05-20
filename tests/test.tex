@@ -1,0 +1,132 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+% some standard packages
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url} 
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+
+\usepackage{owl}
+% begin / end environments
+\usepackage{amssymb,amsmath}
+
+\usepackage{amsthm}
+\newtheorem{examp}{Example}
+
+
+
+\author{Samantha Bail}
+\begin{document}
+
+\begin{examp}
+\begin{alignat*}{2}
+		\K = \{&\ax{Cat \sqsubseteq Carnivore} & \quad\quad &\ax{Carnivore \sqsubseteq Animal \conj \forall eats.Animal}\\
+		&\ax{Plant \sqsubseteq \lnot Animal} & \quad\quad & \ax{PetOwner \equiv Human\conj \exists hasPet.Animal}\\
+		& \ax{Grass \sqsubseteq Plant} &&\\
+		&\ax{Cat(Molly)} & \quad\quad &\ax{hasPet(Alice, Molly)}\\
+		&\ax{Human(Alice)} \}\label{ex:petkb}
+	\end{alignat*}
+\end{examp}
+
+\begin{examp}
+\begin{alignat*}{2}
+		\K' = \{&\ax{Cat \sqsubseteq Carnivore} & \quad\quad &\ax{Carnivore \sqsubseteq Animal \conj \forall eats.Animal}\\
+		&\ax{Plant \sqsubseteq \lnot Animal} & \quad\quad & \ax{PetOwner \equiv Human\conj \exists hasPet.Animal} \\
+    	&\ax{Grass \sqsubseteq Plant} & \quad\quad &  \ax{SickCat \equiv Cat \conj \exists eats.Grass} \\
+		&\ax{Cat(Molly)} & \quad\quad &\ax{hasPet(Alice, Molly)}\\
+		&\ax{Human(Alice)} \}
+	\end{alignat*}
+\end{examp}
+
+
+\begin{examp}
+\begin{alignat*}{2}
+ (\alpha_{1})  & \quad\quad & &\dlax{A \subcls \exists r.A}  \\
+ (\alpha_{2})  & \quad\quad & &\dlax{A \subcls Y}  \\	
+ (\alpha_{2})  & \quad\quad & &\dlax{\exists r.Y \subcls  B}  \\
+ (\alpha_{4})  & \quad\quad & &\dlax{Y \subcls B}   \\
+\end{alignat*}
+\end{examp}
+
+\begin{table}[h!]
+\footnotesize
+\begin{tabular}{rlrl}
+		(1)&\ax{Cat \sqsubseteq Carnivore}												&(4)&\ax{Grass \sqsubseteq Plant}\\
+		(2)&\ax{Carnivore \sqsubseteq Animal \conj \forall eats.Animal}	&(5)&\ax{PetOwner \equiv Human\conj \exists hasPet.Animal}\\
+		(3)&\ax{Plant \sqsubseteq \lnot Animal}											&(6)&\ax{SickCat \equiv Cat \conj \exists eats.Grass}
+\end{tabular}
+\end{table}
+
+
+\begin{examp}
+\begin{alignat}{2}
+		\ax{Cat \sqsubseteq Carnivore}	& \quad\quad & &	\ax{Grass \sqsubseteq Plant}\\
+		\ax{Carnivore \sqsubseteq Animal \conj \forall eats.Animal} & \quad\quad & & \ax{PetOwner \equiv Human\conj \exists hasPet.Animal}\\
+		\ax{Plant \sqsubseteq \lnot Animal}	& \quad\quad & & \ax{SickCat \equiv Cat \conj \exists eats.Grass}
+	\end{alignat}
+\end{examp}
+
+
+
+\begin{examp}
+~\newline ~\newline
+\begin{tabular}{rlrl}
+		(1)&\ax{Cat \sqsubseteq Carnivore}												&(4)&\ax{Grass \sqsubseteq Plant}\\
+		(2)&\ax{Carnivore \sqsubseteq Animal \conj \forall eats.Animal}	&(5)&\ax{PetOwner \equiv Human\conj \exists hasPet.Animal}\\
+		(3)&\ax{Plant \sqsubseteq \lnot Animal}											&(6)&\ax{SickCat \equiv Cat \conj \exists eats.Grass}
+\end{tabular}
+\end{examp}
+
+
+
+\begin{figure}
+\centering{
+\input{../img/workflow}
+\caption{A decision tree for categorising entailments.}
+\label{fig:entailmenthierarchy}
+}
+\end{figure}
+\newpage
+
+
+\begin{figure}
+\centering{
+\input{../img/decisiontree}
+\caption{A decision tree for categorising entailments.}
+\label{fig:entailmenthierarchy}
+}
+\end{figure}
+\newpage
+
+\begin{figure}
+\centering
+		\begin{subfigure}{0.4\textwidth}
+                \centering
+                \input{../img/asserted-cg.tex}
+                \caption{Asserted class graph.}
+        	\label{fig:asserted}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+          %(or a blank line to force the subfigure onto a new line)
+		\begin{subfigure}{0.6\textwidth}
+                \centering
+                \input{../img/inferred-cg.tex}
+                \caption{Inferred class graph.}
+        	\label{fig:inferred}
+        \end{subfigure}
+\end{figure}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar erat at mi facilisis condimentum. Sed bibendum arcu nec erat venenatis nec venenatis enim pulvinar. Fusce nunc dolor, mollis sit amet faucibus ac, accumsan id odio. In enim ligula, placerat pharetra commodo non, pulvinar at libero. Vestibulum nisi leo, consequat ut accumsan nec, pellentesque ac elit. Aliquam at facilisis sapien. Nunc sed velit et enim elementum commodo mattis ac eros. Aliquam libero sapien, eleifend vitae consequat eget, dictum a lorem. Mauris feugiat ligula non tortor feugiat eget malesuada purus ultrices. Praesent viverra tristique orci nec dapibus. Cras at augue eget est ultricies auctor. Sed condimentum dolor sed ipsum bibendum eget placerat nisi ultrices. Duis et condimentum tellus. Duis mi urna, pulvinar vitae scelerisque non, vestibulum sed massa. Vestibulum cursus, enim sit amet tincidunt posuere, nunc lectus aliquam quam, in malesuada turpis odio quis elit. Curabitur in tincidunt velit.
+
+
+\end{document}

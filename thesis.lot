@@ -1,0 +1,22 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces \ensuremath {\mathcal {\MakeUppercase {ALC}}}\xspace constructors and semantics.\relax }}{26}{table.caption.7}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Entailment set properties and keys\relax }}{74}{table.caption.11}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Ontologies and imported entailments in the NCBO BioPortal.\relax }}{80}{table.caption.14}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Overview of data in sets $S_{sa}$ and $S_{u}$.\relax }}{146}{table.caption.23}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Overview of OWL 2 profiles.\relax }}{146}{table.caption.24}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Overview of the basic ontology metrics in the corpus.\relax }}{147}{table.caption.25}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Entailment types in sets $S_{sa}$ and $S_{u}$.\relax }}{148}{table.caption.26}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Root and derived justifications in $S_{s}$ and $S_{u}$.}}{153}{table.caption.29}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Mean times (in seconds) per ontology for isomorphism detection.\relax }}{157}{table.caption.31}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Template frequency and coverage across the corpus.\relax }}{161}{table.caption.33}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Most frequent templates for lemma-isomorphism across the corpus.}}{164}{table.caption.35}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Comparison of reductions in $S_{s}$ and $S_{sl}$.\relax }}{165}{table.caption.36}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

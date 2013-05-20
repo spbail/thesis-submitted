@@ -1,0 +1,61 @@
+\documentclass[12pt,PhD,oneside,leqno]{muthesis}
+
+%\addtolength{\oddsidemargin}{-1in}
+%\addtolength{\evensidemargin}{-1in}
+
+% TODO: change to TWOSIDE later and remove the addtolength!
+% The regulations say that 12pt should be used
+% Change the MSc option to MPhil, MRes or PhD if appropriate
+
+\input{header}
+
+% Uncomment the next line if you want subsubsections to be numbered
+%\setcounter{secnumdepth}{3}
+% Uncomment the next line if you want subsubsections to appear in
+% the table of contents
+\setcounter{tocdepth}{2}
+
+
+\begin{document}
+% Uncomment the following lines to leave out list of figures, tables
+% and copyright until final printing
+%\figurespagefalse
+%\tablespagefalse
+%\copyrightfalse
+
+\title{The Justificatory Structure\\ of OWL Ontologies}
+\author{Samantha Patricia Bail}
+%\principaladviser{Supervisor: Bijan Parsia and Ulrike Sattler}
+%\firstreader{First reader}
+
+\beforeabstract
+
+\prefacesection{Abstract}
+%\abstracttitle
+\input{chapters/abstract}
+\afterabstract
+
+%\prefacesection{Acknowledgements}
+%\input{chapters/ack}
+%\afterpreface
+
+
+\input{chapters/introduction}
+\input{chapters/background}
+\input{chapters/entailments}
+\input{chapters/juststructure}
+\input{chapters/justequiv}
+\input{chapters/cogmodel}
+\input{chapters/survey}
+\input{chapters/conclusions}
+
+%\input{chapters/notes}
+
+\bibliography{bib/long-string,bib/bib2012}             
+
+\bibliographystyle{alpha}       % possible values are plain and abbrv
+
+% Appendices start here
+\appendix
+\include{chapters/appendix-v1}
+\end{document}

@@ -1,0 +1,21 @@
+Righto! 3rd May 2012, today are the council elections
+Matt is just trying to find out where we have to go to vote - I'm rather uninfomed I have to say, but I'll just vote anyway. Hang on, I'll have to actually check the time to make sure it doesn't get too much. 
+
+I quite like Ommwriter actually, I think the fullscreen mode is quite convenient and much less distracting.
+
+Aaanyway - so what am I going to write about today?
+
+I read an interesting paper by Johnson-Laird (him again!) yesterday while waiting for Laney from SF. Had a massive cup of coffee at the Cornerhouse, I think it was a bit too much - I massively crashed in the afternoon.
+
+The Johnson-Laird paper (2010) discusses the complexity of simple propositional reasoning problems based on mental models. The complexity of the problems (they call them concepts) comes from the number of possible correct *and* incorrect models a concept can have. they call these incorrect models "illusory", i.e. something that seems like a correct model but is not, but also a correct model that is difficult to find. By making the complete model explicit (rather than just leaving out assignments, e.g. a and b and not c isi often written as a and b, but not c should be made explicit to make it clearer what the model looks like) they can prevent errors caused by such illusory models. They ran three experiments, which tested the hypothesis. Those concepts that had illusory models caused most students to fail, regardless of the kkkkkkkkkkko the thing thing caused most students to fail, regardless of the constructors used (although apparently conditionals and biconditionals caused the most problems). They also did some interesting 'modulation' on the concepts in order to support the learners through domain knowledge (i.e. give them shapes and colours, where combinations of two colours are easier to rule out)
+
+I emailed Bijan about it and he said getting it right might be difficult in a DL setting - but that we could modify and repeat the experiments somehow. I haven't actually read it in detail (it was just on my phone last night), but I suppose we could bear this in mind.
+
+Suggestions I've had in the past weeks, things that I would like to follow up on:
+- Ontology engineering: speak to Alan or Robert, read Snomed papers and NCI papers, ask Rafael about SNOMED/NCI papers!! I suppose reading papers is a good start really - where do they get the information from, how is it turned into an ontology, who are the people working on it (experts or ontology people), where is it used - like a small case study
+- Survey the current debugging situation: theoretical approaches, and actually implemented approaches. Check Thomas' and Nadeschda's tools!
+- create a list of ontology development tools  to go with the above
+omg when are the ten minutes up? I feel like I've written a lot more than yesterday but the thing is still ticking. Bloody kitchen timer! I also need to learn to type with 10 fingers again, otherwise my index fingers will go sore!
+- right, another idea I had: ontology visualisation tools
+OH JESUS CHRIS TIMER JUST WENT SHOCKER!!
+Today I will finish the camera ready version of my DL paper (check the code for errors to see why it won't use the laconic ones!) > download error log first

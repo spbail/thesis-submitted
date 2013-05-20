@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\tikzstyle{every node}=[draw, inner sep=5pt, node distance = 1.3cm, text width=5cm, text centered];
+
+\node[rounded corners=6pt] (download) {BioPortal download: 256 OWL ontologies};
+\node[below = 0.5cm of download] (a) {Entailment extraction: 209 processed};
+\node [below = 0.5cm of a] (b) {Self-supporting entailment pruning: 197 ontologies};
+\node [right = 1.5cm of b] (c) {Justification computation: 190 processed};
+\node [above = 0.5cm of c] (d) {Imported entailments pruning: 187 ontologies};
+\node [above = 0.5cm of d] (e) {J-graph generation for complex justifications: 78 ontologies};
+
+\foreach \from/\to in {download/a, a/b, b/c, c/d, d/e}
+\draw [->,thick] (\from) -- (\to);
+
+\end{tikzpicture}
+

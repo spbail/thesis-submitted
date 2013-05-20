@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\tikzstyle{every node}=[draw];
+
+  \node (e) at (2,5.2) {$\mathsf{Animal}$};
+  \node (d) at (0,3.9) {$\mathsf{Mammal}$};
+  \node (c) at (0,2.6) {$\mathsf{Cat}$};
+  \node (b) at (2,1.3) {$\mathsf{\{Puma, MountainLion, Cougar\}}$};
+  \node (a) at (0,0) {$\mathsf{NorthAmericanCougar}$};
+  
+  \foreach \from/\to in {a/b, b/c, c/d, d/e, b/d, b/e}
+\draw [->,thick] (\from) -- (\to);
+    
+   \draw [->, bend left,thick] ([xshift={-25}]a.north) to (c.west);
+   \draw [->, bend left,thick] ([xshift={-25}]a.north) to (d);
+   \draw [->, bend left,thick] ([xshift={-25}]a.north) to ([xshift={-25}]d.west) to (e.west);
+
+   \draw [->, thick] ([xshift={10}]c.north) to (e);
+     
+
+\end{tikzpicture}
+

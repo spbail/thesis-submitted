@@ -1,0 +1,213 @@
+\select@language {english}
+\contentsline {chapter}{Abstract}{8}{chapter*.4}
+\contentsline {chapter}{Declaration}{9}{chapter*.5}
+\contentsline {chapter}{Copyright}{10}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Justification-based debugging support}{13}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Understanding justifications}{14}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Justificatory structure}{16}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Beyond debugging and repair}{18}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Research objectives}{19}{section.1.2}
+\contentsline {section}{\numberline {1.3}Contributions}{20}{section.1.3}
+\contentsline {section}{\numberline {1.4}Published Work}{21}{section.1.4}
+\contentsline {chapter}{\numberline {2}Background and related work}{22}{chapter.2}
+\contentsline {section}{\numberline {2.1}Description logic knowledge bases}{23}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}DL syntax and semantics}{23}{subsection.2.1.1}
+\contentsline {subsubsection}{DL syntax}{23}{subsection.2.1.1}
+\contentsline {subsubsection}{Axioms}{23}{subsection.2.1.1}
+\contentsline {subsubsection}{Naming conventions}{25}{examp.2.1}
+\contentsline {subsubsection}{Model-theoretic semantics}{26}{examp.2.1}
+\contentsline {subsection}{\numberline {2.1.2}Standard reasoning services}{26}{subsection.2.1.2}
+\contentsline {subsubsection}{Entailments}{28}{subsection.2.1.2}
+\contentsline {subsubsection}{Incoherence}{29}{defn.2.2}
+\contentsline {subsubsection}{Inconsistency}{29}{examp.2.2}
+\contentsline {subsection}{\numberline {2.1.3}The Web Ontology Language OWL}{30}{subsection.2.1.3}
+\contentsline {subsubsection}{From description logic to OWL}{30}{subsection.2.1.3}
+\contentsline {subsubsection}{Usage of OWL}{31}{subsection.2.1.3}
+\contentsline {paragraph}{OWL 2 profiles}{31}{subsection.2.1.3}
+\contentsline {paragraph}{Semantic Web}{32}{subsection.2.1.3}
+\contentsline {paragraph}{Medical informatics and life sciences}{33}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Errors in OWL ontologies}{33}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Logical errors}{34}{subsection.2.2.1}
+\contentsline {subsubsection}{Unsatisfiable and tautological classes}{34}{subsection.2.2.1}
+\contentsline {subsubsection}{Inconsistency}{35}{subsection.2.2.1}
+\contentsline {subsubsection}{Wrong entailments}{35}{subsection.2.2.1}
+\contentsline {subsubsection}{Non-entailments}{36}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Non-logical errors}{37}{subsection.2.2.2}
+\contentsline {subsubsection}{Structural irregularities}{37}{subsection.2.2.2}
+\contentsline {subsubsection}{Annotation errors}{37}{subsection.2.2.2}
+\contentsline {subsubsection}{Performance problems}{38}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Debugging ontologies}{38}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Justifications for entailments of ontologies}{39}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Computing justifications}{42}{subsection.2.3.1}
+\contentsline {subsubsection}{Glass-box techniques}{42}{subsection.2.3.1}
+\contentsline {subsubsection}{Black-box techniques}{43}{subsection.2.3.1}
+\contentsline {paragraph}{Expand-contract approach}{43}{subsection.2.3.1}
+\contentsline {paragraph}{Hitting set tree algorithm}{43}{subsection.2.3.1}
+\contentsline {subsubsection}{Modularisation}{44}{subsection.2.3.1}
+\contentsline {subsubsection}{Performance}{45}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Justification-based repair}{45}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Understanding individual justifications}{47}{subsection.2.3.3}
+\contentsline {subsubsection}{Fine-grained justifications}{47}{subsection.2.3.3}
+\contentsline {subsubsection}{Masking}{48}{examp.2.5}
+\contentsline {subsubsection}{Justification-based proofs}{51}{examp.2.9}
+\contentsline {subsubsection}{Cognitive complexity}{52}{examp.2.10}
+\contentsline {subsection}{\numberline {2.3.4}Understanding multiple justifications}{53}{subsection.2.3.4}
+\contentsline {subsubsection}{Root and derived justifications}{53}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Alternative approaches to debugging}{54}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Proofs}{54}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Ontology revision}{55}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Direct computation of diagnoses}{56}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}OntoClean}{56}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Ontology comprehension}{57}{subsection.2.4.5}
+\contentsline {section}{\numberline {2.5}Summary and conclusions}{57}{section.2.5}
+\contentsline {chapter}{\numberline {3}Defining finite entailment sets}{59}{chapter.3}
+\contentsline {section}{\numberline {3.1}Design decisions for finite entailment sets}{60}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Tautologies}{61}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Asserted and inferred axioms}{62}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Transitivity}{63}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Equivalent classes}{65}{subsection.3.1.4}
+\contentsline {paragraph}{Representing equivalence as axioms}{65}{subsection.3.1.4}
+\contentsline {paragraph}{Subsumptions between equivalent classes}{66}{Item.11}
+\contentsline {subsection}{\numberline {3.1.5}Strict and non-strict subsumptions}{67}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Equivalence to top and bottom}{68}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Axiom and expression types}{69}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Dealing with ontology imports}{71}{subsection.3.1.8}
+\contentsline {section}{\numberline {3.2}A notation for finite entailment sets}{72}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Introducing the notation}{72}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Axioms and expressions}{73}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Wanted and unwanted entailments}{73}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Sample entailment sets}{75}{subsection.3.2.4}
+\contentsline {paragraph}{Transitive closure}{75}{figure.caption.12}
+\contentsline {paragraph}{Transitive reduct}{76}{examp.3.3}
+\contentsline {section}{\numberline {3.3}Entailments in OWL applications}{77}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Inferred ontology generation in the OWL API}{77}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Presenting entailments to end-users}{78}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Ontology publishing}{78}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Metrics and analytical applications}{79}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Imported and native entailments in BioPortal}{80}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Summary and conclusions}{81}{section.3.4}
+\contentsline {chapter}{\numberline {4}The justificatory structure of OWL ontologies}{82}{chapter.4}
+\contentsline {section}{\numberline {4.1}Categories of justifications and entailments}{83}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Self-justifications and self-supporting entailments}{83}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Atomic subsumption chains}{84}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Complex justifications}{85}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Categorising entailments and ontologies}{85}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Representing justifications as j-graphs}{86}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}J-graph definition}{87}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}J-graph generation}{89}{subsection.4.2.2}
+\contentsline {paragraph}{Construction}{89}{subsection.4.2.2}
+\contentsline {paragraph}{Implementation}{90}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Justificatory structure}{90}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Axiom properties}{90}{subsection.4.3.1}
+\contentsline {subsubsection}{Frequency}{91}{figure.caption.17}
+\contentsline {subsubsection}{Impact}{92}{defn.4.5}
+\contentsline {subsubsection}{Semantic relevance}{93}{defn.4.7}
+\contentsline {subsubsection}{Activity}{93}{defn.4.8}
+\contentsline {subsection}{\numberline {4.3.2}Properties of justifications}{94}{subsection.4.3.2}
+\contentsline {subsubsection}{Justificatory redundancy}{94}{subsection.4.3.2}
+\contentsline {subsubsection}{Justfication size}{94}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Relations between justifications}{95}{subsection.4.3.3}
+\contentsline {subsubsection}{Structural regularities}{95}{subsection.4.3.3}
+\contentsline {subsubsection}{Graph components}{95}{subsection.4.3.3}
+\contentsline {subsubsection}{Arbitrary justification overlap}{96}{subsection.4.3.3}
+\contentsline {subsubsection}{Root and derived justifications}{96}{subsection.4.3.3}
+\contentsline {subsubsection}{Equality and inferential power}{97}{examp.4.3}
+\contentsline {section}{\numberline {4.4}Summary and conclusions}{98}{section.4.4}
+\contentsline {chapter}{\numberline {5}Justification isomorphism}{100}{chapter.5}
+\contentsline {section}{\numberline {5.1}Isomorphism}{102}{section.5.1}
+\contentsline {paragraph}{Remarks}{102}{defn.5.1}
+\contentsline {section}{\numberline {5.2}Subexpression-isomorphism}{103}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Preferred templates}{108}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Lemma-isomorphism}{109}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Lemmatisations and obvious steps}{112}{subsection.5.3.1}
+\contentsline {subsubsection}{Atomic subsumption chains}{112}{subsection.5.3.1}
+\contentsline {paragraph}{Maximal atomic subsumption chains}{112}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Equivalence and superfluity}{114}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementing an isomorphism checker}{116}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Algorithm and implementation}{116}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Optimisations}{117}{subsection.5.5.2}
+\contentsline {paragraph}{Strict isomorphism optimisations}{118}{subsection.5.5.2}
+\contentsline {paragraph}{Subexpression- and lemma-isomorphism optimisations}{118}{Item.58}
+\contentsline {paragraph}{General optimisations}{118}{Item.58}
+\contentsline {subsection}{\numberline {5.5.3}Limitations due to syntactical differences}{120}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Extending the j-graph}{121}{subsection.5.5.4}
+\contentsline {section}{\numberline {5.6}Summary and conclusions}{122}{section.5.6}
+\contentsline {chapter}{\numberline {6}Justification comprehension}{124}{chapter.6}
+\contentsline {section}{\numberline {6.1}Debugging problems}{125}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Defining debugging problems}{125}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Justification encounters}{127}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Measuring effort}{128}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}The complexity of individual justifications}{129}{subsection.6.2.1}
+\contentsline {paragraph}{Representation of justifications}{129}{subsection.6.2.1}
+\contentsline {paragraph}{From complexity score to effort}{131}{figure.caption.21}
+\contentsline {subsection}{\numberline {6.2.2}A model for user effort}{132}{subsection.6.2.2}
+\contentsline {paragraph}{Reducing user effort}{133}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Coping strategies}{134}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Characterising justification sets}{134}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Justification overlap}{135}{subsection.6.3.2}
+\contentsline {paragraph}{Single-axiom overlap}{135}{subsection.6.3.2}
+\contentsline {paragraph}{Justification equality}{136}{subsection.6.3.2}
+\contentsline {paragraph}{Root and derived justifications}{137}{subsection.6.3.2}
+\contentsline {paragraph}{Arbitrary overlap}{137}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Isomorphism relations}{138}{subsection.6.3.3}
+\contentsline {paragraph}{Entity naming in justification templates}{139}{subsection.6.3.3}
+\contentsline {paragraph}{Levels of abstraction}{139}{Item.81}
+\contentsline {paragraph}{Combining isomorphism and overlap}{140}{Item.81}
+\contentsline {section}{\numberline {6.4}Summary and conclusions}{141}{section.6.4}
+\contentsline {chapter}{\numberline {7}A survey of justificatory structure}{142}{chapter.7}
+\contentsline {section}{\numberline {7.1}The BioPortal corpus}{142}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Properties of the corpus}{143}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Justification corpus preparation}{143}{subsection.7.1.2}
+\contentsline {paragraph}{Ontology corpus}{143}{subsection.7.1.2}
+\contentsline {paragraph}{Stage 1: entailment extraction}{144}{figure.caption.22}
+\contentsline {paragraph}{Stage 2: self-supporting entailments removal}{145}{Item.84}
+\contentsline {paragraph}{Stage 3: justification generation and filtering}{145}{Item.84}
+\contentsline {paragraph}{Ontology properties}{146}{table.caption.23}
+\contentsline {section}{\numberline {7.2}Results of the BioPortal survey}{147}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Entailment types}{147}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Occurrence of multiple justifications}{148}{subsection.7.2.2}
+\contentsline {paragraph}{Ontology activity and axiom power}{150}{figure.caption.27}
+\contentsline {paragraph}{Graph components}{150}{figure.caption.27}
+\contentsline {subsection}{\numberline {7.2.3}Justification overlap}{151}{subsection.7.2.3}
+\contentsline {paragraph}{Inferential power of justifications}{151}{subsection.7.2.3}
+\contentsline {paragraph}{Axiom frequency and impact}{151}{subsection.7.2.3}
+\contentsline {paragraph}{Root and derived justifications}{153}{figure.caption.28}
+\contentsline {paragraph}{Arbitrary overlap}{154}{table.caption.29}
+\contentsline {subsection}{\numberline {7.2.4}Justification isomorphism}{156}{subsection.7.2.4}
+\contentsline {subsubsection}{Individual entailments}{157}{table.caption.31}
+\contentsline {paragraph}{Strict isomorphism}{157}{table.caption.31}
+\contentsline {paragraph}{Subexpression-isomorphism}{157}{table.caption.31}
+\contentsline {paragraph}{Lemma-isomorphism}{158}{table.caption.31}
+\contentsline {subsubsection}{Isomorphism within ontologies}{158}{table.caption.31}
+\contentsline {paragraph}{Strict isomorphism}{159}{figure.caption.32}
+\contentsline {paragraph}{Subexpression-Isomorphism}{160}{figure.caption.32}
+\contentsline {paragraph}{Lemma-isomorphism}{160}{figure.caption.32}
+\contentsline {subsubsection}{Isomorphism across the corpus}{161}{figure.caption.32}
+\contentsline {paragraph}{Strict isomorphism}{161}{table.caption.33}
+\contentsline {paragraph}{Subexpression-isomorphism}{162}{figure.caption.34}
+\contentsline {paragraph}{Lemma-isomorphism}{163}{figure.caption.34}
+\contentsline {subsubsection}{Isomorphism and superfluity}{164}{table.caption.35}
+\contentsline {section}{\numberline {7.3}Discussion}{166}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Justification types and frequency}{166}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Overlaps}{167}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Isomorphism}{168}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Threats to validity}{169}{subsection.7.3.4}
+\contentsline {paragraph}{Threats to internal validity}{169}{subsection.7.3.4}
+\contentsline {paragraph}{Threats to external validity}{170}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Summary and conclusions}{170}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusions}{172}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary of contributions}{172}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Design decisions for finite entailment sets}{172}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Justificatory structure and justification isomorphism}{173}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Reducing user effort}{174}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}Experimental results}{174}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Significance of results}{175}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future directions}{177}{section.8.3}
+\contentsline {paragraph}{Lemma-isomorphism}{177}{section.8.3}
+\contentsline {paragraph}{Dealing with masking and superfluity}{178}{section.8.3}
+\contentsline {paragraph}{Effects on justification computation}{178}{section.8.3}
+\contentsline {paragraph}{Visualisation and user interaction}{179}{section.8.3}
+\contentsline {paragraph}{Applications of justifications}{180}{section.8.3}
+\contentsline {chapter}{Bibliography}{181}{chapter*.37}
+\contentsline {chapter}{\numberline {A}Ontologies in the test corpus}{201}{appendix.A}

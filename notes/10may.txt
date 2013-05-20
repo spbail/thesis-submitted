@@ -1,0 +1,40 @@
+Thursday, 10th May 2012
+
+It's only the 10th today, turns out my watch has got the wrong date on it. I've been massively confused all week, seriously!!
+
+Anyway, so what am I going to write about today? Maybe think a little more about the related work bit. Currently my related work section looks like this:
+\section{Explanation in Description Logic Knowledge Bases}
+
+\section{Ontology Metrics}
+\section{Root- and Derived Justifications}
+\section{Masking}
+\section{Proofs and Lemmas}
+\section{Unification and Matching}
+\section{Cognitive Complexity}
+
+And I honestly don't like writing related work, but I suppose I'll have to.
+
+The first section will be about explanation in general, i.e. first a section on justification-based debugging/repair - start with McGuinness, then mainly Schlobach, Parsia, Kalyanpur, and the whole pinpointing work by Baader and Penaloza. 
+This should also include a subsection on 'computing justifications' I suppose?  
+Then I discuss other (more recent) approaches to debugging, e.g. Nadeschda's repair tool, Scharrenbach, and the belief revision based on.
+With the justification-based approaches, I am trying to illustrate how there have been many approaches for computing justifications, but only one has made it into a tool so far.
+I might leave out the 'metrics' section as this is not my main focus. There is a huge body of work for metrics, so discussing it would be quite a big job - I could mention some entailment/axiomatic richness related papers I suppose for the entailment section!
+The next step after justifications (with focus on computing) then is work that has been done in *understanding* justifications or supporting working with justificaitons, i.e. root and derived, laconic and precise --> user-interaction/user-experience/reducing effort approaches
+
+the plan would look like this
+explanation
+	justification based approaches
+		computing
+		understanding
+			laconic/precise
+			masking
+			root/derived
+			proofs/lemmas
+			cognitive complexity
+	other explanation 
+ 
+Then I will have to try and fit cognitive aspects somehow?
+Unification and matching is syntactical (i.e. similarity of concepts?), but I consider it from a cognitive point of view. Why do I discuss unification/matching? To show that there has already been the idea of isomorphism/subexpression-isomorphism, for a different purpose (what is the purpose of it anyway?), but it hasn't been applied to cognitive issues. (find out where u/m has been applied in general?)
+
+Have cognitive stuff separate - what's the purpose of the section? It's not really related work as in applied to OWL/DL ontologies (I might have a look and see if there has been any work done re: cognitive issues of description logics), but  an example of cognitive analysis that has been performed in other areas, but not OWL.
+I generally want to discuss the background on cognitive complexity of logics/KR formalisms, but I'm not sure where to put it.

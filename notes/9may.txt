@@ -1,0 +1,12 @@
+10/05/2012 Righty-ho, back to writing!
+
+So, I discussed the structure of my thesis with Uli yesterday and it seems all fine. I'm actually quite looking forward to writing! She suggested I fix a terminology first for Justifications, entailments, etc. in the background section, to make it easier to stick to a consistent notation later, which is a really good idea. It's still not clear whether to name a justification/entailment pair a 'justification', or just the set of axiom itself. It gets even more fun when we look at laconic justifications, which aren't really subset of the ontology anymore. I suppose I'll just have to define it a little like this:
+
+Definition: Justification - blah
+
+When speaking of a 'justification', we generally consider a subset of O with respect to a particular entailment eta, i.e. a pair (J, eta). Depending on the context, however, we may also use the term justification for other arrangements:
+0) An axiom set / entailment pair J, eta such that J fulfils the conditions given in the above definition. 
+1) A subset of O which entails at least one such axiom eta. E.g. the axiom set  A sub B, B sub  C and D  (which is a subset of some O) is a justification for both eta1= A sub D and eta2 = A sub C; in order to clarify which entailment we consider, we can write J_eta1, J_eta2 to denote the same axiom set and its function as a justification for two distinct entailments.
+2) A set of axioms which is *not*  a subset of O, but is a minimal entailing axiom set for an eta for which O \models eta. We will later introduce laconic justifications, which are modified versions of axioms in O. Despite their violating the condition that J subset O, we denote them as "justification" for an entailment eta.
+
+While such a multiple use of the same term may seem impractical, it is mostly clear from the context which function of 'justification' is considered. Furthermore, we will clarify the specific use of the term 'justification' at the beginning of each chapter.

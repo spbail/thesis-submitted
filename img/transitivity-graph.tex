@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+  [scale=1,->,auto=left,every node/.style={draw=none, fill=none}]
+
+  \node (tab) at (3.5,9) {$ (\Theta_{ab}, \eta_{ab})$};
+  \node (tbc) at (8.5,9) {$(\Theta_{bc}, \eta_{bc})$};
+  \node (tac) at (6,10.5) {$(\Theta_{ac}, \eta_{ac})$};
+    
+  \node (ja) at (1,8) {$(\J_{a}, \eta_{a})$};
+  \node (jb) at (6,8) {$(\J_{b}, \eta_{b}) $};
+  \node (jc) at (11,8) {$(\J_{c}, \eta_{c}) $};
+
+  \draw [bend right] (tab) to node {$\phi^{ab}_{1}$} (ja);
+  \draw [bend left] (tab) to node [swap] {$\phi^{ab}_{2}$} (jb);
+  \draw [ bend right] (tbc) to node {$\phi^{bc}_{1}$} (jb);
+  \draw [bend left] (tbc) to node [swap]  {$\phi^{bc}_{2}$} (jc);
+  
+  \draw [bend right] (tac) to node [swap]  {$\phi^{ac}_{1}$} (ja);
+  \draw [bend left] (tac) to node {$\phi^{ac}_{2}$} (jc);
+
+
+  \draw [<->, dashed] (ja) to node {$\sisom$} (jb);
+  \draw [<->, dashed] (jb) to node [swap] {$\sisom$} (jc);
+  \draw [<->, dashed, bend right] (ja) to node {$\sisom$} (jc);
+    
+\end{tikzpicture}

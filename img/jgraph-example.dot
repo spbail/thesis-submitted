@@ -1,0 +1,43 @@
+ digraph jgraph {
+  node [style=rounded];
+  a1;
+  a2;
+  a3;
+  a4;
+  a5;
+  a6;
+  a7;
+  a8;
+  a9;
+  a10;
+  a11;
+  a12;
+
+  j1 [shape=box];
+  j2 [shape=box];
+  j3 [shape=box];
+  j4 [shape=box];
+  j5 [shape=box];
+  j6 [shape=box];
+  a1 -> j1;
+  a2 -> j2;
+  a3 -> j2;
+  a4 -> j2;
+  a4 -> j3;
+  a5 -> j3;
+  a6 -> j4;
+  a7 -> j4;  
+  a8 -> j4;  
+  a7 -> j5;  
+  a8 -> j5;  
+  a9 -> j5;
+  a11->j6;
+  
+  j6->a11[style=dashed];
+  j1 -> a1 [style=dashed];
+  j2 -> a10 [style=dashed];
+  j3 -> a11 [style=dashed];
+  j4 -> a12 [style=dashed];
+  j5 -> a12 [style=dashed];
+
+}

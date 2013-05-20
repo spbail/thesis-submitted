@@ -1,0 +1,356 @@
+\chapter{Random Notes}
+
+\listoftodos
+
+\section*{Style questions}
+\begin{itemize}
+\item Reference to URLs like OWL API, Protege, HermiT etc. - whenever they occur, only the first time, once per chapter... or references in general/
+\item \textbf{solved} DL speak or OWL speak- since I'm using DL notation (nicer!) I might as well use DL speak, i.e. concepts, roles, etc. rather than classes, properties...
+\item How to write examples etc? Need to fix one style...
+\end{itemize}
+
+
+ given a (propositional) formula $\varphi$, a clause (disjunction of literals) $\lambda$ is a prime implicate of $\varphi$ if $\lambda$ is not a tautology, $\varphi \models \lambda$ and, for any literal $\l_{i} \in \lambda$ it holds that  $\varphi \not \models \lambda \setminus \{ l_{i}\}$. Prime implicates are the \enquote{logically strongest clausal consequences} \cite{bienvenu09aa} of a formula that do not contain any redundancies; removing any literal from a prime implicate would cause the clause to no longer be entailed. As an example \cite{horridge11ab}, take the propositional formula $\varphi = (p \vee \neg s) \wedge r \wedge (q \vee t)$. The prime implicates of $\varphi$ are the clauses $P_{1} = r, P_{2} = p \vee s, P_{3} = q \vee t.$
+ 
+ 
+
+\section*{Iso proof continued}
+
+There are three possible cases and sub-cases (two of which are trivial) when constructing $(\Theta_{ac}, \eta_{ac})$ from the labelled tree: 
+
+\begin{enumerate}
+\item All nodes labelled with variables $(x,\ldots)$ are leaf nodes, i.e. $\phi^{ab}_{i}, \phi^{bc}_{i}$ (for $i$ in $\{0,1\}$) only map variables in the templates $\Theta_{ab}, \Theta_{bc}$ to atomic concept names in $(\J_{a}, \eta_{a}), (\J_{b}, \eta_{b})$, respectively. This implies that the templates are strictly isomorphic, and therefore, the relation is trivially transitive.
+
+\item We substitute subtrees representing non-atomic \emph{subexpressions} in $\J_{b}, \eta_{b}$ with leaf nodes: 
+
+\begin{enumerate}
+
+\item We label subtrees in $(\J_{b}, \eta_{b})$ \emph{only} with $(x, ab)$. Then the entailment relation $\Theta_{ac} \models \eta_{ac}$ is guaranteed as this process simply reconstructs $(\Theta_{ab}, \eta_{ab})$  and we know that $\Theta_{ab} \models \eta_{ab}$. The analogue holds for a substitution with $(x, bc)$.
+
+\item We label $(\J_{b}, \eta_{b})$ with a \enquote{mix} of $(x, ab)$ and $(x, bc)$. We show that the resulting $\Theta_{ac}$ entails the resulting $\eta_{ac}$ by employing a proof by contradiction: Assume that $\Theta_{ac} \not\models \eta_{ac}$. This means that $\phi^{ac}_{1}(\Theta_{ac}) \not\models \phi^{ac}_{1}(\eta_{ac})$ and $\phi^{ac}_{2}(\Theta_{ac}) \not\models \phi^{ac}_{2}(\eta_{ac})$ (they might happen to entail the respective entailments, but they are not guaranteed to).
+
+\begin{enumerate}
+\item Since $\phi^{ac}_{1}(x) = \phi^{ab}_{2}(x)$ for every $x$ in $(\Theta_{ab}, \eta_{ab}$, this would imply that $\phi^{ab}_{2}(\Theta_{ab})  \not\models \phi^{ab}_{2}(\eta_{ab})$, which violates the condition for $(\J_{a}, \eta_{a}) \sisom (\J_{b}, \eta_{b}) $. Therefore, the entailment relation between $\Theta_{ac}$ and $\eta_{ac}$ must hold.
+\item $\phi^{ac}_{2}(x) = \J_{b}|_{p} [t_{j} \rightarrow \phi^{bc}_{2}(y_{j})]$ \ldots, we show that non-entailment would violate $\phi^{bc}_{2}(\Theta_{bc})  \models \phi^{bc}_{2}(\eta_{bc})$ \todo{hmm?}
+
+\end{enumerate}
+
+\end{enumerate}
+\end{enumerate}
+
+
+\section*{\enquote{Trivial} and \enquote{Interesting} Entailments}
+
+Another category of entailments is that of \enquote{trivial} and \enquote{interesting} entailments.
+
+
+\begin{itemize}
+\item set which is useful and meaningful for a specific purpose
+\item equivalence axioms are preferred to 2 subsumptions. Thomas says that equivalence = 2 subsumptions was not intuitive for (general public) test subjects.
+\item conjunction on RHS as trivial/easy subsumption? Thomas suggests a tension score, i.e. tension score of 1 for atomic subsumptions, and decreasing for more complex expressions which contain the subsumption
+\item direct vs indirect: include direct if there exists a non-trivial justification for it?
+\item adding axioms reduces number of edges in transitive reduct = adding the right bit of information reduces the complexity of inference!
+\item Hypothesis: An interesting TBox has a minimal reduct
+\item Hypothesis: A TBox with minimal reduct reduces complexity of inference (because you concentrate on simple justifications only)
+\item Hypothesis: For a TBox = an optimal set of Lemmas, the resulting TBox has a minimal reduct
+\item Hypothesis: A module has a minimal reduct
+\end{itemize}
+
+
+\paragraph*{What makes justifications easy or hard to understand?}
+\begin{itemize}
+\item Case structure of a justification - single / multiple cases (i.e. reasoning by cases necessary?)
+\item How many things do I need to prove to understand the justification?
+\item Difficulty vs complexity = presentation/training issues vs intrinsic difficulty of set of axioms\
+\item Example: not ordering justifications makes them more \emph{difficult} to understand, but that doesn't change the hardness of the reasoning that is needed to understand why the entailment follows.
+\item three aspects to complexity of an individual justification:
+\begin{itemize}
+\item 'stack-holding': how much do you have to keep in memory?
+\item 'tricks', solving strategies
+\item misleading / distracting parts
+\end{itemize}
+\item model-based solving - do people build a mental model of the justification to understand it?
+\end{itemize}
+
+
+
+\subsection*{Examples for Subexpression-Isomorphism}
+
+\todo{Can this example be used for one of the proofs?}
+The example below illustrates a case where the justifications are only isomorphic if a variable in \J is mapped to a larger subexpression, despite the concepts occurring in that expression having their own mappings. It can be argued that the justifications are dissimilar, as the operands in the respective conjunctions are used differently in the remaining axioms of the justification. Indeed, when trying to find a mapping that matches the individual operands of the conjunction, we find that the justifications are not subexpression-isomorphic. However, the definition for subexpression-isomorphism only requires \emph{some} mapping to be correct, which can be achieved by mapping $x_{3}$ to the entire conjunction, while allowing that $x_{1}$ and $x_{2}$ map to the concept names occurring in the respective conjunctions.
+\begin{examp}
+\begin{align*}
+\J_{1}  &=  \{A \sqsubseteq B, B \sqsubseteq A \sqcap C, A \sqcap C \sqsubseteq D \}  \\ 
+\J_{2}   &=  \{A \sqsubseteq B, B \sqsubseteq A \sqcap B, A \sqcap B \sqsubseteq D \}  \\ 
+\J   &=  \{x_{1} \sqsubseteq x_{2}, x_{2} \sqsubseteq x_{3}, x_{3} \sqsubseteq x_{4} \}  \\ 
+\phi_{1}  &=  \{ x_{1} \mapsto A, x_{2} \mapsto B, x_{3} \mapsto A \sqcap C, x_{4} \mapsto D\}\\
+\phi_{2}  &= \{ x_{1} \mapsto A, x_{2} \mapsto B, x_{3} \mapsto A \sqcap B, x_{4} \mapsto D \}
+\end{align*}
+\end{examp}
+
+The example demonstrates why it is necessary to treat a justifications as a pair of a set of axioms and a respective entailment, rather than regarding them as loose sets of axioms: While the material axioms in the justifications are indeed not similar (for the above reason, i.e. they use the complex concept expressions in different ways), the reasoning which leads to the entailment is the same for $\J_{1}$ and $\J_{2}$. In both cases, the conjunction can be substituted with an atomic concept variable, resulting in a simple atomic subsumption chain.
+
+
+%\subsubsection*{Proof of Transitivity} The condition for two justifications $\J_{1}, \J_{2}$  to be $\ell t$-isomorphic is that they are s-isomorphic except that they differ in the length of their subsumption chains. Assuming any subsumption chain $C_{0}\sqsubseteq  \ldots C_{n-1} \sqsubseteq C_{n}$ in the justifications can be replaced by an axiom $C_{0}\sqsubseteq C_{n}$ of length 1 without affecting the respective entailment; this substitution transforms the justifications into their \emph{minimal cardinality} lemmatisations $\J_{1}^{\Lambda}, \J_{2}^{\Lambda}$. 
+
+%%If $\J_{1}^{\Lambda}$ and $ \J_{2}^{\Lambda}$ are s-isomorphic (which is the condition for l-isomorphism), they will now have the same number of axioms. For any justification $\J_{3}$ in order to be l-isomorphic to $\J_{2}$, it must be equally possible to transform it to a minimal lemmatisation $ \J_{3}^{\Lambda}$ which, again, will have the same cardinality as $\J_{2}^{\Lambda}$ and therefore the same cardinality as $\J_{1}^{\Lambda}$. This shows that if $\J_{1} \lisom \J_{2}$ and if $\J_{2} \lisom \J_{3}$ there always exist minimal lemmatisations such that $\left|\J_{1}^{\Lambda}\right| = \left|\J_{2}^{\Lambda}\right| = \left|\J_{3}^{\Lambda}\right|$ which implies that $\J_{1} \lisom \J_{3}$; therefore, l-isomorphism is a transitive relation.
+
+
+
+%\subsection*{Non-Summarising Lemmatisations}
+
+%In the above definition for lemma-isomorphism, the selection of lemmas is restricted to consider only summarising lemmas; this implies that justifications containing chains which \emph{overlap} cannot be considered lemma-isomorphic (unless they are already isomorphic with respect to s-isomorphism or i-isomorphism).
+
+%Overlapping chains (assuming the chains are of the primitive type described in Section \ref{sec:obvious}) can be characterised by three parameters:
+%\begin{enumerate}
+%\item The \emph{number} of chains which overlap in a justification.
+%\item The \emph{size} of the overlap, i.e. how many axioms are shared between the chains.
+%\item The \emph{shape} of the overlap, i.e. which position the overlapping axioms occur in.
+%\end{enumerate}
+%\todo{discuss types of overlapping chains + check whether overlapping chains can be lemmatised while preserving transitivity}
+
+
+\section*{Reasons for overlap}
+\todo{This discussion requires summarising lemmas, which we haven't actually discussed yet. Introduce summarising lemmas here already?}
+The occurrence of such subsets gives rises to a hypothesis about their suitability for lemma generation: Justification subsets (i.e. justification overlaps containing multiple axioms) which occur in multiple justifications lead to a lemma, that is, an intermediate entailment that is not one of the axioms in the overlap, which is essential for the actual entailment to hold. Such a conclusion does not follow immediately for any given overlap, since it is quite possible for a set of axioms to occur in multiple justifications without there being an interaction between the axioms. Consider the two justifications in Example \ref{ex:overlap}:
+
+\begin{examp}
+\begin{align*}
+\J_{1} = \{ & \dlax{A \subcls B \conj C}, \dlax{B \subcls \exists r.D}, \dlax{\exists r.D \subcls E},  \dlax{E \subcls F} \} \entails dlax{A \subcls F} \\
+\J_{2} = \{ & \dlax{A \subcls B \conj C}, \dlax{C \subcls \exists s.G}, \dlax{\exists s.G \subcls E}, \dlax{E \subcls F}  \} \entails dlax{A \subcls F}
+\end{align*}\label{ex:overlap}
+\end{examp}
+
+While $\J_{1}$ and $\J_{2}$ do overlap in two axioms \{\dlax{A \subcls B \conj C}, \dlax{E \subcls F}\}, there exists no lemma originating from \emph{both} axioms which would be relevant to the entailment \dlax{A \subcls F}. In contrast, the shared axioms in Example \ref{ex:overlap2} form a common lemma for both justifications:
+
+\begin{examp}
+\begin{align*}
+\J_{1} = \{ & \dlax{A \subcls \exists r.B}, \dlax{\domain{r}{C}}, \dlax{A \subcls D},  \dlax{C \conj D \subcls E} \} \entails dlax{A \subcls E} \\
+\J_{2} = \{ & \dlax{A \subcls \exists r.B}, \dlax{\domain{r}{C}},  \dlax{C  \subcls F} \} \entails dlax{A \subcls F}
+\end{align*}\label{ex:overlap2}
+\end{examp}
+
+The axiom subset \{ \dlax{A \subcls \exists r.B}, \dlax{\domain{r}{C}} \} entails the lemma \dlax{A \subcls C} which is relevant to the entailments of both justifications in the sense that if the lemma did not follow from these axioms, the entailments of $\J_{1}$ and $\J_{2}$ would not hold. 
+
+Arbitrary overlap is interesting in the context of justificatory structure as it indicates axiom sets which can be considered self-contained entities. Further, with respect to justification isomorphism, such overlaps lend themselves to lemma generation for lemma-isomorphism. With respect to the debugging of faulty entailments, lemmas of frequently occurring axiom sets may be presented to a user to support understanding by encouraging \emph{chunking} of information, a concept which will be discussed in detail in Chapter \ref{chap:understanding}. Note that our definition of lemmas only allows intermediate entailments which originate from a subset that can be substituted by the lemma. Thus, we can say that if there exists a lemma for an overlapping axiom set at all, the overlap can be considered relevant to the entailment. On the other hand, however, intermediate entailments which follow from subsets that cannot be substituted may be left out, even if they are relevant and potentially useful for understanding. Given that the substitution property of lemmas has clear benefits, this seems an acceptable tradeoff.
+
+
+
+
+\subsection*{Lemmatisations}
+From the pairwise disjointness of the subsets $S_{i}$ in $\Sigma$ one might think that any $S_{i}$ can be substituted by its respective lemma without affecting the entailment. However, this consequence does \emph{not} hold for \emph{all} entailments of a justification, in particular in cases where \emph{internal masking} occurs. \todo{example here?}
+
+
+\subsection*{Entailments and relevance}
+While this example demonstrates a very obvious case of an infinite tautological entailment set which has absolutely no information value beyond the originally asserted axiom, even entailments which hold some information value may not be relevant to an ontology user. Given an ontology \O' = \dlcn{\{A \subcls B, B \subcls \exists r.C\}} in the description logic \dl{EL}, the set of entailments of \O includes (amongst the entailments listed above) the axiom \dlax{A \subcls \exists r.C}. This axiom \emph{does} indeed have some information value and, depending on the user's preferences, may be included in a view of an ontology's entailments. On the other hand, however, it is easy to see how including \emph{all} non-tautological entailments of an ontology quickly leads to an entailment set which contains large amounts of irrelevant information.
+
+
+\begin{table}
+\caption{Overview of the basic ontology metrics in the corpus.}
+\label{tab:ontologies}
+\centering
+\begin{tabular}{lrrrrrr}
+\hline
+ & Classes & Object properties & Data properties & Individuals & Logical axioms & Entailments (sampled) \\
+\hline
+mean		& 	2,206.4 & 22.2		& 9.8		& 159.6 	&  4856.6		&  	608.8 \\
+median 	&  395		 & 6.5		&  0			& 0 			& 	810.5		& 710.5 \\
+min 			& 	5			& 0			&  0 			&  0 			& 19 		&  	1 		\\
+max			& 	38,640	& 431		& 	488		& 7,559 	& 79,180 & 1,000 \\
+\hline 
+\end{tabular} 
+\end{table}
+
+For the purpose of detecting how many distinct \emph{types} of justifications there are for a given set of entailments, we have seen that it is crucial to focus not on the \emph{material} form of a justification, but rather on the justification templates in an ontology. By only considering the abstract template of a set of justifications, we can represent the reasoning that underlies not only one, but a whole class of justifications in the ontology.
+
+
+
+
+\begin{table}
+\caption{A comparison of the number of justifications encountered. $j_{i}$ denotes the number of justifications for an entailment $\eta_{i}$.}
+\label{tab:justencounters}
+\centering
+\begin{tabu}{rcc}
+\toprule 
+ & 1 justification & $n$ justifications \\ 
+\midrule 
+1 entailment & 1 & $n$ \\ 
+$k$ entailments & $k$ & $\sum\limits_{\substack{1\leq i\leq k \\
+   1\leq j \leq n}} j_{i}$ \\ 
+\bottomrule 
+\end{tabu} 
+\end{table}
+
+
+\begin{examp}
+\begin{alignat*}{2}
+	&\dlax{A_{1} \subcls A_{2}} & \quad\quad &\dlax{A_{3} \subcls A_{4}}\\
+	&\quad \dlax{A_{2} \subcls A_{3}} & \quad\quad &\dlax{A_{5} \subcls A_{6}}\\
+	&\quad \quad \dlax{A_{3} \subcls A_{4}} & \quad\quad &\dlax{A_{2} \subcls A_{3}}\\
+	&\quad \quad \quad \dlax{A_{4} \subcls A_{5}} & \quad\quad &\dlax{A_{4} \subcls A_{5}}\\
+	&\quad \quad \quad \quad \dlax{A_{5} \subcls A_{6}} & \quad\quad &\dlax{A_{1} \subcls A_{2}}
+	\end{alignat*}\label{ex:ordering}
+\end{examp}
+
+
+\begin{examp}
+\begin{alignat*}{2}
+	& unordered & \quad\quad    & ordered+indented \\
+	& \dlax{A_{3} \subcls A_{4}}&    \quad\quad    &\dlax{A_{1} \subcls A_{2}}\\
+	& \dlax{A_{5} \subcls A_{6}}&    \quad\quad    &\quad \dlax{A_{2} \subcls A_{3}}\\
+	& \dlax{A_{2} \subcls A_{3}}&    \quad\quad    &\quad \quad \dlax{A_{3} \subcls A_{4}} \\
+	&\dlax{A_{4} \subcls A_{5}} & 	\quad\quad 	&\quad \quad \quad \dlax{A_{4} \subcls A_{5}} \\
+	&\dlax{A_{1} \subcls A_{2}} & \quad\quad & \quad \quad \quad \quad \dlax{A_{5} \subcls A_{6}}
+	\end{alignat*}\label{ex:ordering}
+\end{examp}
+
+
+\begin{table}[bht]
+\caption{A model for user effort for a given debugging problem. $c_{i,j}$ denotes the complexity score of a justification $\J_{j}$ for an entailment $\eta_{i}$.}\label{tab:effortmodel}
+\centering 
+\begin{tabu}{rcc}
+\toprule 
+ & 1 justification & $n$ justifications \\ 
+\midrule 
+1 entailment & $c_{1,1}$ & $\sum\limits_{\substack{1\leq j\leq n}}  c_{1,j}$ \\ 
+$k$ entailments & $\sum\limits_{\substack{1\leq i\leq k}} c_{i,1}$ & $\sum\limits_{\substack{
+   1\leq i\leq k \\
+   1\leq j \leq n
+  }} c_{i,j}$ \\ 
+\bottomrule 
+\end{tabu} 
+\end{table}
+
+
+
+
+
+
+
+
+
+\section{Requirements for debugging support}
+
+In previous justification-based debugging approaches, the concept of repair was heavily focused on finding a \emph{cardinality-minimal} repair, that is, a set of axioms \repair to be removed which contains as few axioms as possible. This was motivated by the assumption that we do not necessarily know which axioms are correct or incorrect, and the fewer axioms we remove from an ontology, the less information will be lost in the debugging process. However, this approach considers neither the complex relations between justifications and axioms in \entsetplus and \entsetminus, nor the effort required for finding a suitable modification. In this section, we will discuss the issue of finding a \emph{good} solution for a debugging problem, taking into account the effects of modifications as well as the effort required to find such a solution.
+
+\subsection{Why minimal repairs are not necessarily \enquote{good}}
+\label{sec:goodrepair}
+
+First, the concept of a cardinality-minimal repair is based on the assumption that removing the smallest number of axioms leads to a minimal loss of correct entailments. A cardinality-minimal repair generally consists of high-power axioms, i.e.\ those axioms which are shared between many justifications. However, as we have seen in our discussion in Section \ref{sec:arity}, these high-power axioms might also occur in justifications for correct entailments in \entsetplus; thus, removing them may also lead to the loss of more correct entailments than necessary. 
+
+Second, it \emph{may} seem reasonable to assume that a frequently occurring axiom or set of axioms is likely to be the source of an error, as stated by Schlobach \cite{schlobach05tf}: \emph{\enquote{The more MIPSs such a core belongs to, the more likely it is that axioms are the cause of contradictions}}. However, it is clear that simply because a set of axioms occurs frequently in justifications does not mean the axioms are \emph{necessarily} the ones causing the error. While focusing on shared cores in order to obtain a minimal repair might be a pragmatic choice for (semi-) automated debugging when dealing with a large number of erroneous entailments, it does not tackle the actual reason for unwanted entailments, which is the incorrectness---with respect to the domain knowledge or simply incorrect use of constructors---of one or several axioms in the justifications.
+
+And third, a cardinality-minimal repair does not necessary imply minimal \emph{effort} for a human user in the debugging process. Finding a cardinality-minimal repair may require the user to inspect axioms or justifications which are very difficult to understand. While we have already established that removing unwanted entailments while preventing the loss of relevant information is key to a successful repair solution, it seems that we also need to strike a good balance between removing unwanted entailments, preserving wanted entailments, and finding a repair strategy which is comprehensible to a user.
+
+
+
+We therefore loosen the restrictions for our definition of successful repairs given in the previous section and take into consideration the user's profile: a \emph{good} repair is a modification \modif which requires the least \emph{effort} from a user while being \emph{as close as possible} to the best solution. The least effort solution for a user depends on the user's experience with the respective formalism and their knowledge of certain \enquote{tricks} and patterns. 
+
+%\cite{kalyanpur06nm} states: \enquote{[\ldots] in cases where there is more than one reasonable solution, determining a correct solution is subjective} 
+
+\subsection{The \enquote{give-up factor}}
+The \enquote{give-up factor} is a direct result of the complexity of individual justifications and the number of justifications a user has to consider, paired with the way these justifications are presented to the user, as well as the profile of the user. We ask: how long or difficult a debugging task does it take for the user to \enquote{give up}, that is, abandon the debugging task or switch from focused and goal-oriented repair to \enquote{ripping out} arbitrary parts of the ontology?
+
+Imagine a set of unsatisfiable classes with a total of, say, 100 justifications, presented to a user in the default Explanation panel in the \protege ontology editor. The entailments will be listed on the left-hand-side panel, with the respective justifications displayed one after another (ordered, indented, and with coloured syntax highlighting) in the right-hand-side panel. A user may attempt to repair the justifications for each unsatisfiable class individually, scrolling through the list of justifications for each entailment, inspecting each justification, then modifying one or several axioms in the justification to break it. While this may be extremely tedious, it does not seem unreasonable to think that a highly motivated user may be able to succeed in repairing all entailments given sufficient time. 
+
+\paragraph{Some experimental insights into the give-up factor}
+On the other hand, previous experiments have given us some insights into how much time users spend with OWL justifications in general and before giving up or declaring them \enquote{impossible} to understand. In a first user study, Kalyanpur et al.\ \cite{kalyanpur05mi} asked groups of OWL users to debug multiple (8, 1, and 30, respectively) unsatisfiable classes in three OWL ontologies, setting an optional time limit of 20 minutes per ontology to complete the task. On average, users required 12.9 minutes to complete the tasks correctly, with a maximum\footnote{Only the average time per group is given, thus we do not know the actual maximum times taken by the individual subjects.} of 24.3 minutes required by one group to debug the ontology with 30 unsatisfiable classes. 
+
+In a further study by Kalyanpur \cite{kalyanpur06nm} subjects were asked to debug two ontologies (containing around\footnote{The author only states that \enquote{new errors} were introduced but does not specify how many \cite[p 96]{kalyanpur06nm}.}  8 and 30 unsatisfiable classes, respectively) using ontology specific repair tools. On average, the test subjects spent 9.2 minutes per ontology, with a maximum of 33 minutes taken (again, on average) by one group for the ontology with 8 (or slightly more) unsatisfiable classes. No group hit the given time limit of 45 minutes per ontology in this experiment.
+
+In a study of the complexity of individual justifications, Horridge et al.\ \cite{horridge09ct} presented 12 OWL users with an arbitrarily large number of both naturally occurring and modified justifications which had to be marked as on a scale from \emph{easy} to \emph{impossible to understand} by the user. Test subjects inspected an average of 18.9 justifications before choosing to end the study. Further, 11 out of the 12 participants gave up (marked as \emph{impossible}) on at least one of the justifications they were shown, with a large number of participants abandoning \emph{impossible} justifications before the 6 minute mark. Average times are not given for the experiment, but the maximum time taken by a participant before giving up on a single justification ranks at around 21 minutes, with approximately 90\% of the 227 rankings taking up less than 6.6 minutes.
+
+Following up from this study, we conducted an evaluation \cite{horridge11gj} to validate the complexity model created by Horridge et al.\ \cite{horridge09ct}. In this experiment, 14 MSc students were shown sets of axioms and entailments and asked to confirm whether the entailment followed from the set of axioms, i.e.\ whether the set of axioms was a justification for the entailment. The average time the subjects spent on such a justification-entailment pair was only 2.5 minutes. We can assume that this is due to the test subjects having no intrinsic motivation to perform well or spend a lot of time with the study, unlike the previous studies where subjects were most likely aware of the relevance of the study to person conducting the experiment, or real-world situations where an ontology developer \emph{must} fix a bug in an ontology and cannot simply give up.\footnote{Some anecdotal evidence of the \enquote{days and weeks} spent on debugging ontologies can be found in \cite{allemang05aa}.}
+
+\paragraph{When are users likely to give up?}
+
+Based on this small set of results, we it seems realistic to assume that the average time an OWL user is likely to spend on examining a justification before either understanding it or giving up ranks between 2.5 and 6.6 minutes, with a maximum of approximately 20 minutes for an individual justification. Note that the timings in these experiments are based on a broad selection of (mostly) naturally occurring justifications, i.e.\ these were not only \emph{difficult} justifications that were specifically selected for their size or apparent complexity. 
+
+Going back to our initial scenario of a user attempting to debug unsatisfiable classes with around 100 justifications, we estimate that this task will take up between 4.2 and 11 hours if all justifications are inspected one after another. Note that this estimate does not take into account possible learning effects and improved performance on the one hand, or effects of fatigue and decreased performance (e.g.\ \emph{skimming} rather than focussed inspection of the justifications) on the other hand; to date, there have been no user studies examining the performance of subjects on justification-based tasks over longer periods of time. It is clear to see, however, that the time required to debug the ontology is rather high, and that we can reasonably expect an ontology developer to give up well before the estimated completion time. 
+
+This leads us back to the \enquote{give-up factor} of a justification scenario: from the above results, we can infer that users are likely to 
+\begin{compactitem}
+\item abandon justifications quickly if they lie above a certain threshold of (perceived) complexity
+\item give up on justifications which require more than \enquote{a few} (i.e.\ 2.5 to 6.6) minutes to understand
+\item give up on the debugging process altogether after a certain time limit (takings 33 minutes as a point of reference) is reached.
+\end{compactitem}
+
+We can conclude that, in addition to reducing overall effort, an important factor when providing user support in the debugging process is to reduce the likelihood of the user giving up entirely because the process is too complex or time-consuming.
+
+
+
+ We then performed pairwise Mann-Whitney tests on the expressivity bins, which revealed that there are no significant differences in the numbers of complex justifications for the different expressivity bins. Table \ref{tab:dl-vs-justs} shows the U-statistics resulting from the Mann-Whitney tests for the pairwise comparisons involving the lowest (\elplusplus) and highest (\dl{SROIQ}) bins alongside the \emph{upper} limit for a critical value at the 5\% significance level.
+
+
+\begin{table}[htb]
+\centering
+\caption{Mann-Whitney test statistics describing the correlation between description logic expressivity and justification numbers in $S_{s}$.}
+\label{tab:dl-vs-justs}	
+\begin{tabu}{rlrr}
+\toprule
+Bin A & Bin B & U-statistic  &  Upper limit \\
+\midrule
+\elplusplus &	\dl{ALC}		& 137.0	 	& 67 \\
+\elplusplus &	\dl{SHIN} 	  	& 313.0		& 67 \\ 173
+\elplusplus &	\dl{SROIQ} 		& 265.5 	& 112 \\
+\dl{SROIQ}  &	\dl{ALC}		& 172.0 	& 76 \\
+\dl{SROIQ}  &	\dl{SHIN} 		& 288.0		& 93 \\
+\bottomrule 
+\end{tabu} 
+\end{table}
+
+%%%%%%%%
+
+
+
+In order to determine whether there is a relevant correlation between the description logic expressivity and the average number of justifications, the ontologies in $S_{s}$ were sorted into four expressivity bins: 
+\begin{compactitem}
+\item \dl{SROIQ} (20 ontologies): \dl{S} or \dl{ALC} plus \dl{R} or \dl{Q}
+\item \dl{SHIN} (27 ontologies): \dl{S} or \dl{ALC} plus \dl{N} or \dl{O}.
+\item \dl{ALC} (13 ontologies): all remaining ontologies which are not in \elplusplus.
+\item \elplusplus (18 ontologies): ontologies in \elplusplus.
+\end{compactitem}
+Note that the issue of binning ontologies according to their expressivity is a non-trivial problem. There is no strict ordering of hardness of the individual logics, and the DL mnemonics only indicate the occurrence of at least \emph{one} constructor or axiom type, but do not provide any information about the usage or prevalence of the constructor in the ontology. Furthermore, the ontologies in the bins differ not only in their expressivity, but many other properties, which means that the binning cannot be considered reliable.
+
+ We then performed pairwise Mann-Whitney tests on the expressivity bins which tests the null-hypothesis that there are no statistically significant differences between the numbers of justifications in the different expressivity bins.  revealed that there are no significant differences in the numbers of complex justifications for the different expressivity bins. Table \ref{tab:dl-vs-justs} shows the p-values resulting from the Mann-Whitney tests for the pairwise comparisons involving the lowest (\elplusplus) and highest (\dl{SROIQ}) bins.
+
+
+\begin{table}[htb]
+\centering
+\caption{Mann-Whitney test statistics describing the correlation between description logic expressivity and justification numbers in $S_{s}$.}
+\label{tab:dl-vs-justs}	
+\begin{tabu}{rlrr}
+\toprule
+Bin A & Bin B & U-statistic  &  $p$ \\
+\midrule
+\elplusplus &	\dl{ALC}		& 0.423 	 \\
+\elplusplus &	\dl{SHIN} 	  	& 0.105		 \\
+\elplusplus &	\dl{SROIQ} 		& 0.012 	 \\
+\dl{SROIQ}  &	\dl{ALC}		& 0.122 	 \\
+\dl{SROIQ}  &	\dl{SHIN} 		& 0.699		 \\
+\bottomrule 
+\end{tabu} 
+\end{table}
+
+
+
+
+Finally, we need to ensure that the resulting $\jtemplate_{ac}$ indeed entails $\eta_{ac}$. We prove that every model $I_{ac}$ for $\Theta_{ac}$ is a model for $\eta_{ac}$ by first showing that, for $I_{ac}$ a model of $\Theta_{ac}$, we can extend $I_{ac}$ to a model $I_{a}$ for $\J_{a}$ (and the analogue for $I_{c}, \J_{c}$). The model $I_{a}$ is constructed as follows. Given a model $I_{ac} = (\deltaiac, \dotiac)$ of $\jtemplate_{ac}$, for every $x \mapsto C$ in $\phi^{ac}_{1}$, we construct $C^{I_{a}}$ such that  $C^{I_{a}} = x^{I_{ac}}$. The interpretation domain $\deltaia$ is fixed to be $\deltaiac$ with the addition of elements that are newly created in the construction process. The construction steps are as follows, with $A, r$ denoting atomic classes and properties, and $C, D$ denoting possibly complex expressions:
+\begin{compactitem}
+\item $(A)^{I_{a}} = x^{I_{ac}} $
+\item $(r)^{I_{a}} = x^{I_{ac}} $
+\item $(\neg C)^{I_{a}}$: for every element $a_{i} \in (\deltaia \setminus x)^{I_{ac}})$ add $a_{i}$ to $C^{I_{a}}$.
+\item $(C \conj D)^{I_{a}}$: assign $C^{I_{a}} = D^{I_{a}} = x^{I_{ac}}$.
+\item $(C \disj D)^{I_{a}}$: assign $C^{I_{a}} = x^{I_{ac}}$ \emph{or} $D^{I_{a}} = x^{I_{ac}}$.
+\item $(\exists r.C)^{I_{a}}$: for every $a_{i}$ in $x^{I_{ac}}$ add a new element $b_{i}$ to \deltaia. Then add pairs $(a_{i}, b_{i})$ to $r^{I_{a}}$ and add every $b_{i}$ to $C^{I_{a}}$. The interpretation  $(\forall r.C)^{I_{a}}$ is constructed likewise.
+\item $(\leq n r.C)^{I_{a}}$: for every $a_{i}$ in $x^{I_{ac}}$ add $n$ new elements $b_{ij}$ (for $j \in 1 \ldots n$) to \deltaia. Then add pairs $(a_{i}, b_{ij})$ to $r^{I_{a}}$ and add every $b_{ij}$ to $C^{I_{a}}$. The interpretations $(\geq n r.C)^{I_{a}}$ and $(= n r.C)^{I_{a}}$ are constructed likewise.
+\end{compactitem}
+
+Note that the expressions in $\J_{a}$ and the mappings have to fulfil certain conditions for this construction to be possible:
+\begin{compactenum}
+\item For any  $\phi^{ac}_{1}(x) = C$, the expression $C$ must not be equivalent to \thing or \nothing. This is necessary as it may not be possible to construct $C^I_{a}$ such that it is equal to $x^{I_{ac}}$ if $C^I_{a} = \emptyset$ or $C^I_{a} = \deltaia$.
+\item For any $C_{1}$, $C_{2}$ in the range of $\phi^{ac}_{1}$, it must hold that $\sig{C_{1}} \cap \sig{C_{2}} = \emptyset$, that is, the expressions in the range of the mappings must be pairwise signature disjoint, otherwise it would not be possible to freely choose the interpretations of the expressions as shown in the above construction.
+\end{compactenum}
+
+With the above steps we have shown that, given any model $I_{ac}$ such that $I_{ac} \entails \jtemplate_{ac}$, it is possible to construct a model $I_{a}$ such that $I_{a} \models \J_{a}$ and since $\J_{a} \models \eta_{a}$ it holds that $I_{a} \models \eta_{a}$. 
+By construction we know that for every variable $x \in \Theta^{ac}, \eta_{ac}$ it holds that $(\phi^{ac}_{1}(x))^{I_{a}} = x^{I_{ac}}$ and thus $I_{ac} \models \eta_{ac}$. This means that every model $I_{ac}$ for $\Theta_{ac}$ is a model for $\eta_{ac}$ and the entailment relation $\Theta_{ac} \models \eta_{ac}$ holds. We have therefore shown that we can always construct a template $(\jtemplate_{ac}, \eta_{ac})$ the justifications $\J_{a}$ and $\J_{c}$, and thus $\J_{a} \sisom \J_{c}$.

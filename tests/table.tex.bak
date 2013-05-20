@@ -1,0 +1,81 @@
+\begin{longtable}{lrrrrrrrrrrrrrl}
+ONT & EN & CJ & UC & DL & EL & QL & RL & CL & OP & DP & IN & DT & AX & DL
+adverse event reporting & 3 & 9 & 0 & \cmark & \xmark & \xmark & \xmark & 275 & 59 & 4 & 25 & 2 & 537 & SROIQ
+amino acid & 112 & 2652 & 0 & \cmark & \xmark & \xmark & \xmark & 46 & 5 & 1 & 0 & 1 & 477 & ALCF
+basic formal ontology & 116 & 459 & 0 & \cmark & \xmark & \xmark & \xmark & 39 & 0 & 0 & 0 & 0 & 95 & ALC
+basic vertebrate anatomy & 292 & 7186 & 0 & \cmark & \xmark & \xmark & \xmark & 99 & 74 & 0 & 0 & 0 & 386 & SHIF
+bioassay & 167 & 307 & 0 & \xmark & \xmark & \xmark & \xmark & 1293 & 120 & 13 & 45 & 4 & 1791 & SROIQ
+biological imaging methods & 95 & 311 & 0 & \cmark & \cmark & \xmark & \xmark & 517 & 1 & 0 & 0 & 0 & 548 & EL++
+biopax & 10 & 12 & 0 & \xmark & \xmark & \xmark & \xmark & 70 & 55 & 41 & 0 & 5 & 399 & SHIN
+bleeding history phenotype & 421 & 1313 & 0 & \cmark & \xmark & \xmark & \xmark & 544 & 33 & 5 & 0 & 2 & 1925 & ALCIF
+bone dysplasia & 800 & 1114 & 0 & \cmark & \xmark & \xmark & \xmark & 13839 & 28 & 6 & 9 & 3 & 44683 & SHIF
+breast cancer grading  & 109 & 109 & 0 & \xmark & \xmark & \xmark & \xmark & 134 & 56 & 27 & 193 & 6 & 1034 & SHOIN
+cancer research & 10 & 378 & 0 & \cmark & \xmark & \xmark & \xmark & 1770 & 242 & 15 & 61 & 8 & 5522 & SROIQ
+cao & 767 & 5800 & 0 & \cmark & \xmark & \xmark & \xmark & 204 & 35 & 2 & 0 & 2 & 442 & SHIQ
+cereal plant gross anatomy & 250 & 729 & 0 & \cmark & \cmark & \xmark & \xmark & 1181 & 3 & 0 & 0 & 0 & 2091 & EL++
+cerebrotendinous xanth. & 14 & 15 & 0 & \xmark & \xmark & \xmark & \xmark & 292 & 22 & 11 & 282 & 6 & 1972 & ALCOIN
+chemical information & 132 & 1962 & 4 & \cmark & \xmark & \xmark & \xmark & 579 & 59 & 6 & 22 & 9 & 1230 & SHOIN
+cognitive atlas & 146 & 810 & 0 & \cmark & \xmark & \xmark & \xmark & 1701 & 6 & 5 & 1697 & 1 & 8791 & ALC
+cognitive paradigm & 406 & 4252 & 0 & \cmark & \xmark & \xmark & \xmark & 355 & 49 & 4 & 22 & 2 & 682 & SHOIN
+comparative data analysis & 121 & 532 & 1 & \xmark & \xmark & \xmark & \xmark & 127 & 74 & 11 & 8 & 7 & 813 & SROIQ
+computational neuroscience & 20 & 86 & 0 & \cmark & \xmark & \xmark & \xmark & 214 & 10 & 4 & 165 & 2 & 1241 & ALCOI
+dendritic cell & 142 & 143 & 0 & \cmark & \xmark & \xmark & \xmark & 148 & 9 & 0 & 0 & 0 & 313 & ALC
+dikb evidence & 113 & 124 & 0 & \xmark & \xmark & \xmark & \xmark & 124 & 70 & 37 & 8 & 6 & 645 & ALCHOIN
+eagle i research resource  & 662 & 12227 & 0 & \cmark & \xmark & \xmark & \xmark & 2239 & 103 & 54 & 22 & 2 & 3114 & SHOIF
+electrocardiography  & 37 & 73 & 0 & \cmark & \xmark & \xmark & \xmark & 1098 & 20 & 24 & 0 & 1 & 1274 & ALCIF
+emotion  & 423 & 1558 & 0 & \cmark & \xmark & \xmark & \xmark & 404 & 60 & 4 & 20 & 2 & 698 & SHOIQ
+environment  & 69 & 138 & 0 & \cmark & \cmark & \xmark & \xmark & 1538 & 7 & 0 & 0 & 0 & 1807 & EL++
+enzyme mechanism  & 19 & 104 & 0 & \cmark & \xmark & \xmark & \xmark & 260 & 32 & 1 & 50 & 1 & 931 & ALCRQ
+evidence codes & 441 & 662 & 0 & \cmark & \cmark & \xmark & \xmark & 268 & 1 & 0 & 0 & 0 & 345 & EL++
+family health history  & 522 & 665 & 0 & \xmark & \xmark & \xmark & \xmark & 239 & 431 & 1 & 12 & 1 & 1111 & ALCHIF
+fission yeast phenotype  & 770 & 10630 & 0 & \cmark & \cmark & \xmark & \xmark & 1571 & 20 & 0 & 0 & 0 & 2257 & EL++
+gene ontology extension & 32 & 6421 & 0 & \cmark & \cmark & \xmark & \xmark & 32841 & 6 & 0 & 0 & 0 & 68777 & EL++
+gene regulation  & 564 & 1167 & 0 & \xmark & \xmark & \xmark & \xmark & 508 & 24 & 5 & 4 & 2 & 962 & ALCHIQ
+general formal ontology & 16 & 21 & 0 & \cmark & \xmark & \xmark & \xmark & 45 & 41 & 0 & 0 & 0 & 212 & SHIQ
+host pathogen interactions & 669 & 4056 & 0 & \cmark & \xmark & \xmark & \xmark & 278 & 30 & 0 & 0 & 0 & 403 & SHI
+imgt & 4 & 23 & 0 & \cmark & \xmark & \xmark & \xmark & 292 & 23 & 4 & 0 & 1 & 2114 & SHIN
+infectious disease & 821 & 7570 & 0 & \cmark & \xmark & \xmark & \xmark & 509 & 41 & 0 & 19 & 0 & 1245 & SROIF
+information artifact & 218 & 1149 & 0 & \cmark & \xmark & \xmark & \xmark & 116 & 36 & 1 & 33 & 1 & 314 & SHOIN
+int. class. nursing practice & 762 & 863 & 0 & \cmark & \xmark & \xmark & \xmark & 3290 & 33 & 0 & 0 & 0 & 11891 & SHIF
+interaction network & 293 & 1063 & 0 & \cmark & \xmark & \xmark & \xmark & 978 & 0 & 0 & 0 & 0 & 1034 & ALC
+kinetic simulation algorithm  & 202 & 2617 & 0 & \cmark & \xmark & \xmark & \xmark & 224 & 9 & 2 & 0 & 4 & 706 & ALCRIQ
+lipid  & 665 & 4724 & 0 & \cmark & \xmark & \xmark & \xmark & 716 & 46 & 0 & 0 & 0 & 2375 & ALCHIN
+mahco an mhc  & 178 & 2279 & 0 & \cmark & \xmark & \xmark & \xmark & 7929 & 8 & 3 & 0 & 1 & 13781 & ALCIQ
+mged  & 85 & 161 & 0 & \xmark & \xmark & \xmark & \xmark & 237 & 81 & 45 & 713 & 5 & 1478 & ALEOF
+nanoparticle  & 43 & 633 & 0 & \cmark & \xmark & \xmark & \xmark & 1816 & 50 & 8 & 0 & 2 & 16267 & SHIN
+neomark oral cancer  & 505 & 2365 & 0 & \cmark & \xmark & \xmark & \xmark & 325 & 26 & 0 & 0 & 0 & 399 & SHIQ
+neural electromagnetic & 238 & 1338 & 0 & \cmark & \xmark & \xmark & \xmark & 1633 & 89 & 4 & 56 & 3 & 2681 & SHIQ
+nif dysfunction & 461 & 1790 & 0 & \xmark & \xmark & \xmark & \xmark & 1860 & 44 & 12 & 178 & 2 & 2696 & SROIF
+nmr instrument specific comp. & 423 & 3119 & 0 & \cmark & \xmark & \xmark & \xmark & 481 & 9 & 9 & 32 & 2 & 676 & SH
+non random. controlled trials & 530 & 2275 & 5 & \cmark & \xmark & \xmark & \xmark & 156 & 4 & 5 & 31 & 3 & 508 & ALCOF
+o. for drug discovery investig. & 1 & 38 & 0 & \cmark & \xmark & \xmark & \xmark & 659 & 60 & 4 & 20 & 2 & 1001 & SHOIN
+o. for general medical science & 709 & 14 & 0 & \cmark & \xmark & \xmark & \xmark & 133 & 0 & 0 & 19 & 0 & 216 & ALCO
+o. for genetic interval & 224 & 7 & 0 & \xmark & \xmark & \xmark & \xmark & 212 & 51 & 14 & 22 & 4 & 524 & SHIN
+o. for microrna target pred. & 84 & 1 & 0 & \cmark & \xmark & \cmark & \xmark & 320 & 16 & 2 & 0 & 2 & 415 & ALCI
+o. of adverse events oae  & 228 & 6993 & 0 & \cmark & \xmark & \xmark & \xmark & 653 & 28 & 0 & 0 & 0 & 807 & SHI
+o. of clinical research ocre  & 208 & 1163 & 0 & \xmark & \xmark & \xmark & \xmark & 13 & 13 & 2 & 0 & 1 & 51 & ALCHIF
+o. of exp. variables and values & 1 & 1147 & 0 & \cmark & \xmark & \xmark & \xmark & 39 & 22 & 20 & 147 & 5 & 487 & ALCO
+o. of physics for biology & 100 & 9832 & 0 & \cmark & \xmark & \xmark & \xmark & 297 & 5 & 3 & 0 & 1 & 447 & ALCHIQ
+oboe & 36 & 780 & 0 & \cmark & \xmark & \xmark & \xmark & 40 & 32 & 10 & 0 & 4 & 265 & SRIQ
+oboe sbc & 12 & 4 & 0 & \cmark & \xmark & \xmark & \xmark & 629 & 26 & 6 & 0 & 4 & 1359 & SRIQ
+ontologia proj alternativa & 4 & 747 & 0 & \xmark & \xmark & \xmark & \xmark & 22 & 20 & 68 & 2 & 5 & 288 & ALUIN+
+parasite experiment o. & 187 & 4064 & 0 & \cmark & \xmark & \xmark & \xmark & 144 & 26 & 19 & 27 & 5 & 348 & ALCHQ
+pathogen transmission & 1 & 1 & 0 & \cmark & \cmark & \cmark & \cmark & 25 & 0 & 0 & 0 & 0 & 24 & EL++
+pharmacovigilance & 140 & 140 & 0 & \cmark & \cmark & \cmark & \cmark & 33 & 0 & 0 & 0 & 0 & 24 & EL++
+phenotypic quality & 18 & 44 & 0 & \cmark & \cmark & \xmark & \xmark & 1404 & 12 & 0 & 0 & 0 & 1884 & EL++
+phenx toolkit & 295 & 1354 & 0 & \cmark & \cmark & \cmark & \cmark & 4 & 0 & 0 & 2 & 0 & 5 & EL++
+plant environ. conditions & 15 & 45 & 0 & \cmark & \cmark & \cmark & \cmark & 483 & 0 & 0 & 0 & 0 & 499 & EL++
+plant growth and dev. stage & 107 & 379 & 0 & \cmark & \cmark & \xmark & \xmark & 239 & 1 & 0 & 0 & 0 & 240 & EL++
+protein modification & 165 & 374 & 0 & \cmark & \cmark & \xmark & \xmark & 1313 & 4 & 0 & 0 & 0 & 1986 & EL++
+smoking behavior risk & 290 & 1971 & 0 & \cmark & \xmark & \xmark & \xmark & 121 & 12 & 0 & 0 & 0 & 185 & ALEI+
+snp & 182 & 935 & 0 & \xmark & \xmark & \xmark & \xmark & 2258 & 101 & 12 & 4 & 3 & 11199 & SHOIN
+solanaceae phenotype & 584 & 336 & 0 & \cmark & \cmark & \cmark & \xmark & 380 & 1 & 0 & 0 & 0 & 411 & EL++
+soyontology & 645 & 940 & 0 & \cmark & \cmark & \cmark & \cmark & 1817 & 0 & 0 & 0 & 0 & 1816 & EL++
+student health record & 196 & 255 & 0 & \cmark & \xmark & \xmark & \xmark & 344 & 36 & 2 & 0 & 2 & 418 & ALH
+synapse & 508 & 10624 & 0 & \cmark & \xmark & \xmark & \cmark & 6464 & 1 & 0 & 0 & 0 & 6743 & ALF
+teleost taxonomy & 2 & 4 & 0 & \cmark & \cmark & \cmark & \cmark & 38640 & 0 & 0 & 0 & 0 & 38639 & EL++
+translational medicine & 216 & 1697 & 0 & \cmark & \xmark & \xmark & \xmark & 300 & 33 & 6 & 15 & 6 & 502 & SRIN
+vertebrate anatomy & 528 & 2867 & 0 & \cmark & \cmark & \xmark & \xmark & 230 & 13 & 0 & 0 & 0 & 392 & EL++
+vivo & 168 & 907 & 0 & \cmark & \xmark & \xmark & \xmark & 217 & 220 & 178 & 388 & 8 & 1712 & ALEHIN+
+zebrafish anat. and dev. & 20 & 32 & 0 & \cmark & \cmark & \xmark & \xmark & 2740 & 5 & 0 & 0 & 0 & 10495 & EL++
+\end{longtable}

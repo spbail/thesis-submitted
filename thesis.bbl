@@ -1,0 +1,1024 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{{W3C}04b}
+
+\bibitem[AAKS08]{aranguren08nx}
+Mikel~Ega{\~n}a Aranguren, Erick Antezana, Martin Kuiper, and Robert Stevens.
+\newblock Ontology design patterns for bio-ontologies: a case study on the cell
+  cycle ontology.
+\newblock {\em BMC Bioinformatics}, 9(S-5), 2008.
+
+\bibitem[AB06]{alani06or}
+Harithand Alani and Christopher Brewster.
+\newblock Metrics for ranking ontologies.
+\newblock In {\em Proceedings of the 4th International Workshop on Evaluation
+  of Ontologies for the Web (EON-06)}, pages 24--30, 2006.
+
+\bibitem[ACKZ09]{artale2009aa}
+Alessandro Artale, Diego Calvanese, Roman Kontchakov, and Michael
+  Zakharyaschev.
+\newblock The {DL-Lite} family and relations.
+\newblock {\em Journal of Artificial Intelligence Research}, 36:1--69, 2009.
+
+\bibitem[AGU72]{aho72pz}
+Alfred~V. Aho, Michael~R. Garey, and Jeffrey~D. Ullman.
+\newblock The transitive reduction of a directed graph.
+\newblock {\em SIAM Journal on Computing}, 1(2):131--137, 1972.
+
+\bibitem[All05]{allemang05aa}
+Dean Allemang.
+\newblock S is for semantics.
+\newblock
+  \url{http://dallemang.typepad.com/my_weblog/2005/06/ive\_been\_progra.html}
+  [Accessed: 22-03-2013], 2005.
+
+\bibitem[BB07]{barinskis07uz}
+Martins Barinskis and Guntis Barzdins.
+\newblock Satisfiability model visualization plugin for deep consistency
+  checking of {OWL} ontologies.
+\newblock In {\em Proceedings of the 3rd International Workshop on OWL:
+  Experiences and Directions (OWLED-07)}, 2007.
+
+\bibitem[BBL05]{baader05aj}
+Franz Baader, Sebastian Brandt, and Carsten Lutz.
+\newblock Pushing the {EL} envelope.
+\newblock In {\em Proceedings of the 19th International Joint Conference on
+  Artificial Intelligence (IJCAI-05)}, pages 364--369, 2005.
+
+\bibitem[BCM{\etalchar{+}}03]{dlhb03}
+Franz Baader, Diego Calvanese, Deborah~L. McGuinness, Daniele Nardi, and
+  Peter~F. {Patel-Schneider}, editors.
+\newblock {\em The Description Logic Handbook: Theory, Implementation, and
+  Applications}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem[BFH99]{borgida99cn}
+Alex Borgida, Eric Franconi, and Ian Horrocks.
+\newblock Explaining $\mathcal{ALC}$ subsumption.
+\newblock In {\em Proceedings of the 12th International Workshop on Description
+  Logics (DL-99)}, 1999.
+
+\bibitem[BG94]{baral94aa}
+Chitta Baral and Michael Gelfond.
+\newblock Logic programming and knowledge representation.
+\newblock {\em The Journal of Logic Programming}, 19--20, Supplement 1:73--148,
+  1994.
+
+\bibitem[BGSS07]{baader07aa}
+Franz Baader, Bernhard Ganter, Baris Sertkaya, and Ulrike Sattler.
+\newblock Completing description logic knowledge bases using formal concept
+  analysis.
+\newblock In {\em Proceedings of the 20th International Joint Conference on
+  Artificial Intelligence (IJCAI-07)}, pages 230--235, 2007.
+
+\bibitem[BH95]{baader95aa}
+Franz Baader and Bernhard Hollunder.
+\newblock Embedding defaults into terminological knowledge representation
+  formalisms.
+\newblock {\em Journal of Automated Reasoning}, 14(1):149--180, 1995.
+
+\bibitem[BHPS11]{bail11jm}
+Samantha Bail, Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock The justificatory structure of the {NCBO} bioportal ontologies.
+\newblock In {\em Proceedings of the 10th International Semantic Web Conference
+  (ISWC-11)}, 2011.
+
+\bibitem[Bie07]{bienvenu07aa}
+Meghyn Bienvenu.
+\newblock Consequence finding in $\mathcal{ALC}$.
+\newblock In {\em Proceedings of the 20th International Workshop on Description
+  Logics (DL-07)}, 2007.
+
+\bibitem[Bie09]{bienvenu09aa}
+Meghyn Bienvenu.
+\newblock Prime implicates and prime implicants: From propositional to modal
+  logic.
+\newblock {\em Journal of Artificial Intelligence Research}, 36:71--128, 2009.
+
+\bibitem[BKBM99]{baader99ai}
+Franz Baader, Ralf K{\"u}sters, Alex Borgida, and Deborah~L. McGuinness.
+\newblock Matching in description logics.
+\newblock {\em Journal of Logic and Computation}, 9(3):411--447, 1999.
+
+\bibitem[BKM99]{baader99aa}
+Franz Baader, Ralf K{\"u}sters, and Ralf Molitor.
+\newblock Computing least common subsumers in description logics with
+  existential restrictions.
+\newblock In {\em Proceedings of the 16th International Joint Conference on
+  Artificial Intelligence (IJCAI-99)}, pages 96--103, 1999.
+
+\bibitem[BL04]{brachman2004aa}
+Ronald~J. Brachman and Hector Levesque.
+\newblock {\em Knowledge Representation and Reasoning}.
+\newblock The Morgan Kaufmann Series in Artificial Intelligence. Elsevier
+  Science, 2004.
+
+\bibitem[BLHL01]{berners-lee01bf}
+Tim Berners-Lee, James Hendler, and Ora Lassila.
+\newblock The {S}emantic {Web}.
+\newblock {\em Scientific American}, 284(5):34--43, 2001.
+
+\bibitem[BM09]{baader09je}
+Franz Baader and Barbara Morawska.
+\newblock Unification in the description logic $\mathcal{EL}$.
+\newblock In {\em Proceedings of the 20th International Conference on Rewriting
+  Techniques and Applications (RTA-09)}, pages 350--364, 2009.
+
+\bibitem[BN98]{baader98yt}
+Franz Baader and Paliath Narendran.
+\newblock Unification of concept terms in description logics.
+\newblock In {\em Proceedings of the 13th European Conference on Artificial
+  Intelligence (ECAI-98)}, pages 331--335, 1998.
+
+\bibitem[BP08a]{baader08eb}
+Franz Baader and Rafael Pe{\~n}aloza.
+\newblock Automata-based axiom pinpointing.
+\newblock In {\em Proceedings of the 4th International Joint Conference on
+  Automated Reasoning (IJCAR-08)}, pages 226--241, 2008.
+
+\bibitem[BP08b]{baader08tp}
+Franz Baader and Rafael Pe{\~n}aloza.
+\newblock Axiom pinpointing in general tableaux.
+\newblock {\em Journal of Logic and Computation}, 2008.
+
+\bibitem[BP10]{baader10jc}
+Franz Baader and Rafael Pe{\~n}aloza.
+\newblock Automata-based axiom pinpointing.
+\newblock {\em Journal of Automated Reasoning}, 2010.
+
+\bibitem[BPS07a]{baader07xp}
+Franz Baader, Rafael Pe{\~n}aloza, and Boontawee Suntisrivaraporn.
+\newblock Pinpointing in the description logic $\mathcal{EL}+$.
+\newblock In {\em Proceedings of the 22nd AAAI Conference on Artificial
+  Intelligence (AAAI-07)}, pages 52--67, 2007.
+
+\bibitem[BPS07b]{baader07ur}
+Franz Baader, Rafael Pe{\~n}aloza, and Boontawee Suntisrivaraporn.
+\newblock Pinpointing in the description logic {$\mathcal{EL}^+$}.
+\newblock In {\em Proceedings of the 30th Annual German Conference on
+  Artificial Intelligence (KI-07)}, pages 52--67, 2007.
+
+\bibitem[BPS10a]{bail10wb}
+Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock Justbench: A framework for {OWL} benchmarking.
+\newblock In {\em Proceedings of the 9th International Semantic Web Conference
+  (ISWC-10)}, 2010.
+
+\bibitem[BPS10b]{bail10kb}
+Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock The justificatory structure of {OWL} ontologies.
+\newblock In {\em Proceedings of the 7th International Workshop on OWL:
+  Experiences and Directions (OWLED-10)}, 2010.
+
+\bibitem[BPS11]{bail11kk}
+Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock Extracting finite sets of entailments from {OWL} ontologies.
+\newblock In {\em Proceedings of the 24th International Workshop on Description
+  Logics (DL-11)}, 2011.
+
+\bibitem[BPS12a]{bail12aa}
+Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock Declutter your justifications: Determining similarity between owl
+  explanations.
+\newblock In {\em Proceedings of the First International Workshop on Debugging
+  Ontologies and Ontology Mappings (WoDOOM-12)}, 2012.
+
+\bibitem[BPS12b]{bail12ab}
+Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock Diversity of reason: Equivalence relations over description logic
+  explanations.
+\newblock In {\em Proceedings of the 25th International Workshop on Description
+  Logics (DL-12)}, 2012.
+
+\bibitem[Bra04]{brandt04ub}
+Sebastian Brandt.
+\newblock Polynomial time reasoning in a description logic with existential
+  restrictions, {GCI} axioms, and---what else?
+\newblock In {\em Proceedings of the 16th European Conference on Artificial
+  Intelligence (ECAI-04)}, pages 298--302, 2004.
+
+\bibitem[BS84a]{buchanan84zb}
+Bruce~G. Buchanan and Edward~H. Shortliffe.
+\newblock Explanation as a topic of {AI} research.
+\newblock In Bruce~G. Buchanan and Edward~H. Shortliffe, editors, {\em
+  Rule-Based Expert Systems}. Addison-Wesley, 1984.
+
+\bibitem[BS84b]{buchanan84lq}
+Bruce~G. Buchanan and Edward~H. Shortliffe, editors.
+\newblock {\em Rule-Based Expert Systems}.
+\newblock Addison-Wesley, 1984.
+
+\bibitem[BS00]{baader00va}
+Franz Baader and Ulrike Sattler.
+\newblock Tableau algorithms for description logics.
+\newblock In {\em Proceedings of the International Conference on Automated
+  Reasoning with Analytic Tableaux and Related Methods ({TABLEAUX}-00)}, pages
+  1--18, 2000.
+
+\bibitem[BSP09]{bauer09ru}
+Johannes Bauer, Ulrike Sattler, and Bijan Parsia.
+\newblock Explaining by example: Model exploration for ontology comprehension.
+\newblock In {\em Proceedings of the 22nd International Workshop on Description
+  Logics (DL-09)}, 2009.
+
+\bibitem[BST07]{baader07ab}
+Franz Baader, Baris Sertkaya, and Anni-Yasmin Turhan.
+\newblock Computing the least common subsumer w.r.t. a background terminology.
+\newblock {\em Journal of Applied Logic}, 5(3):392 -- 420, 2007.
+
+\bibitem[Car07]{cardoso07xj}
+Jorge Cardoso.
+\newblock The semantic web vision: Where are we?
+\newblock {\em IEEE Intelligent Systems}, 22(5):84--88, 2007.
+
+\bibitem[CGL{\etalchar{+}}11]{calvanese2011aa}
+Diego Calvanese, Giuseppe~De Giacomo, Domenico Lembo, Maurizio Lenzerini,
+  Antonella Poggi, Mariano Rodriguez-Muro, Riccardo Rosati, Marco Ruzzi, and
+  Domenico~Fabio Savo.
+\newblock The {MASTRO} system for ontology-based data access.
+\newblock {\em Semantic Web Journal}, 2(1):43--53, 2011.
+
+\bibitem[CHKS07]{cuenca-grau07ci}
+Bernardo {Cuenca Grau}, Ian Horrocks, Yvgeny Kazakov, and Ulrike Sattler.
+\newblock Just the right amount: Extracting modules from ontologies.
+\newblock In {\em Proceedings of the 14th International World Wide Web
+  Conference (WWW-05)}, 2007.
+
+\bibitem[CHKS08]{cuenca-grau08sj}
+Bernardo {Cuenca Grau}, Ian Horrocks, Yevgeny Kazakov, and Ulrike Sattler.
+\newblock Modular reuse of ontologies: Theory and practice.
+\newblock {\em Journal of Artificial Intelligence Research}, 31, 2008.
+
+\bibitem[CHM{\etalchar{+}}08]{cuenca-grau08kw}
+Bernardo {Cuenca Grau}, Ian Horrocks, Boris Motik, Bijan Parsia, Peter~F.
+  {Patel-Schneider}, and Ulrike Sattler.
+\newblock {OWL 2}: The next step for {OWL}.
+\newblock {\em Journal of Web Semantics}, 2008.
+
+\bibitem[Cla81]{clancey81mg}
+William~J. Clancey.
+\newblock The epistemology of a rule-based expert system: a framework for
+  explanation.
+\newblock Technical report, Stanford University, Stanford, CA, USA, 1981.
+
+\bibitem[CPSK06]{cuenca-grau06ga}
+Bernardo {Cuenca Grau}, Bijan Parsia, Evren Sirin, and Aditya Kalyanpur.
+\newblock Modularity and web ontologies.
+\newblock In {\em Proceedings of the 10th International Conference on the
+  Principles of Knowledge Representation and Reasoning (KR-06)}, 2006.
+
+\bibitem[CRVBP09]{corcho09gj}
+Oscar Corcho, Catherine Roussey, Luis~Manuel Vilches-Bl\'{a}zquez, and Iv\'{a}n
+  P\'{e}rez.
+\newblock Pattern-based {OWL} ontology debugging guidelines.
+\newblock In {\em Proceedings of the Workshop on Ontology Patterns (WOP 2009)},
+  2009.
+
+\bibitem[Dav81]{davis81sz}
+Martin Davis.
+\newblock Obvious logical inferences.
+\newblock In {\em Proceedings of the 7th International Joint Conference on
+  Artificial Intelligence (IJCAI-81)}, pages 530--531, 1981.
+
+\bibitem[dCHS{\etalchar{+}}04]{coronado04zh}
+Sherri de~Coronado, Margaret~W. Haber, Nicholas Sioutos, Mark~S. Tuttle, and
+  Lawrence~W. Wright.
+\newblock {NCI Thesaurus}: Using science-based terminology to integrate cancer
+  research results.
+\newblock {\em Studies in Health Technology and Informatics}, 107(1), 2004.
+
+\bibitem[DHS05]{deng05aa}
+Xi~Deng, Volker Haarslev, and Nematollaah Shiri.
+\newblock A framework for explaining reasoning in description logics.
+\newblock In {\em Working Notes of the AAAI Fall Symposium on Explanation-Aware
+  Computing}, 2005.
+
+\bibitem[DKP{\etalchar{+}}11]{del-vescovo11aa}
+Chiara {Del Vescovo}, Pavel Klinov, Bijan Parsia, Ulrike Sattler, and Thomas
+  Schneider.
+\newblock {DeMoSt}: a tool for exploring the decomposition and the modular
+  structure of {OWL} ontologies.
+\newblock In {\em Proceedings of the 10th International Semantic Web Conference
+  (ISWC-11)}, 2011.
+
+\bibitem[DL96]{de-giacomo96ez}
+Giuseppe {De Giacomo} and Maurizio Lenzerini.
+\newblock Tbox and {A}box reasoning in expressive description logics.
+\newblock In {\em Proceedings of the 5th International Conference on the
+  Principles of Knowledge Representation and Reasoning (KR-96)}, pages
+  316--327, 1996.
+
+\bibitem[DQJ09]{du09bn}
+Jianfeng Du, Guilin Qi, and Qiu Ji.
+\newblock Goal-directed module extraction for explaining {OWL DL} entailments.
+\newblock In {\em Proceedings of the 8th International Semantic Web Conference
+  (ISWC-09)}, pages 163--179, 2009.
+
+\bibitem[DS08]{du08eo}
+Jianfeng Du and Yi-Dong Shen.
+\newblock Computing minimum cost diagnoses to repair populated {DL}-based
+  ontologies.
+\newblock In {\em Proceedings of the 17th International World Wide Web
+  Conference (WWW-08)}, 2008.
+
+\bibitem[FH88]{felty1988aa}
+Amy Felty and Greg Hager.
+\newblock Explaining modal logic proofs.
+\newblock In {\em Proceedings of the IEEE 1988 International Conference on
+  Systems, Man, and Cybernetics}, 1988.
+
+\bibitem[Fit83]{83aa}
+Melvin Fitting.
+\newblock {\em Proof Methods for Modal and Intuitionistic Logics}.
+\newblock Springer, 1983.
+
+\bibitem[FMV10]{franconi10bg}
+Enrico Franconi, Thomas Meyer, and Ivan Varzinczak.
+\newblock Semantic diff as the basis for knowledge base versioning.
+\newblock In {\em Proceedings of the 13th International Workshop on
+  Non-Monotonic Reasoning (NMR-2010)}, 2010.
+
+\bibitem[FS05]{friedrich05rg}
+Gerhard Friedrich and Kostyantyn Shchekotykhin.
+\newblock A general diagnosis method for ontologies.
+\newblock In {\em Proceedings of the 4th International Semantic Web Conference
+  (ISWC-05)}, pages 232--246, 2005.
+
+\bibitem[Gan05]{gangemi05cr}
+Aldo Gangemi.
+\newblock Ontology design patterns for semantic web content.
+\newblock In {\em Proceedings of the 4th International Semantic Web Conference
+  (ISWC-05)}, pages 262--276, 2005.
+
+\bibitem[G{\"a}r88]{gardenfors88aa}
+Peter G{\"a}rdenfors.
+\newblock {\em Knowledge in Flux: Modeling the Dynamics of Epistemic States}.
+\newblock {MIT} {Press}, 1988.
+
+\bibitem[GLC{\etalchar{+}}01]{gobet01aa}
+Fernand Gobet, Peter~C.R. Lane, Steve Croker, Peter C-H. Cheng, Gary Jones,
+  Iain Oliver, and Julian~M. Pine.
+\newblock Chunking mechanisms in human learning.
+\newblock {\em Trends in Cognitive Sciences}, 5(6):236--243, 2001.
+
+\bibitem[GMPS13]{goncalves13aa}
+Rafael~S. Gon\c{c}alves, Nicolas Matentzoglu, Bijan Parsia, and Uli Sattler.
+\newblock The empirical robustness of description logic classification.
+\newblock In {\em Submitted to the 26th International Workshop on Description
+  Logics}, 2013.
+
+\bibitem[GPS11a]{goncalves11as}
+Rafael~S. Gon\c{c}alves, Bijan Parsia, and Ulrike Sattler.
+\newblock Analysing the evolution of the {NCI} thesaurus.
+\newblock In {\em Proceedings of the 24th IEEE International Symposium on
+  Computer-Based Medical Systems (CBMS-11)}, 2011.
+
+\bibitem[GPS11b]{goncalves11xz}
+Rafael~S. Gon\c{c}alves, Bijan Parsia, and Ulrike Sattler.
+\newblock Categorising logical differences between {OWL} ontologies.
+\newblock In {\em Proceedings of the 20th ACM International Conference on
+  Information and Knowledge Management (CIKM-11)}, 2011.
+
+\bibitem[GPS12a]{Goncalves:2012kx}
+Rafael~S. Gon\c{c}alves, Bijan Parsia, and Ulrike Sattler.
+\newblock Concept-based semantic difference in expressive description logics.
+\newblock In {\em Proceedings of the 25th International Workshop on Description
+  Logics (DL-12)}, 2012.
+
+\bibitem[GPS12b]{goncalves12uq}
+Rafael~S. Gon\c{c}alves, Bijan Parsia, and Ulrike Sattler.
+\newblock Performance heterogeneity and approximate reasoning in description
+  logic ontologies.
+\newblock In {\em Proceedings of the 11th International Semantic Web Conference
+  (ISWC-12)}, 2012.
+
+\bibitem[Gru93]{gruber93xg}
+Thomas Gruber.
+\newblock Towards principles for the design of ontologies used for knowledge
+  sharing.
+\newblock In {\em Formal Ontology in Conceptual Analysis and Knowledge
+  Representation}, 1993.
+
+\bibitem[GSG04]{grenon04aa}
+Pierre Grenon, Barry Smith, and Louis Goldberg.
+\newblock Biodynamic ontology: applying the {BFO} in the biomedical domain.
+\newblock In {\em Ontologies in Medicine}. IOS Press, 2004.
+
+\bibitem[GSW89]{greiner89jl}
+Russell Greiner, Barbara~A. Smith, and Ralph~W. Wilkerson.
+\newblock A correction to the algorithm in {R}eiter's theory of diagnosis.
+\newblock {\em Artificial Intelligence}, 41(1):79--88, 1989.
+
+\bibitem[GSW05]{ganter05ar}
+Bernhard Ganter, Gerd Stumme, and Rudolf Wille.
+\newblock {\em Formal Concept Analysis: Foundations and Applications}.
+\newblock Springer, 2005.
+
+\bibitem[GW02]{guarino02aa}
+Nicola Guarino and Christopher~A. Welty.
+\newblock Evaluating ontological decisions with {OntoClean}.
+\newblock {\em Commununications of the ACM}, 45(2):61--65, 2002.
+
+\bibitem[GW04]{guarino04aa}
+Nicola Guarino and Christopher~A. Welty.
+\newblock An overview of {OntoClean}.
+\newblock In {\em Handbook on Ontologies}, pages 151--172. Springer, 2004.
+
+\bibitem[GWS07]{gibson07aa}
+Andrew Gibson, Katy Wolstencroft, and Robert Stevens.
+\newblock Promotion of ontological comprehension: Exposing terms and metadata
+  with web 2.0.
+\newblock In {\em Proceedings of the Workshop on Social and Collaborative
+  Construction of Structured Knowledge (CKC 2007)}, 2007.
+
+\bibitem[HBMB05]{halford05vg}
+Graeme~S. Halford, Rosemary Baker, Julie~E. McCredden, and John~D. Bain.
+\newblock How many variables can humans process?
+\newblock {\em Psychological Science}, 16(1):70--76, 2005.
+
+\bibitem[HBPS11a]{horridge11gj}
+Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock The cognitive complexity of {OWL} justifications.
+\newblock In {\em Proceedings of the 10th International Semantic Web Conference
+  (ISWC-11)}, 2011.
+
+\bibitem[HBPS11b]{horridge11si}
+Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock The cognitive complexity of {OWL} justifications.
+\newblock In {\em Proceedings of the 24th International Workshop on Description
+  Logics (DL-11)}, 2011.
+
+\bibitem[HBPS13]{horridge13aa}
+Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler.
+\newblock Toward cognitive support for {OWL} justifications.
+\newblock {\em Knowledge-Based Systems (in submission)}, 2013.
+
+\bibitem[HDG{\etalchar{+}}06]{horridge06aa}
+Matthew Horridge, Nick Drummond, John Goodwin, Alan~L. Rector, Robert Stevens,
+  and Hai Wang.
+\newblock The {Manchester} {OWL} syntax.
+\newblock In {\em Proceedings of the 2nd International Workshop on OWL:
+  Experiences and Directions (OWLED-06)}, 2006.
+
+\bibitem[Hen07]{hendler07aa}
+James Hendler.
+\newblock The dark side of the semantic web.
+\newblock {\em IEEE Intelligent Systems}, 22(1):2--3, 2007.
+
+\bibitem[HKS06]{horrocks06ya}
+Ian Horrocks, Oliver Kutz, and Ulrike Sattler.
+\newblock The even more irresistible $\mathcal{SROIQ}$.
+\newblock In {\em Proceedings of the 10th International Conference on the
+  Principles of Knowledge Representation and Reasoning (KR-06)}, 2006.
+
+\bibitem[Hor97]{horrocks97cf}
+Ian Horrocks.
+\newblock {\em Optimising Tableaux Decision Procedures for Description Logics}.
+\newblock PhD thesis, University of Manchester, 1997.
+
+\bibitem[Hor02]{horrocks02aa}
+Ian Horrocks.
+\newblock {DAML}+{OIL}: a description logic for the semantic web.
+\newblock {\em IEEE Data Engineering Bulletin}, 25(1):4--9, 2002.
+
+\bibitem[Hor10]{horridge10aa}
+Matthew Horridge.
+\newblock {OWL} syntaxes.
+\newblock \url{http://ontogenesis.knowledgeblog.org/88} [Accessed: 2012-06-19],
+  2010.
+
+\bibitem[Hor11a]{horridge11ab}
+Matthew Horridge.
+\newblock {\em Justification Based Explanation in Ontologies}.
+\newblock PhD thesis, The University of Manchester, 2011.
+
+\bibitem[Hor11b]{horridge11aa}
+Matthew Horridge.
+\newblock A practical guide to building {OWL} ontologies using
+  {Prot{\'e}g{\'e}} 4 and {CO-ODE} tools, edition 1.3.
+\newblock \url{http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/}
+  [Accessed: 30-09-2012], 2011.
+
+\bibitem[HP09]{horridge09zp}
+Matthew Horridge and Bijan Parsia.
+\newblock From justifications to proofs for entailments in {OWL}.
+\newblock In {\em Proceedings of the 6th International Workshop on OWL:
+  Experiences and Directions (OWLED-09)}, 2009.
+
+\bibitem[HPS08]{horridge08yi}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock Laconic and precise justifications in {OWL}.
+\newblock In {\em Proceedings of the 7th International Semantic Web Conference
+  (ISWC-08)}, pages 323--338, 2008.
+
+\bibitem[HPS09]{horridge09ct}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock Lemmas for justifications in {OWL}.
+\newblock In {\em Proceedings of the 22nd International Workshop on Description
+  Logics (DL-09)}, 2009.
+
+\bibitem[HPS10a]{horridge10bg}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock Justification masking in {OWL}.
+\newblock In {\em Proceedings of the 23rd International Workshop on Description
+  Logics (DL-10)}, 2010.
+
+\bibitem[HPS10b]{horridge10gs}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock Justification oriented proofs in {OWL}.
+\newblock In {\em Proceedings of the 9th International Semantic Web Conference
+  (ISWC-10)}, pages 354--369, 2010.
+
+\bibitem[HPS11]{horridge11ac}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock The state of bio-medical ontologies.
+\newblock In {\em Proceedings of the 2011 ISMB Bio-Ontologies SIG}, 2011.
+
+\bibitem[HPS12]{horridge12aa}
+Matthew Horridge, Bijan Parsia, and Ulrike Sattler.
+\newblock Extracting justifications from {BioPortal} ontologies.
+\newblock In {\em Proceedings of the 11th International Semantic Web Conference
+  (ISWC-12)}, 2012.
+
+\bibitem[HPSv03]{horrocks03vn}
+Ian Horrocks, Peter~F. Patel-Schneider, and Frank {van Harmelen}.
+\newblock From {$\mathcal{SHIQ}$} and {RDF} to {OWL}: The making of a web
+  ontology language.
+\newblock {\em Journal of Web Semantics}, 1(1):7--26, 2003.
+
+\bibitem[HST99]{horrocks99wq}
+Ian Horrocks, Ulrike Sattler, and Stephan Tobies.
+\newblock Practical reasoning for expressive description logics.
+\newblock In {\em Proceedings of the 6th International Conference on Logic for
+  Programming and Automated Reasoning (LPAR-99)}, pages 161--180, 1999.
+
+\bibitem[HST00]{horrocks00dy}
+Ian Horrocks, Ulrike Sattler, and Stephan Tobies.
+\newblock Practical reasoning for very expressive description logics.
+\newblock {\em Logic Journal of the IGPL}, 8(3):239--264, 2000.
+
+\bibitem[HvT05]{huang05du}
+Zhisheng Huang, Frank {van Harmelen}, and Annette Teije.
+\newblock Reasoning with inconsistent ontologies.
+\newblock In {\em Proceedings of the 19th International Joint Conference on
+  Artificial Intelligence (IJCAI-05)}, 2005.
+
+\bibitem[Jac92]{jackson92aa}
+Peter Jackson.
+\newblock Computing prime implicates.
+\newblock In {\em Proceedings of the 1992 {ACM} Annual Conference on
+  Communications}, pages 65--72, 1992.
+
+\bibitem[JGSV06]{joslyn06aa}
+Cliff Joslyn, Damian Gessler, Stefan Schmidt, and Karin Verspoor.
+\newblock Distributed representations of bio-ontologies for semantic web
+  services.
+\newblock In {\em Joint BioLink and BioOntologies SIG of ISMB 2006}, 2006.
+
+\bibitem[JL80]{johnson-laird80kt}
+Philip~N. Johnson-Laird.
+\newblock Mental models in cognitive science.
+\newblock {\em Cognitive Science}, 4(1):71--115, 1980.
+
+\bibitem[JQH08]{ji08en}
+Qiu Ji, Guilin Qi, and Peter Haase.
+\newblock A relevance-based algorithm for finding justifications of {DL}
+  entailments.
+\newblock Technical report, University of Karlsruhe, 2008.
+
+\bibitem[Kal06]{kalyanpur06nm}
+Aditya Kalyanpur.
+\newblock {\em Debugging and Repair of {OWL} Ontologies}.
+\newblock PhD thesis, University of Maryland at College Park, 2006.
+
+\bibitem[KDLD08]{konyk2008aa}
+Mykola Konyk, Alexander De~Leon, and Michel Dumontier.
+\newblock Chemical knowledge for the semantic web.
+\newblock In {\em Data Integration in the Life Sciences}, pages 169--176.
+  Springer Berlin / Heidelberg, 2008.
+
+\bibitem[Kee07]{keet07pc}
+C.~Maria Keet.
+\newblock Enhancing comprehension of ontologies and conceptual models through
+  abstractions.
+\newblock {\em Proceedings of the 10th Conference of the Italian Association
+  for Artificial Intelligence (AI*IA-07)}, pages 813--821, 2007.
+
+\bibitem[KKS11]{kazakov11aa}
+Yevgeny Kazakov, Markus Kr{\"o}tzsch, and Frantisek Simancik.
+\newblock Unchain my $\mathcal{EL}$ reasoner.
+\newblock In {\em Proceedings of the 24th International Workshop on Description
+  Logics (DL-11)}, 2011.
+
+\bibitem[KPC06]{kalyanpur06fj}
+Aditya Kalyanpur, Bijan Parsia, and Bernardo {Cuenca Grau}.
+\newblock Beyond asserted axioms: Fine-grain justifications for {OWL-DL}
+  entailments.
+\newblock In {\em Proceedings of the 19th International Workshop on Description
+  Logics (DL-06)}, 2006.
+
+\bibitem[KPHS07]{kalyanpur07oq}
+Aditya Kalyanpur, Bijan Parsia, Matthew Horridge, and Evren Sirin.
+\newblock Finding all justifications of {OWL DL} entailments.
+\newblock In {\em Proceedings of the 6th International Semantic Web Conference
+  (ISWC/ASWC-07)}, pages 267--280, 2007.
+
+\bibitem[KPS{\etalchar{+}}06]{kalyanpur06sk}
+Aditya Kalyanpur, Bijan Parsia, Evren Sirin, Bernardo {Cuenca Grau}, and James
+  Hendler.
+\newblock Swoop: A web ontology editing browser.
+\newblock {\em Journal of Web Semantics}, 4(2):144--153, 2006.
+
+\bibitem[KPSC06]{kalyanpur06bh}
+Aditya Kalyanpur, Bijan Parsia, Evren Sirin, and Bernardo {Cuenca Grau}.
+\newblock Repairing unsatisfiable concepts in {OWL} ontologies.
+\newblock In {\em Proceedings of the 3rd European Semantic Web Conference
+  (ESWC-06)}, pages 170--184, 2006.
+
+\bibitem[KPSH05]{kalyanpur05mi}
+Aditya Kalyanpur, Bijan Parsia, Evren Sirin, and James Hendler.
+\newblock Debugging unsatisfiable classes in {OWL} ontologies.
+\newblock {\em Journal of Web Semantics}, 3(4):268--293, 2005.
+
+\bibitem[K{\v S}K11]{kremen11yc}
+Petr K\u{r}emen, Marek {\v S}m\'id, and Zdenek Kouba.
+\newblock {OWLDiff}: A practical tool for comparison and merge of {OWL}
+  ontologies.
+\newblock In {\em Proceedings of the 22nd International Conference on Database
+  and Expert Systems Applications (DEXA-11)}, 2011.
+
+\bibitem[Kwo05]{kwong05aa}
+Francis Kwong.
+\newblock Practical approach to explaining $\mathcal{ALC}$ subsumption.
+\newblock Master's thesis, The University of Manchester, 2005.
+
+\bibitem[Lam07]{lam07aa}
+Joey Sik~Chun Lam.
+\newblock {\em Methods for Resolving Unsatisfiable Ontologies}.
+\newblock PhD thesis, University of Aberdeen, 2007.
+
+\bibitem[LH05]{liebig05lf}
+Thorsten Liebig and Michael Halfmann.
+\newblock A tableau-based explainer for {DL} subsumption.
+\newblock In {\em Proceedings of the 14th International Conference on Automated
+  Reasoning with Analytic Tableaux and Related Methods ({TABLEAUX}-05)}, pages
+  323--327, 2005.
+
+\bibitem[Lin89]{lingenfelder89rm}
+Christoph Lingenfelder.
+\newblock Structuring computer generated proofs.
+\newblock In {\em Proceedings of the 11th International Joint Conference on
+  Artificial Intelligence (IJCAI-89)}, pages 378--383, 1989.
+
+\bibitem[LMS04]{lynce04fq}
+In{\^e}s Lynce and Jo{\~a}o Marques-Silva.
+\newblock On computing minimum unsatisfiable cores.
+\newblock In {\em International Symposium on Theory and Applications of
+  Satisfiability Testing}, pages 305--310, 2004.
+
+\bibitem[LN04]{liebig04lx}
+Thorsten Liebig and Olaf Noppens.
+\newblock {OntoTrack}: Combining browsing and editing with reasoning and
+  explaining for {OWL} {Lite} ontologies.
+\newblock In {\em Proceedings of the 3rd International Semantic Web Conference
+  (ISWC-04)}, pages 244--257, 2004.
+
+\bibitem[LPSV06]{lam06tk}
+Joey Sik~Chun Lam, Jeff~Z. Pan, Derek Sleeman, and Wamberto Vasconcelos.
+\newblock A fine-grained approach to resolving unsatisfiable ontologies.
+\newblock In {\em Proceedings of the 5th IEEE/WIC/ACM International Conference
+  on Web Intelligence (WI-06)}. Springer, 2006.
+
+\bibitem[LS08]{lin08xi}
+Harris Lin and Evren Sirin.
+\newblock Pellint - a performance lint tool for {Pellet}.
+\newblock In {\em Proceedings of the 5th International Workshop on OWL:
+  Experiences and Directions (OWLED-08EU)}, 2008.
+
+\bibitem[Lut02]{lutz02gy}
+Carsten Lutz.
+\newblock {\em The Complexity of Description Logics with Concrete Domains}.
+\newblock PhD thesis, RWTH Aachen, 2002.
+
+\bibitem[LvHN05]{liebig05jm}
+Thorsten Liebig, Friedrich von Henke, and Olaf Noppens.
+\newblock Explanation support for {OWL} authoring.
+\newblock In {\em International Symposium on Explanation-aware Computing (ExaCt
+  2005)}, pages 86--93, 2005.
+
+\bibitem[MB95]{mcguinness95jb}
+Deborah~L. McGuinness and Alex Borgida.
+\newblock Explaining subsumption in description logics.
+\newblock In {\em Proceedings of the 14th International Joint Conference on
+  Artificial Intelligence (IJCAI-95)}, pages 816--821, 1995.
+
+\bibitem[McG96]{mcguinness96rp}
+Deborah~L. McGuinness.
+\newblock {\em Explaining reasoning in description logics}.
+\newblock PhD thesis, Rutgers University, 1996.
+
+\bibitem[MHL07]{ma07yl}
+Yue Ma, Pascal Hitzler, and Zuoquan Lin.
+\newblock Algorithms for paraconsistent reasoning with {OWL}.
+\newblock In {\em Proceedings of the 4th European Semantic Web Conference
+  (ESWC-07)}, pages 399--413, 2007.
+
+\bibitem[Mil56]{miller56aa}
+George~A. Miller.
+\newblock The magical number seven, plus or minus two: some limits on our
+  capacity for processing information.
+\newblock {\em Psychological Review}, 63(2):81--97, 1956.
+
+\bibitem[Min74]{minsky74aa}
+Marvin Minsky.
+\newblock A framework for representing knowledge.
+\newblock {MIT}-{AI} Laboratory Memo 306, 1974.
+
+\bibitem[MIS12]{mikroyannidi12aa}
+Eleni Mikroyannidi, Luigi Iannone, and Robert Stevens.
+\newblock Rio: The regularities inspector for ontologies plugin for
+  {Prot{\'e}g{\'e}}-4.
+\newblock In {\em ICBO}, 2012.
+
+\bibitem[MLBP06]{meyer06rj}
+Thomas Meyer, Kevin Lee, Richard Booth, and Jeff~Z. Pan.
+\newblock Finding maximally satisfiable terminologies for the description logic
+  $\mathcal{ALC}$.
+\newblock In {\em Proceedings of the 21st National Conference on Artificial
+  Intelligence (AAAI-06)}, pages 269--274, 2006.
+
+\bibitem[MLP06]{meyer06aa}
+Thomas Meyer, Kevin Lee, and Jeff Pan.
+\newblock Computing maximally satisfiable terminologies for the description
+  logic $\mathcal{ALC}$ with cyclic definitions.
+\newblock 2006.
+
+\bibitem[MMIS12]{mikroyannidi12qf}
+Eleni Mikroyannidi, Nor Azlinayati~Abdul Manaf, Luigi Iannone, and Robert
+  Stevens.
+\newblock Analysing syntactic regularities in ontologies.
+\newblock In {\em Proceedings of the 9th International Workshop on OWL:
+  Experiences and Directions (OWLED-12)}, 2012.
+
+\bibitem[MMV10]{meyer10vd}
+Thomas Meyer, Kodylan Moodley, and Ivan Varzinczak.
+\newblock First steps in the computation of root justifications.
+\newblock In {\em Proc.\ of ARCOE-10}, 2010.
+
+\bibitem[MSR11]{mikroyannidi11aa}
+Eleni Mikroyannidi, Robert Stevens, and Alan~L. Rector.
+\newblock Identifying ontology design styles with metrics.
+\newblock In {\em 7th International Workshop on Semantic Web Enabled Software
+  Engineering (SWESE)}, 2011.
+
+\bibitem[NBH{\etalchar{+}}06]{newstead06nz}
+Stephen~E. Newstead, Peter Brandon, Simon~J. Handley, Ian Dennis, and Jonathan
+  St. B.~T. Evans.
+\newblock Predicting the difficulty of complex logical reasoning problems.
+\newblock {\em Psychology Press}, 12:62--90, 2006.
+
+\bibitem[Neb90]{nebel90dh}
+Bernhard Nebel.
+\newblock {\em Reasoning and Revision in Hybrid Representation Systems}.
+\newblock Springer-Verlag, 1990.
+
+\bibitem[NPPW12a]{nguyen12ab}
+Tu~Anh~T. Nguyen, Richard Power, Paul Piwek, and Sandra Williams.
+\newblock Measuring the understandability of deduction rules for {OWL}.
+\newblock In {\em Proc.\ of WoDOOM-12}, 2012.
+
+\bibitem[NPPW12b]{nguyen12aa}
+Tu~Anh~T. Nguyen, Richard Power, Paul Piwek, and Sandra Williams.
+\newblock Planning accessible explanations for entailments in {OWL} ontologies.
+\newblock In {\em Proceedings of the 7th International Natural Language
+  Generation Conference (INLG 2012)}, pages 110--114, 2012.
+
+\bibitem[NRG12]{nikitina12aa}
+Nadeschda Nikitina, Sebastian Rudolph, and Birte Glimm.
+\newblock Interactive ontology revision.
+\newblock {\em Journal of Web Semantics}, 12:118--130, 2012.
+
+\bibitem[NSW{\etalchar{+}}09]{noy09jc}
+Natalya~F. Noy, Nigam~H. Shah, Patricia~L. Whetzel, Benjamin Dai, Michael Dorf,
+  Nicholas Griffith, Clement Jonquet, Daniel~L. Rubin, Margaret-Anne Storey,
+  Christopher~G. Chute, and Mark~A. Musen.
+\newblock Bioportal: ontologies and integrated data resources at the click of a
+  mouse.
+\newblock {\em Nucleic Acids Research}, 37:W170--W173, 2009.
+
+\bibitem[owl09]{owl2profiles2009}
+{OWL} 2 profiles.
+\newblock \url{http://www.w3.org/TR/owl2-profiles/} [Accessed: 10-10-2012],
+  2009.
+
+\bibitem[PS10]{penaloza10ff}
+Rafael Pe{\~n}aloza and Baris Sertkaya.
+\newblock Complexity of axiom pinpointing in the {DL-Lite} family of
+  description logics.
+\newblock In {\em Proceedings of the 19th European Conference on Artificial
+  Intelligence (ECAI-10)}, 2010.
+
+\bibitem[PSK05]{parsia05dg}
+Bijan Parsia, Evren Sirin, and Aditya Kalyanpur.
+\newblock Debugging {OWL} ontologies.
+\newblock In {\em Proceedings of the 14th International World Wide Web
+  Conference (WWW-05)}, pages 633--640, 2005.
+
+\bibitem[PSMB{\etalchar{+}}91]{patel-schneider91tc}
+Peter~F. Patel-Schneider, Deborah~L. McGuinness, Ronald~J. Brachman,
+  Lori~Alperin Resnick, and Alexander Borgida.
+\newblock The {CLASSIC} knowledge representation system: Guiding principles and
+  implementation rationale.
+\newblock {\em {SIGART} Bulletin}, 2(3):108--113, 1991.
+
+\bibitem[Qui52]{quine52aa}
+Willard Van~Orman Quine.
+\newblock The problem of simplifying truth functions.
+\newblock {\em The American Mathematical Monthly}, 59(8):521--531, 1952.
+
+\bibitem[Qui59]{quine59aa}
+Willard Van~Orman Quine.
+\newblock On cores and prime implicants of truth functions.
+\newblock {\em The American Mathematical Monthly}, 66(9):755--760, 1959.
+
+\bibitem[RCVB09]{roussey09ab}
+Catherine Roussey, Oscar Corcho, and Luis~Manuel Vilches-Bl\'{a}zquez.
+\newblock A catalogue of {OWL} ontology antipatterns.
+\newblock In {\em Proceedings of the 5th International Conference on Knowledge
+  Capture (K-CAP-09)}, pages 205--206, 2009.
+
+\bibitem[RDH{\etalchar{+}}04]{rector04aa}
+Alan~L. Rector, Nick Drummond, Matthew Horridge, Jeremy Rogers, Holger
+  Knublauch, Robert Stevens, Hai Wang, and Chris Wroe.
+\newblock Owl pizzas: Practical experience of teaching owl-dl: Common errors
+  {\&} common patterns.
+\newblock pages 63--81, 2004.
+
+\bibitem[Rei87]{reiter87pb}
+Raymond Reiter.
+\newblock A theory of diagnosis from first principles.
+\newblock {\em Artificial Intelligence}, 32(1):57--95, 1987.
+
+\bibitem[RMC12]{rodriguez-muro2012aa}
+Mariano Rodriguez-Muro and Diego Calvanese.
+\newblock Quest, an {OWL 2 QL} reasoner for ontology-based data access.
+\newblock In {\em Proceedings of the 9th International Workshop on OWL:
+  Experiences and Directions (OWLED-12)}, 2012.
+
+\bibitem[RN03]{russell03aa}
+Stuart~J. Russell and Peter Norvig.
+\newblock {\em Artificial {I}ntelligence: A Modern Approach}.
+\newblock Pearson Education, 2003.
+
+\bibitem[RSFF12]{rodler12aa}
+Patrick Rodler, Kostyantyn~M. Shchekotykhin, Philipp Fleiss, and Gerhard
+  Friedrich.
+\newblock {RIO}: Minimizing user interaction in ontology debugging.
+\newblock {\em {CoRR}}, abs/1209.3734, 2012.
+
+\bibitem[Rud87]{rudnicki87om}
+Piotr Rudnicki.
+\newblock Obvious inferences.
+\newblock {\em Journal of Automated Reasoning}, 3(4):383--393, 1987.
+
+\bibitem[SC03]{schlobach03nc}
+Stefan Schlobach and Ronald Cornet.
+\newblock Non-standard reasoning services for the debugging of description
+  logic terminologies.
+\newblock In {\em Proceedings of the 18th International Joint Conference on
+  Artificial Intelligence (IJCAI-03)}, pages 355--362, 2003.
+
+\bibitem[Sch05a]{schlobach05tf}
+Stefan Schlobach.
+\newblock Debugging and semantic clarification by pinpointing.
+\newblock In {\em Proceedings of the 2nd European Semantic Web Conference
+  (ESWC-05)}, pages 226--240, 2005.
+
+\bibitem[Sch05b]{schlobach05vd}
+Stefan Schlobach.
+\newblock Diagnosing terminologies.
+\newblock In {\em Proceedings of the 20th National Conference on Artificial
+  Intelligence (AAAI-05)}, pages 670--675, 2005.
+
+\bibitem[Sch11]{scharrenbach11aa}
+Thomas Scharrenbach.
+\newblock {\em End-User Assisted Ontology Evolution in Uncertain Domains}.
+\newblock PhD thesis, University of Zurich, Faculty of Economics, 2011.
+
+\bibitem[SFJ08]{shchekotykhin08ay}
+Kostyantyn Shchekotykhin, Gerhard Friedrich, and Dietmar Jannach.
+\newblock On computing minimal conflicts for ontology debugging.
+\newblock In {\em Proceedings of the Workshop on Model-Based Systems (MBS-08)},
+  2008.
+
+\bibitem[SFRF12]{shchekotykhin12aa}
+Kostyantyn~M. Shchekotykhin, Philipp Fleiss, Patrick Rodler, and Gerhard
+  Friedrich.
+\newblock Direct computation of diagnoses for ontology debugging.
+\newblock {\em CoRR}, abs/1209.0997, 2012.
+
+\bibitem[SHCvH07]{schlobach07aa}
+Stefan Schlobach, Zhisheng Huang, Ronald Cornet, and Frank van Harmelen.
+\newblock Debugging incoherent terminologies.
+\newblock {\em Journal of Automated Reasoning}, 39(3):317--349, 2007.
+
+\bibitem[SMH08]{shearer08td}
+Rob Shearer, Boris Motik, and Ian Horrocks.
+\newblock {HermiT}: {A} highly-efficient {OWL} reasoner.
+\newblock In {\em Proceedings of the 5th International Workshop on OWL:
+  Experiences and Directions (OWLED-08EU)}, 2008.
+
+\bibitem[Sow87]{sowa87st}
+John~F. Sowa.
+\newblock Semantic networks.
+\newblock In {\em Encyclopedia of Artificial Intelligence 2}. Journal of Web
+  Semantics, 1987.
+
+\bibitem[SPC{\etalchar{+}}07]{sirin07ws}
+Evren Sirin, Bijan Parsia, Bernardo {Cuenca Grau}, Aditya Kalyanpur, and Yarden
+  Katz.
+\newblock Pellet: A practical {OWL-DL} reasoner.
+\newblock {\em Journal of Web Semantics}, 5(2):51--53, 2007.
+
+\bibitem[SQJH08]{suntisrivaraporn08yq}
+Boontawee Suntisrivaraporn, Guilin Qi, Qiu Ji, and Peter Haase.
+\newblock A modularization-based approach to finding all justifications for
+  {OWL DL} entailments.
+\newblock In {\em Proceedings of the 3rd Asian Semantic Web Conference
+  (ASWC-08)}, pages 1--15, 2008.
+
+\bibitem[SS91]{schmidt-schauss91bc}
+Manfred {Schmidt-Schau\ss} and Gert Smolka.
+\newblock Attributive concept descriptions with complements.
+\newblock {\em Artificial Intelligence}, 48(1):1--26, 1991.
+
+\bibitem[SSZ09]{sattler09jb}
+Ulrike Sattler, Thomas Schneider, and Michael Zakharyaschev.
+\newblock Which kind of module should {I} extract?
+\newblock In {\em Proceedings of the 22nd International Workshop on Description
+  Logics (DL-09)}, 2009.
+
+\bibitem[ST99]{shamir99aa}
+Ron Shamir and Dekel Tsur.
+\newblock Faster subtree isomorphism.
+\newblock {\em Journal of Algorithms}, 33(2):267--280, 1999.
+
+\bibitem[Sun08]{suntisrivaraporn08aa}
+Boontawee Suntisrivaraporn.
+\newblock Module extraction and incremental classification: A pragmatic
+  approach for $\mathcal{EL+}$ ontologies.
+\newblock In {\em Proceedings of the 5th European Semantic Web Conference
+  (ESWC-08)}, pages 230--244, 2008.
+
+\bibitem[TAM{\etalchar{+}}05]{tartir05im}
+Samir Tartir, I.~Budak Arpinar, Michael Moore, Amith~P. Sheth, and Boanerges
+  Aleman-Meza.
+\newblock {OntoQA}: Metric-based ontology quality analysis.
+\newblock In {\em Proc.\ of KADASH-05}, 2005.
+
+\bibitem[TH06]{tsarkov06np}
+Dmitry Tsarkov and Ian Horrocks.
+\newblock {FaCT++} description logic reasoner: System description.
+\newblock In {\em Proceedings of the 3rd International Joint Conference on
+  Automated Reasoning (IJCAR-06)}, 2006.
+
+\bibitem[Tuf]{tuftenumber7}
+Edward Tufte.
+\newblock The magical number seven, plus or minus two: Not relevant for design.
+\newblock
+  \url{http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg\_id=0000U6}
+  [Accessed: 11-01-2013].
+
+\bibitem[{W3C}04a]{w3c04ab}
+{W3C}.
+\newblock {RDF} vocabulary description language 1.0: {RDF} schema.
+\newblock \url{http://www.w3.org/TR/rdf-schema/}, 2004.
+
+\bibitem[{W3C}04b]{w3c04aa}
+{W3C}.
+\newblock Resource description framework ({RDF}): Concepts and abstract syntax.
+\newblock \url{http://www.w3.org/TR/rdf-concepts/}, 2004.
+
+\bibitem[{W3C}09]{w3c09eu}
+{W3C}.
+\newblock {OWL} 2 web ontology language.
+\newblock \url{http://www.w3.org/TR/owl2-overview/}, 2009.
+
+\bibitem[{W3C}12]{w3c12aa}
+{W3C}.
+\newblock {OWL} 2 web ontology language {RDF}-based semantics (second edition).
+\newblock \url{http://www.w3.org/TR/owl2-rdf-based-semantics/}, 2012.
+
+\bibitem[WP06]{wang06wr}
+Taowei~David Wang and Bijan Parsia.
+\newblock {CropCircles}: Topology sensitive visualization of {OWL} class
+  hierarchies.
+\newblock In {\em Proceedings of the 5th International Semantic Web Conference
+  (ISWC-06)}, pages 695--708, 2006.
+
+\bibitem[WPH06]{wang06rr}
+Taowei~David Wang, Bijan Parsia, and James Hendler.
+\newblock A survey of the web ontology landscape.
+\newblock In {\em Proceedings of the 5th International Semantic Web Conference
+  (ISWC-06)}, pages 682--694, 2006.
+
+\end{thebibliography}

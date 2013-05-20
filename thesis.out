@@ -1,0 +1,118 @@
+\BOOKMARK [0][-]{chapter*.4}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter*.5}{Declaration}{}% 2
+\BOOKMARK [0][-]{chapter*.6}{Copyright}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Justification-based debugging support}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.1}{Understanding justifications}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.2}{Justificatory structure}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.3}{Beyond debugging and repair}{section.1.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Research objectives}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.3}{Contributions}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.4}{Published Work}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{Background and related work}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Description logic knowledge bases}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.1.1}{DL syntax and semantics}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.2}{Standard reasoning services}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.3}{The Web Ontology Language OWL}{section.2.1}% 16
+\BOOKMARK [1][-]{section.2.2}{Errors in OWL ontologies}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.1}{Logical errors}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.2}{Non-logical errors}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.3}{Debugging ontologies}{section.2.2}% 20
+\BOOKMARK [1][-]{section.2.3}{Justifications for entailments of ontologies}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.3.1}{Computing justifications}{section.2.3}% 22
+\BOOKMARK [2][-]{subsection.2.3.2}{Justification-based repair}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.3}{Understanding individual justifications}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.4}{Understanding multiple justifications}{section.2.3}% 25
+\BOOKMARK [1][-]{section.2.4}{Alternative approaches to debugging}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.4.1}{Proofs}{section.2.4}% 27
+\BOOKMARK [2][-]{subsection.2.4.2}{Ontology revision}{section.2.4}% 28
+\BOOKMARK [2][-]{subsection.2.4.3}{Direct computation of diagnoses}{section.2.4}% 29
+\BOOKMARK [2][-]{subsection.2.4.4}{OntoClean}{section.2.4}% 30
+\BOOKMARK [2][-]{subsection.2.4.5}{Ontology comprehension}{section.2.4}% 31
+\BOOKMARK [1][-]{section.2.5}{Summary and conclusions}{chapter.2}% 32
+\BOOKMARK [0][-]{chapter.3}{Defining finite entailment sets}{}% 33
+\BOOKMARK [1][-]{section.3.1}{Design decisions for finite entailment sets}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.1.1}{Tautologies}{section.3.1}% 35
+\BOOKMARK [2][-]{subsection.3.1.2}{Asserted and inferred axioms}{section.3.1}% 36
+\BOOKMARK [2][-]{subsection.3.1.3}{Transitivity}{section.3.1}% 37
+\BOOKMARK [2][-]{subsection.3.1.4}{Equivalent classes}{section.3.1}% 38
+\BOOKMARK [2][-]{subsection.3.1.5}{Strict and non-strict subsumptions}{section.3.1}% 39
+\BOOKMARK [2][-]{subsection.3.1.6}{Equivalence to top and bottom}{section.3.1}% 40
+\BOOKMARK [2][-]{subsection.3.1.7}{Axiom and expression types}{section.3.1}% 41
+\BOOKMARK [2][-]{subsection.3.1.8}{Dealing with ontology imports}{section.3.1}% 42
+\BOOKMARK [1][-]{section.3.2}{A notation for finite entailment sets}{chapter.3}% 43
+\BOOKMARK [2][-]{subsection.3.2.1}{Introducing the notation}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.2}{Axioms and expressions}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.3}{Wanted and unwanted entailments}{section.3.2}% 46
+\BOOKMARK [2][-]{subsection.3.2.4}{Sample entailment sets}{section.3.2}% 47
+\BOOKMARK [1][-]{section.3.3}{Entailments in OWL applications}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.3.1}{Inferred ontology generation in the OWL API}{section.3.3}% 49
+\BOOKMARK [2][-]{subsection.3.3.2}{Presenting entailments to end-users}{section.3.3}% 50
+\BOOKMARK [2][-]{subsection.3.3.3}{Ontology publishing}{section.3.3}% 51
+\BOOKMARK [2][-]{subsection.3.3.4}{Metrics and analytical applications}{section.3.3}% 52
+\BOOKMARK [2][-]{subsection.3.3.5}{Imported and native entailments in BioPortal}{section.3.3}% 53
+\BOOKMARK [1][-]{section.3.4}{Summary and conclusions}{chapter.3}% 54
+\BOOKMARK [0][-]{chapter.4}{The justificatory structure of OWL ontologies}{}% 55
+\BOOKMARK [1][-]{section.4.1}{Categories of justifications and entailments}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.1.1}{Self-justifications and self-supporting entailments}{section.4.1}% 57
+\BOOKMARK [2][-]{subsection.4.1.2}{Atomic subsumption chains}{section.4.1}% 58
+\BOOKMARK [2][-]{subsection.4.1.3}{Complex justifications}{section.4.1}% 59
+\BOOKMARK [2][-]{subsection.4.1.4}{Categorising entailments and ontologies}{section.4.1}% 60
+\BOOKMARK [1][-]{section.4.2}{Representing justifications as j-graphs}{chapter.4}% 61
+\BOOKMARK [2][-]{subsection.4.2.1}{J-graph definition}{section.4.2}% 62
+\BOOKMARK [2][-]{subsection.4.2.2}{J-graph generation}{section.4.2}% 63
+\BOOKMARK [1][-]{section.4.3}{Justificatory structure}{chapter.4}% 64
+\BOOKMARK [2][-]{subsection.4.3.1}{Axiom properties}{section.4.3}% 65
+\BOOKMARK [2][-]{subsection.4.3.2}{Properties of justifications}{section.4.3}% 66
+\BOOKMARK [2][-]{subsection.4.3.3}{Relations between justifications}{section.4.3}% 67
+\BOOKMARK [1][-]{section.4.4}{Summary and conclusions}{chapter.4}% 68
+\BOOKMARK [0][-]{chapter.5}{Justification isomorphism}{}% 69
+\BOOKMARK [1][-]{section.5.1}{Isomorphism}{chapter.5}% 70
+\BOOKMARK [1][-]{section.5.2}{Subexpression-isomorphism}{chapter.5}% 71
+\BOOKMARK [2][-]{subsection.5.2.1}{Preferred templates}{section.5.2}% 72
+\BOOKMARK [1][-]{section.5.3}{Lemma-isomorphism}{chapter.5}% 73
+\BOOKMARK [2][-]{subsection.5.3.1}{Lemmatisations and obvious steps}{section.5.3}% 74
+\BOOKMARK [1][-]{section.5.4}{Equivalence and superfluity}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.5}{Implementing an isomorphism checker}{chapter.5}% 76
+\BOOKMARK [2][-]{subsection.5.5.1}{Algorithm and implementation}{section.5.5}% 77
+\BOOKMARK [2][-]{subsection.5.5.2}{Optimisations}{section.5.5}% 78
+\BOOKMARK [2][-]{subsection.5.5.3}{Limitations due to syntactical differences}{section.5.5}% 79
+\BOOKMARK [2][-]{subsection.5.5.4}{Extending the j-graph}{section.5.5}% 80
+\BOOKMARK [1][-]{section.5.6}{Summary and conclusions}{chapter.5}% 81
+\BOOKMARK [0][-]{chapter.6}{Justification comprehension}{}% 82
+\BOOKMARK [1][-]{section.6.1}{Debugging problems}{chapter.6}% 83
+\BOOKMARK [2][-]{subsection.6.1.1}{Defining debugging problems}{section.6.1}% 84
+\BOOKMARK [2][-]{subsection.6.1.2}{Justification encounters}{section.6.1}% 85
+\BOOKMARK [1][-]{section.6.2}{Measuring effort}{chapter.6}% 86
+\BOOKMARK [2][-]{subsection.6.2.1}{The complexity of individual justifications}{section.6.2}% 87
+\BOOKMARK [2][-]{subsection.6.2.2}{A model for user effort}{section.6.2}% 88
+\BOOKMARK [1][-]{section.6.3}{Coping strategies}{chapter.6}% 89
+\BOOKMARK [2][-]{subsection.6.3.1}{Characterising justification sets}{section.6.3}% 90
+\BOOKMARK [2][-]{subsection.6.3.2}{Justification overlap}{section.6.3}% 91
+\BOOKMARK [2][-]{subsection.6.3.3}{Isomorphism relations}{section.6.3}% 92
+\BOOKMARK [1][-]{section.6.4}{Summary and conclusions}{chapter.6}% 93
+\BOOKMARK [0][-]{chapter.7}{A survey of justificatory structure}{}% 94
+\BOOKMARK [1][-]{section.7.1}{The BioPortal corpus}{chapter.7}% 95
+\BOOKMARK [2][-]{subsection.7.1.1}{Properties of the corpus}{section.7.1}% 96
+\BOOKMARK [2][-]{subsection.7.1.2}{Justification corpus preparation}{section.7.1}% 97
+\BOOKMARK [1][-]{section.7.2}{Results of the BioPortal survey}{chapter.7}% 98
+\BOOKMARK [2][-]{subsection.7.2.1}{Entailment types}{section.7.2}% 99
+\BOOKMARK [2][-]{subsection.7.2.2}{Occurrence of multiple justifications}{section.7.2}% 100
+\BOOKMARK [2][-]{subsection.7.2.3}{Justification overlap}{section.7.2}% 101
+\BOOKMARK [2][-]{subsection.7.2.4}{Justification isomorphism}{section.7.2}% 102
+\BOOKMARK [1][-]{section.7.3}{Discussion}{chapter.7}% 103
+\BOOKMARK [2][-]{subsection.7.3.1}{Justification types and frequency}{section.7.3}% 104
+\BOOKMARK [2][-]{subsection.7.3.2}{Overlaps}{section.7.3}% 105
+\BOOKMARK [2][-]{subsection.7.3.3}{Isomorphism}{section.7.3}% 106
+\BOOKMARK [2][-]{subsection.7.3.4}{Threats to validity}{section.7.3}% 107
+\BOOKMARK [1][-]{section.7.4}{Summary and conclusions}{chapter.7}% 108
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 109
+\BOOKMARK [1][-]{section.8.1}{Summary of contributions}{chapter.8}% 110
+\BOOKMARK [2][-]{subsection.8.1.1}{Design decisions for finite entailment sets}{section.8.1}% 111
+\BOOKMARK [2][-]{subsection.8.1.2}{Justificatory structure and justification isomorphism}{section.8.1}% 112
+\BOOKMARK [2][-]{subsection.8.1.3}{Reducing user effort}{section.8.1}% 113
+\BOOKMARK [2][-]{subsection.8.1.4}{Experimental results}{section.8.1}% 114
+\BOOKMARK [1][-]{section.8.2}{Significance of results}{chapter.8}% 115
+\BOOKMARK [1][-]{section.8.3}{Future directions}{chapter.8}% 116
+\BOOKMARK [0][-]{chapter*.37}{Bibliography}{}% 117
+\BOOKMARK [0][-]{appendix.A}{Ontologies in the test corpus}{}% 118

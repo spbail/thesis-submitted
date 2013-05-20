@@ -1,0 +1,51 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+% some standard packages
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{url} 
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+\usepackage{amssymb,amsmath}
+\usepackage{owl}
+
+
+\author{Samantha Bail}
+\begin{document}
+
+
+\begin{align*}
+Ja &&  Jb && Jc \\
+ &&   && \\
+\hline
+ &&   &&  \\
+ V \subcls C && V \subcls C && V \subcls C\\
+A \subcls C && A \subcls B && A \subcls B\\
+C \subcls D && B \subcls C && B \subcls D\\
+&& C \subcls D &&  \\
+V  \subcls \exists r.A && V \subcls \exists r.A && V  \subcls \exists r.A \\
+D \sqcap (\exists r.C \sqcup \exists r.D) \subcls W && D \sqcap (\exists r.C \sqcup \exists r.D) \subcls W &&  D \sqcap (X \sqcup \exists r.D) \subcls W \\
+ &&   && \\
+\hline
+ &&   &&  \\
+\models V \subcls W && \models V \subcls W && \models V \subcls W \\
+\end{align*}
+
+I think the main reason why we get non-transitivity if we allow non-maximal chains is because of the way lemma-iso is defined: \textbf{First}, lemmatise the justifications. \textbf{Second}, check if lemmatisations are subex-iso. This means that in the lemmatisation process, some signature can get \textbf{lost} for one lemmatisation while it is being preserved for the other lemmatisation. If we lemmatise Jb ``in the style of" Jc, the meaning/context of the class C gets lost, which means C (and the expressions containing C) is a ``free" entity that can be mapped to anything.
+
+Ja and Jc are not isomorphic because in Ja the class C is reused in the last axiom, but the corresponding class B in Jc does not occur in the last axiom in Jc. (This would mean we'd have a mapping X to $\exists r.C$ and B to C which is illegal because of our signature disjointness).
+
+But Ja is lemma-isomorphic to Jb (the lemmatised template being Ja; in this case Ja and lemmatised Jb are even strictly isomorphic) and Jb is lemma-isomorphic to Jc (the template being Jc, with a mapping from X to $\exists r.C$).
+
+
+
+
+\end{document}

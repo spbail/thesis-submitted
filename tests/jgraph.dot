@@ -1,0 +1,1 @@
+digraph jgraph { a1; a2; a3; a4; a5; a6; a7; a8; a9; a11; a12; a13; j1; j2; j3; j4; j5; a1 -> j1; a2 -> j2; a3 -> j2; a4 -> j2; a4 -> j3; a5 -> j3; a6 -> j4; a7 -> j4; a8 -> j4; a7 -> j5; a8 -> j5; a9 -> j5; \par a12 -> j3; \par j1 -> a1 [style=dashed]; j2 -> a11 [style=dashed]; j3 -> a12 [style=dashed]; j4 -> a13 [style=dashed]; j5 -> a13 [style=dashed]; \par }

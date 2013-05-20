@@ -1,0 +1,290 @@
+\chapter{Justification comprehension}
+\label{chap:understanding}
+
+In the previous chapters we introduced the basic elements of the justificatory structure of an OWL ontology, such as varying degrees of overlap between justifications, and justification isomorphism. In this chapter, we will characterise different scenarios of how OWL ontology users encounter justifications, and how justificatory structure plays a role in those encounters. There are several possible scenarios in which ontology users could use justifications:
+\begin{compactitem}
+\item Information: understanding why an entailment holds in an ontology, e.g.\ for learning purposes or to verify the correctness of the ontology.
+\item Debugging: modifying an ontology such that one or several erroneous entailments are no longer entailed. 
+\item Analysis: obtaining metrics about the justificatory structure of an ontology, e.g.\ for comparing two ontologies.
+\item Ontology comprehension: understanding the structure of an ontology, e.g.\ for learning purposes or to be able to integrate or modify the ontology.
+\end{compactitem}
+
+The term \emph{ontology comprehension} is frequently used in a rather broad sense to refer to the user understanding entities and their (intended) relations in an ontology in order to be able to use them correctly \cite{gibson07aa,bauer09ru}; however, ontology comprehension is neither a clearly defined task, nor is \emph{understanding} easy to measure; see, for example, \cite{horridge11gj} for a discussion of the challenges faced when designing user studies on justification understanding. In contrast, generating justification-based metrics does have a clearly defined outcome (the correct metrics), but does not require any additional user support beyond the suitable representation of those metrics. Using justifications for information purposes is very similar to debugging; however, rather than \emph{all} justifications, it often only requires small numbers of (or even just one) justifications to provide the required information to the user. Thus, we focus on the case of \emph{debugging} erroneous entailments which is a clearly defined task with a \emph{measurable} goal.
+
+In the context of ontology debugging we now ask how the justificatory structure of an ontology can be exploited to improve the debugging and repair process for OWL ontology developers. While we commonly speak of \emph{the debugging process}, it is clear to see that this is not a single task, but rather that there are many different facets to the act of detecting errors in an ontology and modifying it to remove these errors. Thus, the measures taken to improve debugging support depend on the task, e.g.\ whether the user wants to repair \emph{one} or \emph{multiple} entailments, the occurrence of \emph{single} or \emph{multiple} justifications, the repair strategy (\emph{rewriting} or \emph{removing} axioms) as well as the technical background and goal of the user, such as  \emph{understanding} the sources of error versus finding a \enquote{quick fix}. 
+
+The central focus point of this thesis has been the occurrence of multiple justifications in OWL ontologies, and how we can \enquote{reduce user effort} in a situation where a user encounters multiple justifications. In this chapter, we will define the notion of a \emph{successful} debugging solution which then allows us to pin down what exactly we mean by the \emph{effort} a user has to apply in the debugging process, and how we can measure this effort.
+
+Given these user scenarios, we will then discuss approaches to improving debugging support using the aspects of justificatory structure we have introduced in the previous chapters. The goal of this chapter is to gain a better understanding of the various situations in which users encounter justifications, and to provide an analysis of the impact potential interventions have on a user's effort when dealing with justifications.
+
+
+\section{Debugging problems}
+
+In this section, we discuss the notion of a \emph{debugging problem} and the various scenarios in which users encounter justification in the debugging process. These scenarios include both the number of entailments and justifications in the given task, as well as the relations between the justifications, if applicable. We will then define the \emph{success} of a debugging problem based on a \emph{minimum loss solution} measure for debugging a set of entailments.
+
+\subsection{Defining debugging problems}
+
+Our definition of a debugging problem is based on the commonly used informal notion of ontology debugging: given an ontology and some erroneous entailments, rewrite or remove axioms in the  ontology such that the errors are removed. First, recall that in this context we focus on \emph{finite} entailment sets, that is, we only consider a finite entailment set \entset of an ontology \O of a specific type, such as the set of entailed direct atomic subsumptions involving satisfiable and unsatisfiable classes. As we discussed in Chapter 3, we can partition \entset into the set of \emph{unwanted} entailments \entsetminus and the remainder, the set of \emph{wanted} entailments \entsetplus.
+
+In order to allow us to talk about the effort required to solve a debugging problem, we separate the informal notion of debugging into its two aspects: the debugging \emph{input} and the debugging \emph{task}. Generally, the debugging input consists of an ontology \O and a set \entsetminus of unwanted entailments which the user considers to be erroneous. The debugging task is to find a \emph{solution} to the debugging problem. A solution is simply a modification \modif such that applying \modif to \O yields a new ontology $mod(\O) \subseteq \O$  which entails none of the axioms in \entsetminus. It is clear to see, however, that accepting \emph{any} such solution can lead to undesirable effects: in the most extreme case, simply removing \emph{all} axioms from the ontology would be a solution for a debugging problem.
+
+We therefore place an additional constraint on the acceptable solutions to a debugging problem: a modification \modif must not only remove all errors, but also try to \emph{preserve} the correct entailments in \entsetplus; that is, an acceptable solution is a \emph{minimum loss} solution. Since it may not be possible to preserve \emph{all} entailments in \entsetplus (since, for example, some wanted entailments might entail unwanted ones), we loosen this restriction to preserve a \emph{maximal subset} \entsetstar of \entsetplus. A debugging problem then considers not only the ontology and the set of unwanted entailments, but also includes the set of correct entailments \entsetplus, and the debugging task is extended to finding a minimum loss solution.
+
+In summary, a debugging input $D = \langle \O,  \entsetplus, \entsetminus \rangle$ consists of an ontology \O and two sets of entailments \entsetplus and \entsetminus, such that \O \entails \axiom for all $\alpha \in \entsetplus \cup \entsetminus$. The debugging task is to find a minimum loss solution to the given debugging input:
+
+\begin{defn}
+A \emph{solution} to a debugging problem $D$ is a modification $mod$ such that $mod(\O) \subseteq \O$ and $mod(\O) \not\models \alpha$ for all $ \alpha \in \entsetminus$. A \emph{mimimum loss solution} to a debugging problem $D$ is a modification $mod$ such that 
+\begin{compactitem}
+\item $mod$ is a solution to $D$,
+\item $mod(\O) \entails \alpha$ for all $\alpha \in \entsetstar$ where \entsetstar $\subseteq$ \entsetplus, 
+\item and there is no solution $mod'$ such that $mod'(\O) \models \alpha'$ for all $\alpha' \in \entset'$ where $\entset' \subset \entsetstar$.
+\end{compactitem}
+\end{defn}
+
+Note that \emph{in general} we may consider a modification \modif to be a series of manipulation steps including axiom or subexpression rewritings, removals, or additions. However, for the purpose of defining debugging effort in this chapter, we restrict modifications to the \emph{removal} of axioms. This is in line with the concept of finding minimal repairs (i.e.\ finding a minimal hitting set across a set of justifications and removing it) and allows us to fix the subset relation between the original ontology \O and the repaired ontology \oprime which would not be possible if we allowed additions and rewritings. Fixing this subset relation is necessary to allow us to preserve not only the entailments in \entsetplus, but also any other entailments in the deductive closure of \O without explicitly specifying them in \entsetplus. Otherwise, rewriting \O to yield \entsetplus would always be the considered the ideal solution, but this could lead to an ontology that is vastly different from the original \O, which is obviously undesirable.
+
+Finally, we can pin down the notion of a successful solution of a debugging problem: if the user can find a minimum loss modification \modif, we consider the debugging problem to be solved \emph{successfully}. A debugging problem is \emph{not solved} if after applying a modification it still holds that  $\O \entails \entsetminus$ for some entailments in \entsetminus, and solved \emph{unsucessfully} if the applied modification is not a minimum loss modification, that is, more entailments were removed from \entsetplus than necessary. Of course, there are other aspects to a successful and \emph{good} repair strategy, such as the cognitive effort and time required to find a specific solution, which we have not yet considered in this definition.
+
+
+\subsection{Justification encounters}
+\label{sec:encounters}
+
+Now that we have defined what we mean by a \emph{debugging problem}, we proceed with an analysis of the different scenarios in which single and multiple justifications can occur in debugging problems. This includes a description of (simple) reading strategies users apply in order to find a suitable modification for a given scenario.
+
+\begin{compactenum}
+
+\item \textbf{Single entailment} 
+
+\begin{compactenum}
+
+\item \textbf{Single justification} There exists only a single justification for the entailment.
+
+\begin{compactdesc}
+\item[Strategy] The entailment is repaired by removing one erroneous axiom (or several, if the error is caused by a set of incorrect statements) in the justification.
+\end{compactdesc}
+
+\item \textbf{Multiple justifications} There exist $j$ distinct justifications for the entailment, some of which may have common axioms.
+\begin{compactdesc}
+\item[Strategy] Inspect and remove an axiom from every justification individually in a linear fashion. The user might attempt to find common axioms in order to obtain a smaller repair, for example by jumping back and forth between the justifications and memorising which axioms are shared.
+\end{compactdesc}
+
+\end{compactenum}
+%%%%%%%%%%
+
+\item \textbf{Multiple entailments} 
+
+\begin{compactenum}
+
+\item \textbf{Single justification} Each of the $k$ entailments has exactly one justification.
+
+\begin{compactdesc}
+\item[Strategy] Consider each entailment and its justification in isolation. If the tool re-computes the entailments after an axiom removal, a single modification \emph{might} affect other justifications, thus reducing the total number of justifications to inspect. Otherwise, the user has to inspect every justification once and remove each incorrect axiom.
+\end{compactdesc}
+
+
+\item \textbf{Multiple justifications} Each of the $k$ entailments has $j_{i}$ justifications.
+
+\begin{compactdesc}
+\item[Strategy] Inspect and modify every justification for each entailment individually. Again, the user might attempt to find common axioms between the justifications for a single entailment by jumping (scrolling) back and forth between the justifications. Current explanation tools (e.g.\ in \protege), however, do not support switching between the justifications for different entailments.
+\end{compactdesc}
+
+\end{compactenum}
+
+\end{compactenum}
+
+In summary, the number of justifications a user encounters using a straightforward linear reading strategy is determined as follows: given a set of $k$ entailments where the $i$-th entailment has $j_{i}$ justifications, the number of justifications requiring inspection is $\sum\limits_{\substack{1\leq i\leq k}} j_{i}$.\footnote{For legibility reasons, we will drop the limit $1\leq i\leq k$ from the sum in the remainder of this chapter and generally assume that $i$ ranges over the number of entailments.}
+
+
+\section{Measuring effort}
+
+Our main goal is the reduction of \emph{user effort} in the debugging process when confronted with justifications for single or multiple entailments. While we have some intuitions about the notion of user effort---the time taken to find a repair, the cognitive difficulties in finding a repair---we have not yet pinned down what exactly we mean when we talk about the effort required to solve a debugging problem, and how we can measure such effort. In what follows, we outline the different facets of user effort, and define a simple model for measuring effort for a given debugging problem.
+
+\subsection{The complexity of individual justifications}
+
+The \emph{cognitive complexity} of OWL justifications has gained some attention in recent years, with some investigations into typical errors users make \cite{roussey09ab,corcho09gj} and user studies to test directly which types of justifications users find easy or difficult to deal with \cite{horridge09ct,horridge11si,nguyen12ab}. For example, the study presented by Nguyen et al.\ \cite{nguyen12ab} ranks frequently occurring axiom subsets in justifications according to the number of study participants who correctly interpreted the natural language representation of the justification. However, the authors do not further investigate what properties cause these justifications to be difficult to understand for the study subjects. 
+
+In contrast, the complexity model constructed by Horridge et al.\ \cite{horridge09ct} is based on a number of justification features and can be applied to any OWL justification, resulting in a complexity score which ranges from 0 (\enquote{very easy}) to 2000 (\enquote{very hard}) and beyond for \enquote{naturally occurring} justifications. The model components are based on features such as the different axiom types and class constructors found in the justification and certain \emph{phenomena}, for example whether the justification entails \dlax{\thing \eqcls A} for some class \dlcn{A} in its signature.
+
+
+\paragraph{Representation of justifications}
+
+We have to bear in mind, however, that the difficulty of understanding a justification does not only depend on its \emph{intrinsic} complexity (i.e.\ its complexity score), but also on the experience level of the user, as well as its \emph{presentation}. A user familiar with certain phenomena may deliberately search for such a phenomenon when trying to understand a justification, whereas a novice may not have this kind of coping strategy at their disposal. Regarding the presentation of a justification, the usual visual aids (e.g.\ in \protege) when displaying OWL justifications on a screen are:
+
+\begin{compactitem}
+\item Ordering: in simplified terms, given two axioms $\alpha$ and $\alpha'$, if $\alpha$ contains entities on the RHS which occur in the LHS of $\alpha'$, then $\alpha$ is placed before $\alpha'$ (assuming the axiom list is read left-to-right or top-to-bottom). All other axioms are placed at the end. Overall, the justification axioms are ordered to contain the RHS of the entailment at the beginning, and the LHS of the entailment at the end.
+\item Indentation: assuming that $\alpha'$ follows after $\alpha$ in a list of axioms which is ordered according to the above principles, $\alpha'$ is indented. Axioms which do not have any predecessors that share expressions are not indented.
+\item Syntax highlighting: keywords in the OWL Manchester syntax are highlighted in colour to stand out from the entity names.
+\end{compactitem}
+
+There have been no direct investigations into the effects of these visual aids on understanding OWL justifications. However, in the exploratory study which formed the basis for the complexity model, Horridge \cite{horridge11ab} found that users often skip steps in atomic subsumption chains, a technique which is greatly supported by ordering and indentation. As an example, consider an atomic subsumption chain as shown in the example in Figure \ref{fig:orderinga} and \ref{fig:orderingb}.
+
+
+\begin{figure}
+\centering
+		\begin{subfigure}{0.4\textwidth}
+        \centering 
+		\dlax{A_{3} \subcls A_{4}} \\
+		\dlax{A_{5} \subcls A_{6}}\\
+		\dlax{A_{2} \subcls A_{3}}\\
+		\dlax{A_{4} \subcls A_{5}}  \\
+		\dlax{A_{1} \subcls A_{2}}          
+		\caption{Unordered justification.}\label{fig:orderinga} 
+        \end{subfigure}%
+         %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+          %(or a blank line to force the subfigure onto a new line)
+		\begin{subfigure}{0.5\textwidth}
+        \centering 
+		\dlax{A_{1} \subcls A_{2}}\\
+		\quad \dlax{A_{2} \subcls A_{3}}\\
+		\quad \quad \dlax{A_{3} \subcls A_{4}} \\
+		\quad \quad \quad \dlax{A_{4} \subcls A_{5}} \\
+		\quad \quad \quad \quad \dlax{A_{5} \subcls A_{6}}
+    	\caption{Ordered and indented justification.}\label{fig:orderingb}  
+        \end{subfigure}    
+     \caption{Different representations of a justification for \dlax{A_{1} \subcls A_{6}}.}
+\end{figure}
+
+
+If the chain is unordered and not indented, the user will have to search through the chain, jumping back and forth between the axioms, and \emph{memorise} which concept they are looking for. While not \emph{complex}, such a justification could still be considered challenging, whereby the challenge lies with the general \emph{difficulty} of navigating in a non-linear fashion (see, for example, \cite{johnson-laird80kt} for a discussion of the effects of sentence ordering on spatial reasoning). In contrast, if the chain is ordered and indented accordingly, a user---especially if familiar with this type of representation---will be able to recognise the chain structure and spot the entailment at a glance. The lack of ordering and indentation does not change the \emph{reasoning} required to understand the justification, but it makes the justification as it is presented to the user more \emph{difficult} to understand. 
+
+Furthermore, since syntax highlighting (as well as line indentation) has long been a default feature of programming environments, it seems an obvious step to apply it to human-readable OWL syntax. In summary, we can reasonably assume that visual aids such as ordering, indentation and syntax highlighting improve the way users navigate through axioms, thus reducing the \emph{difficulty} a user has in understanding a justification.
+
+\paragraph{From complexity score to effort}
+
+We have not yet answered the question of how to \emph{measure} the effort a user has to apply in order to successfully understand and debug an entailment using a single justification. As there is no practical\footnote{This is not taking into account the possibility of measuring brain activity during problem solving using an fMRI procedure. See, for example, the prediction of brain activities using the ACT-R system: \url{http://act-r.psy.cmu.edu/actrnews/index.php?id=34}.} way to measure the \emph{cognitive effort} required by a person to solve a reasoning task, we have to base our measurements on more tangible metrics. Studies on human reasoning performance (e.g.\ \cite{newstead06nz}) commonly infer the complexity of a task from two values: the frequency of test subjects coming to an \emph{erroneous} solution, and the \emph{time} required to come to a solution. 
+
+Thus, we can assign an effort (or complexity) score $c$ to each justification which is provided by some complexity model and corresponds to two factors:
+\begin{compactenum}
+\item The likelihood of the user finding an \emph{unsuccesful} solution or not solving the debugging problem at all. An indicator for this is the number of incorrect modifications a user makes before finding a correct solution.
+\item The time required to find a \emph{successful} solution.
+\end{compactenum}
+
+Regarding 2., previous experiments have given us some insights into how much time users spend with OWL justifications in general, and how much time they are willing to spend before giving up or declaring them \enquote{impossible} to understand. Kalyanpur et al.\ \cite{kalyanpur05mi,kalyanpur06nm} conducted two studies in which OWL users were presented with several ontologies containing up to 30 unsatisfiable classes and were asked to repair these ontologies using different types of explanation tools. The average time a user spent per ontology was 12.9 minutes and 9.2 minutes, respectively, with a maximum of 33 minutes taken for one ontology. A further study conducted by Horridge et al.\ \cite{horridge09ct} where users were asked to read and understand an arbitrary number of \emph{individual} justifications showed that study subjects would choose to inspect an average of 18.9 justifications before ending the study. Finally, in a similar study \cite{horridge11gj} involving a series of individual justifications, we found that test subjects would only spend an average of 2.5 minutes on a justification.
+
+In summary, we can say that we have some vague indication of the time users are willing to spend on understanding and repairing justifications. However, since all these studies were performed in an experimental setting, we do not know how the results translate into real-world situations where an ontology developer \emph{must} fix a bug in an ontology and cannot simply give up. Some anecdotal evidence of the \enquote{days and weeks} spent on debugging ontologies before the introduction of explanation into OWL tools can be found in \cite{allemang05aa}.
+
+\subsection{A model for user effort}
+
+Following on from the complexity of single justifications, it is straightforward to see that multiple justifications generally increase the effort a user has to put into debugging one or multiple entailments---if the justifications are considered in isolation, as we will assume in this effort model for dealing with multiple justifications. Recall our discussion of the number of justifications a user has to inspect in different scenarios of justification and entailment encounters (Section \ref{sec:encounters}), which range from exactly 1 to the sum of all justifications for all entailments in a set of multiple entailments.
+
+Now assume that each justification we encounter has a complexity score $c$ which is provided by some complexity model and the times and error rates associated with the score. Not taking into account effects caused by learning (i.e.\ inspecting multiple justifications which contain a recurring pattern), fatigue, or representational issues (e.g.\ scrolling down a long list) when inspecting multiple justifications, we expect the total effort to be the sum of the individual justification effort measures. For example, if justification $\J_{1}$ requires the user 2 minutes to find a correct modification, and $\J_{2}$ requires 4 minutes, we expect the overall debugging process to require 6 minutes. Likewise, if a user is likely to solve $\J_{1}$ at the first attempt and requires 3 attempts at modifying $\J_{2}$, the overall number of incorrect modifications will be 4. 
+
+Based on these assumptions, we define our model for measuring user effort for a given debugging problem as a straightforward sum of the individual complexity scores for the justifications encountered: given a set of $k$ entailments with $j_{i}$ justifications each, the overall complexity is $\sum c_{ij}$ for $1\leq i\leq k, 1\leq j\leq j_{i}$, where $c_{ij}$ denotes the complexity score of a justification $\J_{ij}$ for an entailment $\eta_{i}$. This is obviously only a worst case approximation, as we assume that a) the user deals with each justification individually, and b) the justifications are disjoint, that is, a modification of one justification does not affect any other justification. However, since we do not yet have a sufficiently good understanding of how users interact with justifications and what strategies they commonly apply, this approximation will have to suffice for our purposes.
+	
+\paragraph{Reducing user effort}
+
+Given this effort model, we can now also define the goal of \enquote{reducing user effort}: to exploit the justificatory structure of an ontology in order to reduce the overall time and error rates compared to those given by our effort model for encountering multiple justifications. This reduction may occur in two ways:
+\begin{compactenum}
+\item Introduce an \emph{alleviation factor} $a_{ij} < 1.0 $ that represents the reduction in complexity $c_{ij}$ of a justification $\J_{ij}$ caused by some additional support provided to the user. The reduced complexity of $\J_{ij}$ is then $c_{ij} * a_{ij}$.
+\item Lower the number of justifications a user has to inspect. The reduction of the number of justifications can be represented by an alleviation factor of $a_{ij} = 0$ for a justification $\J_{ij}$ that does not have to be \enquote{touched} in the debugging process.
+\end{compactenum}
+
+Note that for the purpose of defining the effort model, we assume that a user has to \emph{understand} the justification in order to find a suitable repair; that is, the user has to inspect every axiom in the justification and apply mental reasoning strategies in order to understand how the axioms lead to the entailment. However, depending on the debugging strategy applied, the user may not have to inspect every axiom in order to find a suitable repair. Minimising the number of axioms encountered is a strategy mostly applied by semi-automated repair tools, such as the ontology revision tool proposed by Nikitina et al.\ \cite{nikitina12aa}, in which users are presented with a series of axioms and have to make a simple accept/reject decision for each axiom. Reducing the number of axioms encountered is also one of the key aspects of the axiom ranking and the root and derived mechanism used in Kalyanpur's repair tool \cite{kalyanpur06nm}: by suggesting low-ranked axioms in (root) justifications for removal, the tool prevents the user from manually inspecting every axiom in a justification or set of justifications. In our effort model, a  reduction in the number of axioms to inspect in a justification can also be represented by the alleviation factor $a_{ij}$, since fewer axioms to inspect can simply be regarded as a reduction in the overall complexity of the justification. 
+
+
+
+\section{Coping strategies}
+
+Having defined how to measure a reduction in the user effort required to debug a set of justifications, we will now discuss a number of strategies which exploit the justificatory structure of an ontology in order to reduce the effort required by a user to debug one or multiple entailments. We will first outline the scenarios in which justifications can share axioms or be isomorphic, before moving on to suggestions of how the structural properties of a justification set can reduce user effort.
+
+\subsection{Characterising justification sets}
+
+In our analysis of justification encounters and debugging effort in the previous sections we have treated justifications as entirely independent entities, paying no attention to the structural relations between them. But we already know  that there exists a variety of relations between them, such as overlap and structural isomorphism. Before proceeding with a discussion of potential interventions to mitigate the effects of multiple justifications, we will give an overview of the structural characteristics of justification sets. This will allow us to clearly identify those situations in which our proposed interventions will help, and those in which users need to fall back onto other strategies.
+
+Given a set of multiple justifications, the set can have the following properties:
+\begin{compactenum}
+\item All justifications are disjoint and structurally different.
+\begin{compactenum}
+\item If the justifications are individually easy, there is no additional support required. While potentially tedious, users may eventually arrive at a suitable solution to the debugging task by dealing with the justifications one by one. If there are too many justifications, there is a risk of the user \enquote{giving up} before all justifications are repaired.
+\item In the worst case, the justifications are individually hard and there are no structural relations to take advantage of such that the justifications need to be tackled individually. Here, aids for understanding individual justifications (such as justification-based proofs or natural language explanations) may help reduce the complexity of the individual justifications.
+\item If some justifications are easy and others hard, ranking them based on some complexity model and presenting the easiest justifications first may decrease the likelihood of the user giving up immediately, while also taking advantage of learning effects over time. Further, complex justifications will benefit from the additional support mentioned in (b).
+\end{compactenum}
+\item Some of the justifications overlap. 
+\begin{compactenum}
+\item If all justifications overlap in some axioms and no two are disjoint, focus on the most frequent overlaps, e.g.\ by identifying an error in the shared axiom set, or by generating relevant lemmas to support users in understanding the overlapping subsets.
+\item If there are some overlapping and some independent justifications, focus first on those which overlap, then continue as outlined in 1.
+\end{compactenum}
+\item Some justifications are isomorphic.
+\begin{compactenum}
+\item Group isomorphic justifications in order to support the user in understanding the \emph{template} first before tackling the individual justifications.
+\item If there exist isomorphic justifications which also \emph{overlap} in some axioms, apply both grouping and lemmatisation of the shared axiom set.
+\item Treat independent justifications individually as outlined in 1.
+\end{compactenum}
+\end{compactenum}
+
+\subsection{Justification overlap}
+
+\paragraph{Single-axiom overlap}
+
+Justification overlap containing only single axioms has been one of the key aspects of reducing debugging effort since the early days of justification-based explanation \cite{schlobach03nc,kalyanpur06nm}. Shared axioms are essential to finding minimal repairs, that is, minimal hitting sets across a set of justifications. The ontology editor \swoop uses the frequency of an axiom to compute a rank for the axiom, with high frequency axioms being recommended for removal, while the explanation tab in \protege displays the number of justification an axiom occurs in next to each axiom.
+
+Single-axiom overlap can reduce user effort in several ways: first, indicating the frequency of an axiom \emph{may} provide some hints towards a potentially erroneous axiom. If this is truly the case and an axiom occurring in $\sum j_{i}$ justifications turns out to be erroneous, the effort for successfully repairing the unwanted entailment is reduced to the effort required to understand and modify or remove this one axiom.
+
+Second, if the high-frequency axiom itself is considered to be correct, it may still cause an error by interacting with other, incorrect axioms in the justification set. In this case, the number of justifications that need to be inspected remains at $\sum j_{i}$, however, the number of \emph{axioms} that the user encounters is lowered. This means that pointing out the shared axiom indirectly reduces the effort required to understand each one of the justifications, as the user is already \enquote{familiar} with the shared axiom and only needs to understand how it interacts with the remaining axioms in each justification. Hence, we can introduce an alleviation factor $a$ which indicates the reduction in effort required to understand the individual justifications. The overall effort is then reduced from $\sum c_{ij}$ to $\sum c_{i,j} * a_{ij}$ for $a_{ij} < 1.0$.
+
+And third, the high-frequency axiom may only occur as a \enquote{bridging} axiom which does not play a role in the actual conflict that leads to the unwanted entailment. This is the case, for example, in root and derived justifications for unsatisfiable classes, where the cause of the unsatisfiability of the classes lies within the root justification, whereas the remaining axioms in a derived justification simply \enquote{bridge} the relationship between the classes. If the shared axiom is a bridging axiom, the reduction of effort is similar to the previous case: the effort required to understand each justification is reduced by a factor $a_{ij}$ due to the reduction of the number of axioms the user encounters.
+
+\paragraph{Justification equality}
+
+The most striking effect of exploiting justificatory structure on the effort required for debugging a set of entailments is the case of justifications which are simply the same set of axioms. That is, breaking one justification instantly repairs all entailments in the set. Considering the user effort based on our simple effort model, given $k$ entailments to debug with a single justification each, a user would have to inspect $k$ justifications to debug all entailments. This is where the model is rather inaccurate, as we can assume that typical user behaviour would be to inspect one justification, apply a modification to it, then move on to the next justification, rather than inspecting all justifications first before applying a modification to one justification. If, after applying a modification, a reasoner is used to classify the ontology, the user would then immediately notice the repair effect on the other entailments. On the other hand, we can imagine that a user actively \emph{tries} to find a minimal repair, thus inspecting all justifications first before applying any modification. In this case, the effort model still applies.
+
+Regardless of the original effort to start with, it is straightforward to see that pointing out the equality between multiple justifications reduces the number of justifications to inspect from $\sum j_{i}$ to 1. That is, the total effort required for the debugging task will be based on the complexity $c_{ij}$ of that one justification. 
+
+\paragraph{Root and derived justifications}
+
+Even if the justifications are not strictly equal, the existence of subset relationships can significantly reduce user effort in the debugging process. A straightforward application of subset relationships in a list-based justification representation is the \emph{ordering} of justifications to present users with the \emph{root} justifications first. Using a j-graph representation for a set of entailments and justifications, for example, the root justifications could simply be highlighted (for example by rendering them in colour) to signify the user that these justifications need to be dealt with first. 
+
+Regarding the reduction in user effort caused by root and derived justifications, consider a set of $k$ entailments with a total of $j$ justifications. Assume the set of justifications is partitioned into a set of root justifications $Justs_{r}$ and a set of derived justifications $Justs_{d}$, that is, $\setcard{Justs_{r}} + \setcard{Justs_{d}} = j$.
+
+In the presence of root and derived justifications, the number of justifications a user has to repair in order to find a suitable repair for \emph{all} entailments corresponds to the number of root justifications $\setcard{Justs_{r}}$. Given that $\setcard{Justs_{d}} > 0$, the number of justifications to inspect will always be lower than the initial number given by our model, with the reduction in effort depending on the ratio between root and derived justifications. As an effect, we can simply introduce an alleviation factor of $a_{ij} = 0$ for all \emph{derived} justifications $\J_{ij}$.
+
+\paragraph{Arbitrary overlap}
+
+While the effects of justification equivalence and root and derived justifications are immediate, arbitrary justification overlap has a more indirect impact on debugging effort. As we have discussed in Section \ref{sec:overlap}, arbitrary overlap can generate a relevant lemma, that is, an intermediate entailment of a subset of a justification. Such a common lemma which occurs in multiple justifications can support a user in \emph{understanding} multiple justifications by prompting \emph{chunking}, an effect commonly described in cognitive science \cite{miller56aa,gobet01aa}.
+
+The restricted \emph{working memory} of humans is known to be a limiting factor for a person's ability to process information. Cognitive science research widely agrees that the number of items a human can hold in their working memory at any time is fairly small, with figures commonly ranging from four items \cite{halford05vg} to \enquote{the magical number seven} \cite{miller56aa}.\footnote{Note that Miller's \enquote{magical number} paper has been frequently mis-used to generalise to entirely unrelated problems such as text comprehension. See, for example, Edward Tufte's archive page \cite{tuftenumber7} on misinterpretations of Miller's paper.} The process of chunking, however, helps mitigate this limitation by grouping multiple items into one single \emph{chunk}, which corresponds to a single item held in memory. Thus, chunking practically increases the number of items a human can deal with at the same time.
+
+Lemmatisation of an overlapping justification subset corresponds to such chunking, as it groups a number of items---the individual axioms---into a chunk of which only the lemma is relevant to the user. This reduces the overall complexity of the justification set in two ways: first, the lemmatisation makes each individual justification easier to understand. And second, the complexity of understanding each justification is further reduced due to the lemma \emph{reoccurring} in the justification set. Thus, while the number of justifications to inspect remains the same, the complexity of each justification is reduced by a factor $a_{ij}$.
+
+%The presentation of a set of justifications that is \emph{enriched} with a common lemma demands some further consideration. One possible approach to visualising a common lemma is using the j-graph representation of the justification set, substituting or overlaying the individual entailment vertices (and their outgoing edges) with a larger vertex (and a single outgoing edge) which is labelled with the common lemma. However, the effectiveness of this approach depends on the overall size of the j-graph; it is obvious that a j-graph with a large number of vertices and edges may be simply too complex for a user to understand or successfully navigate. 
+
+\subsection{Isomorphism relations}
+As we already know, the isomorphism relations introduced in the previous chapter are equivalence relations, that is, they \emph{partition} a set of justifications into subsets of structurally similar justifications. This effect can be used to provide improved debugging support by \emph{grouping} justifications into their equivalence classes and presenting the user with the abstract template for each group. Given a set of justifications for a single or multiple entailments, we first partition the justifications into the sets of isomorphic justifications according to some notion of isomorphism. These subsets are then arranged to show the user the template \jtemplate to give an abstract explanation of the entire set of structurally similar justifications. 
+
+Similar to the exploitation of arbitrary overlap, such a grouping technique does not directly reduce the number of justifications to be inspected, but it reduces the overall complexity of the justification set the user is dealing with: by understanding the template first, we expect the user to spend less time and have less difficulty when repairing each individual justification. As we cannot apply a repair to a template (since it does not correspond directly to any material axioms in the ontology), the user will still have to repair each justification; the effort for this repair then depends on the overlap relations between the justifications. However, understanding the template first will reduce the overall effort from $\sum c_{ij}$ to $\sum c_{ij} * a_{ij}$, where $a_{ij} < 1.0$ for the justifications $\J_{ij}$ covered by the template.
+
+
+\paragraph{Entity naming in justification templates}
+
+In the examples in the previous chapter we used freshly introduced variable names for the abstractions from class, property, and individual names in a template. While this is straightforward to understand, there may be alternative ways of presenting these abstractions to a user which may be more suitable for understanding the similarity between the justifications. Given a set of classes (properties) in \emph{strictly} isomorphic justifications which are mapped to a newly introduced variable $x$ in a template \jtemplate, the following strategies\footnote{The naming problem we are facing here is similar to that presented in Section \ref{sec:repfunction} where we looked at suitable representations for subsumption relationships between equivalent class nodes in a class graph.} can be used for naming $x$:
+\begin{compactenum}
+\item If the classes (properties) have a common named superclass $C_{s}$ (superproperty $p_{s}$) use this to represent $x$; this superclass is also know as the \emph{least common subsumer} \cite{baader99aa}. Alternatively, as the least common subsumer may be too general, use a \emph{good common subsumer} \cite{baader07ab}, i.e.\ a superclass which is not the least common subsumer, but the most representative and informative for a user.
+\item If there is no common superclass or superproperty, we can attempt to generate a new entity name by simply listing all entity names, e.g.\ as a comma separated list.
+\end{compactenum}
+In the case of subexpression- and lemma-isomorphism, the approaches to naming abstract entities in \jtemplate are less straightforward. For subexpression-isomorphism, we can attempt to find a common subsumer of the complex subexpressions that are mapped to a variable $x$. The situation is similar for lemma-isomorphic justifications: assume a set of justifications is lemma-isomorphic, that is, there exist lemmatisations of the justifications that are subexpression-isomorphic. Even in this case we can attempt to find common subsumers for the entities occurring in the lemmas to represent the entities in \jtemplate. In either case, if there is no such common named subsumer, the naming has to default to using freshly generated variable names.
+
+
+\paragraph{Levels of abstraction}
+In the previous chapter, we established the notion of a preferred template $\jtemplate_{p}$ which is the smallest possible abstract representation of a set of isomorphic justifications. The type of isomorphism hereby determines the level of abstraction of the preferred template: strict isomorphism results in a template which is structurally identical to the original justifications, whereas subexpression and lemma isomorphism abstract from the actual structure of the justification axioms, resulting in a more high-level view. 
+
+Note that there is no strict ordering of abstraction levels between subexpression isomorphism and lemma isomorphism: it is certainly possible for two justifications to be \emph{nearly} strictly isomorphic with the exception of a subset $S$ (such as a short atomic subsumption chain) in \emph{one}  of the justifications, such that the justifications are \enquote{only} lemma-isomorphic. The template $\jtemplate_{p}$ will then, again, be structurally identical to the justification not containing $S$. In contrast, subexpression isomorphism (on which lemma-isomorphism is based) may unite justifications that use a range of widely differing constructors; thus, the level of abstraction depends entirely on the numbers and types of transformations for each justification set, rather than the type of isomorphism.
+
+In line with the idea behind laconic justifications---presenting users with as little unnecessary detail as possible---it seems reasonable to use only preferred templates in a user-facing application. However, which level of abstraction is suitable to best support a user in understanding and repairing a justification is unclear: a high-level, abstract representation of the justification (in some sense an \enquote{explanation of the justification}) may help the user grasp the basic reasoning behind the justification, which can be useful in getting them \enquote{on the right path}. 
+
+On the other hand, when it comes to modifying the justification in order to remove the entailment, a detailed understanding of the expressions and axioms may be of more use, as this will help finding an appropriate modification. This was indeed one of the main concerns in the definition of \emph{preferred} laconic justifications: to contain no superfluous parts, while being as close to the original justification as possible \cite{horridge08yi}. However, what level of granularity for justification templates is appropriate in a debugging context remains an open question.
+
+\paragraph{Combining isomorphism and overlap}
+
+Finally, we can also combine isomorphism and justification overlap: it is possible for a set of justifications to be structurally isomorphic, i.e.\ differ within most of its entity names, but have a common axiom set which results in a relevant lemma. In this case, the user can be presented with the justification template \jtemplate of the isomorphic justifications, whereby the common axioms are represented by their concrete lemma rather than their abstract template.
+
+Combining isomorphism and overlap to create lemmatised templates reduces the effort required to understand the set of justifications in two ways: first, the overall effort to understand all justifications is reduced due to the abstract template. Second, the complexity of the template is then further reduced by lemmatising it. That is, as previously, the overall effort is reduced from $\sum c_{ij}$ to $\sum c_{ij} * a_{ij}$ for $a_{ij} < 1.0$. However, due to the presence of a lemma, we expect the factor $a_{ij}$ to be smaller compared to isomorphism without overlap.
+
+
+%%%%%%%%%%%
+
+
+
+\section{Summary and conclusions}
+In this chapter, we have proposed different approaches to exploiting justificatory structure in order to reduce user effort in the ontology debugging process. We first defined a debugging problem as the problem of finding a minimum loss modification which can be applied to an ontology in order to remove all unwanted entailments while retaining as much wanted information as possible. Using this definition of a debugging problem, we introduced a model for measuring the effort required to solve a debugging problem, which is based on the number of justifications and axioms that need to be inspected in order to find a suitable modification. By introducing an alleviation factor $a_{ij}$ to be applied to the complexity of an individual justification, we can then quantify the reduction in effort achieved by individual coping techniques.
+
+We then introduced a number of coping strategies that make use of different aspects of justificatory structure, and outlined how these strategies would affect the effort required to repair single or multiple entailments. While we do not have any experimental results on the effectiveness of the proposed measures, these suggestions lay out the different paths that can be taken in order to improve justification-based debugging support by exploiting justificatory structure, while also proposing a way to \emph{measure} the success of such strategies. While we have set the foundations for structure-based debugging support, it is clear to see that the successful application of such interventions in ontology tools will require further research into the way OWL developers read and understand justifications in order to determine suitable interaction mechanisms.

@@ -1,0 +1,26 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A screenshot of the \emph {Explanation} tab in Prot\'eg\'e 4\xspace .\relax }}{41}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A screenshot of the \emph {Repair} tool in Swoop\xspace .\relax }}{46}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Screenshot of the \enquote {Selected Entailments} tab in Prot\'eg\'e 4\xspace \relax }}{78}{figure.caption.13}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A decision tree for categorising entailments.\relax }}{86}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of a j-graph for justifications and entailments.\relax }}{88}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces J-graph illustrating axiom frequency, impact, semantic relevance.}}{91}{figure.caption.17}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Three justifications which are s-isomorphic via transitivity.}}{105}{figure.caption.18}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Parse tree of a justification.}}{116}{figure.caption.19}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces An extended j-graph containing four template nodes.}}{121}{figure.caption.20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Different representations of a justification for \ensuremath {A_{1} \ensuremath {\sqsubseteq }\xspace A_{6}}\xspace .\relax }}{130}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The justification corpus preparation workflow.\relax }}{144}{figure.caption.22}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Frequency of multiple complex justifications in the corpus.\relax }}{150}{figure.caption.27}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Axiom frequency vs average axiom impact.}}{152}{figure.caption.28}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Overlap frequency with and without outlier ontologies.}}{155}{figure.caption.30}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Comparison of reduction caused by isomorphism types.}}{159}{figure.caption.32}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Template frequencies for strict and lemma-isomorphism.\relax }}{163}{figure.caption.34}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

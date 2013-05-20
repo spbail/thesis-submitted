@@ -1,0 +1,31 @@
+
+
+
+\subsection{User Profiles}
+One of the issues we have thus far only touched upon is the \emph{profile} of the user who is interacting with the OWL ontology. There are several dimensions to the profile of the person we have previously simply called the \emph{user}. These can be summarised as:
+\begin{compactenum}
+\item Domain expertise
+\item Ontology modelling expertise
+\item Logic expertise
+\item Motivation
+\end{compactenum}
+
+When designing debugging solutions, we need to keep in mind that \enquote{\emph{one show doesn't fit all}}, that is, the appropriate solution and level of detail depends on the expertise and motivation of the user interacting with the ontology.
+
+\paragraph{Domain Expertise}
+The level of experience, training, and understanding a user has in the specific domain they are modelling highly affects the debugging process. While in this thesis we only consider justifications with anonymous entities, this is obviously not the case in ontologies used in practice. While not all \emph{knowledge engineers} are domain \emph{experts}, the person creating the ontology will need a good understanding of the domain knowledge in order to correctly model the entities and their relation.
+
+When debugging an erroneous entailment, a domain expert will already have a good understanding of the classes, properties, and their relations, and thus will often be able to spot the reason for an error not for \emph{logical} reasons but based on their domain knowledge. Even beyond this, users can debug entailments simply using the structure of entity names as indicators for their intended meaning and position in the class hierarchy \cite{horridge11ab}.
+
+\paragraph{Ontology Modelling Expertise}
+The second important characteristic of an OWL user is their expertise in OWL ontology modelling. This can be defined as the user's time and range of experience in building OWL ontologies, the amount of formal training, and the range of ontologies (in terms of size and complexity) they have built. There are clear differences between the ways novices and experts interact with intelligent systems such as OWL ontologies, for example by applying different reasoning strategies \cite{slatter87aa}.
+
+Further, the time required for a cognitive tasks decreases (roughly following a logarithmic function \cite{card1986psychology}) as novices gain experience through practise. Thus, modelling expertise is relevant in the debugging process as it allows us to make estimates of the difficulty a user may have with a certain justification and the time required to find an suitable modification.
+
+\paragraph{Logic Expertise}
+The level of expertise a user has in description logics is a relevant characteristic of the user profile, as it is another indicator of the difficulty a user will have in understanding a justification. Note that the boundaries between expertise in logic and ontology modelling are not clear, as the \emph{effect} of these types on the user's ability to understand justifications may be similar. However, we may argue that logic experts will be more likely to cope with unfamiliar situations and \enquote{phenomena}, such as those identified by Horridge et al \cite{horridge09ct}, and less likely to misuse or misinterpret OWL constructs, such as confusing \ax{and} (conjunction) with \ax{or} (disjunction) due to their ambiguous use in the English language \cite{roussey09ab}.
+
+\paragraph{Motivation}
+The \emph{motivation} of a user for performing a certain task and the preferred way to perform the task are often neglected when talking about ontology users. However, as we know from the literature on knowledge-based expert systems \cite{ye95lt}, the usefulness of explanation facilities depends heavily on whether the user wants to simply \emph{fix} the system without gaining deeper insights into the reason behind the error. In fact, users frequently prefer non-optimal \enquote{quick and easy} debugging solutions to solutions which lead to an optimal repair (e.g.\ loss of fewer information) but require more time and effort \todo{Find the paper...}. 
+
+%This insight may even be interpreted as an argument for automated repair tools which apply modifications that are ranked most suitable according to metrics such as axiom power, impact, and provenance data, as proposed by Kalyanpur \cite{kalyanpur06nm}. However, it is fairly obvious that there needs to be at least some input and decision making from the domain expert, as in the presence of multiple possible repair strategies it is not possible for the system to decide which axioms to modify based on their factual correctness. 

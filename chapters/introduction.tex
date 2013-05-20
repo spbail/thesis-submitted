@@ -1,0 +1,157 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+Since its standardisation by the W3C in 2004, the Web Ontology Language OWL \cite{w3c09eu} has become a widely used language for representing ontological knowledge. OWL ontologies are used across a wide spectrum of domains, ranging from chemistry to bio-health informatics and medical data. In its latest version, OWL 2 \cite{cuenca-grau08kw}, which is based on the expressive description logic \dl{SROIQ} \cite{dlhb03,horrocks06ya}, allows ontology modellers to use highly complex expressions to describe the entities in an ontology. 
+
+An OWL ontology is a set of \emph{axioms}, which make statements about the classes, properties, and individuals in an ontology, as well as the relations between them. Due to its foundations in description logics \cite{dlhb03} and the availability of highly optimised description logic reasoners, OWL ontology modellers and users can apply automated reasoning techniques to elicit not only explicitly asserted knowledge in the ontology, but also \emph{implicit} information which is \emph{entailed} by the ontology. This makes it possible to model complex hierarchical relations  without the need to make explicit every single relation between sub- and super-classes. For example, an ontology which contains the axioms \ax{Cat \subcls Carnivore} (\enquote{every \cn{Cat} is a \cn{Carnivore}}) and \ax{Carnivore \subcls Animal} (\enquote{every \cn{Carnivore} is an \cn{Animal}}) also entails the statement \ax{Cat \subcls Animal}, without having to explicitly state it.
+
+Ontology development often resembles traditional software development: from the first design to a release candidate, axioms and entities are frequently added, modified, and removed. Some OWL ontologies, such as the National Cancer Institute (NCI) Thesaurus ontology \cite{coronado04zh}, undergo a highly dynamic iterative development process, with a team of developers working to produce monthly updates of the ontology. As ontology re-use and sharing on the web is highly encouraged, existing OWL ontologies may be imported, or merged into newly built ones. OWL editing tools, such as the \protege editor,\footnote{\url{http://protege.stanford.edu/}} allow ontology developers to create large and complex ontologies; we often find OWL ontologies that contain thousands of classes and axioms which are highly interlinked across the ontology \cite{wang06rr,horridge11ac}. 
+
+All these processes can lead to \emph{errors} in the resulting ontology. The two classes of commonly occurring errors in OWL ontologies are unwanted entailments and unwanted \emph{non}-entailments. Among the former, \emph{incoherence} and \emph{inconsistency} of an ontology can be detected automatically, as they have distinguishing logical features while also being reliably connected to errors. Incoherence refers to the presence of an \emph{unsatisfiable} class in the ontology, that is, a class which cannot have any instances, while \emph{inconsistency} of the ontology means that the ontology does not have any meaningful entailments at all. Similar to the debugging process in software development, the \emph{repair} of such errors involves finding those parts of the ontology that cause the problem, then modifying or removing them in order to rectify the error. 
+
+Due to the large size and often complex structure of OWL ontologies, finding and repairing these errors without appropriate tool support can be daunting and error-prone: simply removing those parts of the ontology which are suspected to cause the error may result in a significant loss of \emph{relevant} information but is not guaranteed to sufficiently repair the ontology. This is where \emph{explanation} comes into play: on an abstract level, an explanation for an entailment of an ontology is a statement, or a set of statements, which traces the source of the error and \emph{explains} to the user \emph{what} information in the ontology lead to the entailment and \emph{how} it does this. 
+
+Explanation has a long history in the research on intelligent systems (e.g.\ \cite{clancey81mg,buchanan84zb}). It has been considered an important component of expert systems, such as MYCIN \cite{buchanan84lq}, since the early 1980s, not just for the purpose of \emph{debugging} a system, but also for tasks such as learning about the information modelled in the system, and convincing human experts of the system's correctness. Because of its role in these tasks, explanation is thought to enhance both the correctness and the acceptance of an intelligent system. Russell and Norvig \cite{russell03aa} illustrate this point with an example of the role explanation facilities play in user-facing expert systems:
+
+\begin{quote}
+\emph{\enquote{A leading expert on lymph-node pathology describes a fiendishly difficult case to the expert system, and examines the system's diagnosis. He scoffs at the system's response. Only slightly worried, the creators of the system suggest he ask the computer for an explanation of the diagnosis. The machine points out the major factors influencing its decision and explains the subtle interaction of several of the symptoms in this case. The experts admits his error, eventually.}}
+\end{quote}
+
+Explanation can assume various forms, such as a trace of rules in rule-based expert systems \cite{buchanan84lq}, or proofs in logic-based systems \cite{borgida99cn,mcguinness96rp}. In OWL tools, explanation generally takes the form of a \emph{pinpoint} of the set---or sets---of axioms that cause the entailment to hold, which we commonly denote as \emph{justifications}. 
+
+\section{Justification-based debugging support}
+
+Justification-based explanation support for description logic ontologies is the most prevalent form of explanation in current OWL development tools, with OWL editors such as \protege and \swoop\footnote{\url{https://code.google.com/p/swoop/}} providing justification-based debugging tools. There exists a large body of research from the past decade which underlines the important role justification-based explanations play in the ontology development process (e.g.\ \cite{schlobach03nc,kalyanpur05mi,lam07aa,horridge08yi}).
+
+A justification \just for an entailment \ent of an ontology \ont is a minimal subset of \ont which is sufficient for \ent to hold. Justifications have two major benefits: first, the minimality of a justification prevents the tedious process of searching through the ontology in order to find the responsible axioms, while also allowing users to focus on a (usually) small subset of the ontology. And second, since a justification simply consists of axioms occurring in \ont, ontology developers do not have to learn any additional mechanisms or notations in order to understand the explanation. The following example illustrates the idea of justification-based debugging support:
+\begin{examp}
+~\newline ~\newline
+\small
+\begin{tabu}{rlrl}
+		(1)&\ax{Cat \subcls Carnivore} &(5)&\ax{PetOwner \eqcls Human\conj \exists hasPet.Animal}\\
+		(2)&\ax{Carnivore \eqcls Animal \conj \forall eats.Animal}& (6)&\ax{Cat \subcls \exists eats.Mouse}\\
+		(3)&\ax{Plant \subcls \lnot Animal}	&(7)&\ax{SickCat \equiv Cat \conj \exists eats.Grass}\\
+		(4)&\ax{Grass \subcls Plant} & (8)&\ax{\exists eats.\thing \subcls Animal}
+\end{tabu}
+\end{examp}
+
+The ontology \O comprising the axioms in the above example makes statements about the entities in the domain of animals and their eating habits.\footnote{For the purpose of this example, we assume the statement \ax{\exists eats.\thing \subcls Animal} to be correct.} Several other statements follow logically from \O, for example \ax{Cat \subcls Animal} (\enquote{everything that is a \cn{Cat} is an $\mathsf{Animal}$}) and the unsatisfiability of the concept \cn{SickCat}, which is expressed as \cn{SickCat \subcls \bot}. In ontology development tools, such unsatisfiable concepts are usually highlighted to make the user aware of them, for example by rendering them in red colour, or arranging them as a sub-concept of \cn{Nothing}. 
+
+Unsatisfiable classes are commonly regarded as errors, as they cannot have any instances. An ontology developer would want to repair the error by re-writing or removing some of the axioms responsible for causing it. Without a debugging tool, the user has to browse the ontology, find the responsible axioms, and apply modifications they consider appropriate. Providing a justification for the entailment, however, allows the user to focus directly on the responsible axioms, thus clearly reducing the effort involved in finding a suitable repair---and preventing the user from going down the \enquote{wrong path} or giving up their search for the \enquote{needle in the haystack}. 
+
+In our example ontology, there exists exactly one justification for the entailment \cn{SickCat \subcls \bot}, namely the set consisting of the axioms \ax{Cat \subcls Carnivore}, \ax{Carnivore \eqcls Animal \conj \forall eats.Animal},  \ax{Grass \subcls Plant}, \ax{SickCat \eqcls Cat \conj \exists eats.Grass}, \\and \ax{Plant \subcls \lnot Animal}. The contradiction stems from the fact that \cn{Cat} is asserted to be an animal which only eats other animals, but \cn{SickCat} eats \cn{Grass}, which is asserted to be a \cn{Plant}, thus not an \cn{Animal}. There are different approaches to repairing this error, such as weakening the restriction that a \cn{Carnivore} eats \emph{only} \cn{Animals}; however, as we can already see from this small example, finding an appropriate repair without weakening or sacrificing too much information is a non-trivial task and requires the user to understand the relations between the axioms in the justification.
+
+\subsection{Understanding justifications}
+
+Repairing an entailment becomes more challenging as the number of justifications for an entailment grows. Given the entailment \ax{Cat \subcls Animal} from the above ontology in example, we can find two justifications: the set consisting of the two axioms \ax{Cat \subcls Carnivore} and \ax{Carnivore \eqcls Animal \conj \forall eats.Animal}, and the second, perhaps less obvious, justification containing \ax{Cat \subcls \exists eats.Mouse} and \ax{\exists eats.\thing \subcls Animal}. A user who wants to understand why \ax{Cat \subcls Animal} follows from the ontology will be presented with both justifications; if this entailment was unwanted, the user would have to understand and break \emph{both} justifications in order to remove it from the ontology. 
+
+Assume the user is faced not only with a small toy ontology as the one above, but with a large and complex ontology, containing several thousand classes, properties, individuals, and axioms. The number of justifications for a single entailment can grow exponentially in the number of axioms in the ontology, with several thousand found in some ontologies used in practice \cite{bail11jm}. And still, if the user wants to ensure the entailment does no longer hold in the ontology, every single justification has to be broken. While it is possible for a user to inspect and modify every justification in isolation, this approach is time-consuming and error-prone. What we need is a strategy that helps users \emph{cope} with multiple justifications and supports them in finding an appropriate repair.
+
+The question of how users \emph{interact} with justifications once they have been computed has been receiving some attention over the past few years \cite{kalyanpur06fj,lam06tk,horridge10gs,horridge11gj}. Depending on the respective task, whether the explanation is requested to fix an error or to aid understanding of an entailment, this interaction can assume different shapes and objectives. For the purpose of debugging, users may regard a \emph{minimal repair} as crucial, that is, removing an error while losing as little other information as possible. This may be achieved by modifying the given justifications to make them easier to understand to users, or, when dealing with multiple justifications, by identifying axioms which occur across several justifications.
+
+In case of the former, \emph{fine-grained} justifications \cite{lam06tk,kalyanpur06fj,horridge08yi} are variants of justifications which are as weak as possible and do not contain any superfluous expressions that could possibly distract a user from the actual cause of the entailment. Such fine-grained justifications have been defined more precisely as \emph{laconic} and \emph{precise} justifications \cite{horridge08yi}, with suitable and efficient algorithms to compute them for entailments of OWL ontologies. In the above example, the justification \{\ax{Cat \subcls Carnivore}, \ax{Carnivore \eqcls Animal \conj \forall eats.Animal}\!\!\} for the entailment \ax{Cat \subcls Animal} can be re-written into its laconic version \{\ax{Cat \subcls Carnivore}, \ax{Carnivore \subcls Animal}\!\!\}, which reduces the second axiom to its \emph{relevant} parts. While fine-grained justifications might make it easier to understand a single justification, they do not support understanding multiple justifications for an entailment.
+
+Dealing with multiple justifications, either for individual or for \emph{multiple entailments}, has been somewhat facilitated by the introduction of \emph{root and derived} justifications \cite{parsia05dg} which assist in the repair of multiple unsatisfiable classes: a root justification is a subset of a derived justification; fixing the root justification also repairs all those justifications which are derived from it. As an example, assume we add the axiom \ax{SickCatOwner \eqcls PetOwner \conj \exists hasPet.SickCat} to the ontology. The class \cn{SickCatOwner} will then be unsatisfiable, but its unsatisfiability depends entirely on the unsatisfiabilty of the class \cn{SickCat}. Thus, \cn{SickCatOwner} is a derived unsatisfiable class, whereas \cn{SickCat} is the root cause. Root and derived justifications, as used in the ontology editor \swoop, have been successfully shown to reduce user effort when debugging multiple entailments \cite{kalyanpur05mi}. 
+
+\subsection{Justificatory structure}
+
+The debugging tool in the \swoop editor by Kalyanpur was the first attempt to make use of the \emph{relations} between justifications in order to support the user in finding a suitable repair for multiple justifications. In addition to root and derived information, the repair tool also presents metrics for the axioms in the justifications, such as the axiom frequency (the number of justifications an axiom occurs in), impact (the number of entailments an axiom affects), and usage (of terms occurring in the axiom). Based on these metrics, the tool computes a rank for each axiom, with the lowest ranked axioms being suggested for removal or modification. This provides users with important guidance on where to start repairing a set of justifications.
+
+This approach makes use of the fact that there exist structural relations between justifications, such as shared axioms of various extents, ranging from single axioms to subset relationships, as in the case of root and derived justifications. In other words, given a set of entailments of an ontology and their justifications, we can identify the \emph{justificatory structure} of the ontology, that is, the set of features and relations of its justifications. 
+
+Despite the potential usefulness for improving debugging support for multiple justifications and the insights we can gain into the relationships between entailments of OWL ontologies, their justifications, and the axioms they contain, there has been no further exploration of the justificatory structure of OWL ontologies. Therefore, one of the main goals of this thesis is to identify the different aspects of justificatory structure of ontologies, to investigate potential applications of these relations in the debugging process, and to establish how prevalent these structural aspects are in OWL ontologies used in practice.
+
+Shared axiom relationships, such as root and derived justifications, are only one aspect of justificatory structure. Another interesting phenomenon we often find in OWL justifications is the \emph{similarity} between justifications, as we can see in the well-known \emph{Pizza} tutorial\footnote{\url{http://owl.cs.manchester.ac.uk/tutorials/protegeowltutorial/}} ontology: take, for example, the entailment \ax{Fiorentina \subcls InterestingPizza}, which has over 200 justifications. The following example shows three of those justifications; \cn{Fiorentina} is abbreviated to \cn{Fi}, \cn{hasTopping} to \cn{hasTop}, \cn{InterestingPizza} to \cn{IP}, and \thing is the description logic notation for the top concept \cn{Thing} which stands for \enquote{any element in the domain}.
+\begin{examp}
+~\newline ~\newline
+\footnotesize
+\begin{tabu}{rlll}
+(1) & \ax{Fi \subcls NamedPizza} &  \ax{Fi \subcls NamedPizza } &  \\
+(2) &\ax{NamedPizza \subcls Pizza} &  \ax{NamedPizza \subcls Pizza} &   \ax{domain(hasTop, Pizza)} \\
+(3) &\ax{Fi \subcls \exists hasTop.Tomato} &  \ax{Fi \subcls \exists hasTop.Tomato} &   \ax{Fi \subcls \exists hasTop.Tomato} \\
+(4) &\ax{Fi \subcls \exists hasTop.Olive} &  \ax{Fi \subcls \exists hasTop.Mozzarella} &  \ax{Fi \subcls \exists hasTop.Garlic} \\
+(5) &\ax{Fi \subcls \exists hasTop.Spinach} &   \ax{Fi \subcls \exists hasTop.Olive} &    \ax{Fi \subcls \exists hasTop.Spinach} \\
+(6) &\ax{Spinach \subcls \neg Tomato} &   \ax{Mozzarella \subcls \neg Tomato }&   \ax{Spinach \subcls \neg Tomato} \\
+(7) &\ax{Spinach \subcls \neg Olive} &   \ax{Mozzarella \subcls \neg Olive} &    \ax{Spinach \subcls \neg Garlic} \\
+(8) &\ax{Olive \subcls \neg Tomato} &   \ax{Olive \subcls \neg Tomato} &   \ax{Garlic \subcls \neg Tomato}   \\
+(9) &\ax{IP \eqcls Pizza \conj \geq 3 hasTop.\thing}  &  \ax{IP \eqcls Pizza \conj \geq 3 hasTop.\thing} &  \ax{IP \eqcls Pizza \conj \geq 3 hasTop.\thing} 
+\end{tabu}
+~\newline
+\end{examp}
+
+While these justifications may look complicated at first, they can all be easily summarised as follows:
+\begin{compactitem}
+\item Axioms 1-2 (2-3 in the last justification): \cn{Fiorentina} is a \cn{Pizza}.
+\item Axioms 3-5: \cn{Fiorentina} has three kinds of toppings.
+\item Axioms 6-8: These three toppings are pairwise disjoint, that is, no element in the domain can be a member of several toppings at the same time.
+\item Axiom 9: Anything that is a \cn{Pizza} and has at least three toppings is an \cn{InterestingPizza}.
+\end{compactitem}
+
+Despite the fact that the justifications contain different axioms, we can immediately see that they are very similar and that it suffices to understand the reasoning in the abstract explanation in order to understand the concrete examples. Since \cn{Fiorentina} is defined to have six different toppings, the justifications for \ax{Fiorentina \subcls InterestingPizza} are all combinations of three toppings, variations on the reasons why these toppings are pairwise disjoint, and variations of the reasons why \cn{Fiorentina} is a \cn{Pizza}. 
+
+This adds another goal to our investigation of justificatory structure: to determine a set of equivalence relations that allow us to identify such structural similarities, and to investigate how prevalent these similarities are in OWL ontologies---or whether the \emph{Pizza} ontology is just a unique case. The presence of structural similarity provides us with a starting point for lifting justifications from their material form to an abstract explanation \emph{template}, which could drastically reduce the cost of understanding the logical structure of each individual justification. This, in turn, reduces the overall effort a user has to apply in order to debug an entailment with multiple structurally similar justifications.
+
+
+\subsection{Beyond debugging and repair}
+
+While we put strong emphasis on the debugging aspect of justifications, we may also consider their suitability for other purposes in the ontology development process. In the same way as explanation in expert system serves multiple purposes, we can use justifications in OWL ontologies for tasks beyond debugging, such as ontology comprehension and exploration, ontology learning, and generating ontology metrics.
+
+\emph{Ontology comprehension} \cite{keet07pc,bauer09ru} describes the process of a person understanding what knowledge is modelled in an ontology and how it is modelled; this is of particular relevance to users attempting to use or integrate an existing ontology. We believe that examining a set of entailments and their justifications can help users gain insights into the relations between the pieces of information contained in the ontology, thus enhancing their understanding of the ontology. Going back to the \emph{Pizza} example above, we can see that by inspecting only a small number of justifications and their abstract template, we already have some understanding of the basic reasoning behind \emph{all} classes in the ontology which are entailed to be an \cn{InterestingPizza}.
+
+Another potentially useful application of justifications is \emph{ontology metrics}: ontology editors commonly display a set of metrics of an ontology, such as the number and types of axioms, the number of entailments, and the logical expressivity based on the constructors used in the ontology. These ontology metrics allow users to infer information about the size and complexity of the ontology, its \emph{richness} of modelling (that is, the level of detail used to describe a class), and even its general quality \cite{tartir05im,alani06or}. Justification-based metrics, such as the numbers of justifications per entailments, the relations between them, and their structural similarities, add another layer to the existing suite of ontology metrics. These metrics can be used to compare the quality, uniformity, and \enquote{interestingness} of ontologies based on their modelling.
+
+
+\section{Research objectives}
+
+In summary, the main goals of this thesis are to explore the notion of  \enquote{justificatory structure} of OWL ontologies, to investigate the landscape of justificatory structure in ontologies used in practice, and to suggest approaches to using the justificatory structure in order to reduce user effort in the ontology debugging process.
+
+First, we aim to gain a clearer understanding of the landscape of justifications in OWL ontologies. Our goal is to determine how prevalent multiple justifications are in OWL ontologies and what shapes (size, axiom types) these justifications commonly assume. We want to identify a set of relations between justifications which go beyond root and derived unsatisfiable classes, taking into account both shared axioms and shared axiom sets between justifications. 
+
+This includes structural similarities between justifications: we want to find a (reasonable) set of equivalence relations that allow us to capture similarities between justifications and group them based on their abstract explanation templates. Taking these relations, we want to know whether they commonly occur in OWL ontologies found \enquote{in the wild} and how prevalent they are in order to see how effectively they can be used to \emph{summarise} multiple justifications.
+
+Second, we look at justificatory structure in order to address the problem of coping with multiple justifications in a debugging and repair scenario. We first need to pin down the basic notion of \emph{effort} required to solve a debugging task involving multiple justifications before we can identify ways of exploiting the justificatory structure in order to reduce the effort ontology users have to spend when debugging one or multiple entailments.
+
+
+\section{Contributions}
+
+\begin{compactitem}
+\item We provide a set of design decisions for computing finite sets of entailments of OWL ontologies and discuss the benefits and drawbacks of the various options. This has practical implications for the display of \emph{selected entailments} in OWL editors and for the use of entailments as a measure of the information content in ontologies. It also informs the generation and analysis of justifications for finite entailment sets in the context of this thesis.
+
+\item We introduce the notion of the justificatory structure of OWL ontologies which allows us to characterise structural relations between justifications for both single and multiple entailments. This includes the characterisation of various aspects of justificatory structure, such as justification properties, axiom properties, and axiom overlap between justifications.
+
+\item We introduce two equivalence relations between justifications, subexpression-isomorphism and lemma-isomorphism, which are used to analyse the logical diversity of a set of justifications. These equivalence relations partition a set of justifications, with equivalent justifications following the same lines of reasoning. This provides the foundations for representing a set of justifications by an abstract justification \emph{template} which summarises a set of justification, thus reducing the effort involved in understanding multiple justifications.
+
+\item We pin down the notion of a \emph{debugging problem} and present a model of measuring \emph{effort} for successfully solving debugging problems using justifications. We then propose strategies to exploit the justificatory structure of a set of justifications in order to reduce user effort when dealing with multiple justifications.
+
+\item Finally, we present the results of a survey of the justificatory structure of OWL ontologies from the NCBO Bioportal. We find that a large number of OWL ontologies in the test corpus exhibit a very rich justificatory structure, with frequently occurring multiple justifications, high extents of overlaps, and high-frequency axioms. Using the newly introduced equivalence relations, we find that the logical diversity of OWL justifications is significantly lower than their numbers may indicate, with justification sets being reduced to only 10\% of their original size.
+
+
+\end{compactitem}
+
+
+\section{Published Work}
+Some of the work presented in this thesis has been published at peer-reviewed conferences and workshops. The following publications correspond roughly to chapters 3 (reference 1), 4 (reference 2-3), 5 (reference 4-5), and 6 (reference 6-8) in this thesis:
+
+\begin{compactenum}
+
+\item \cite{bail11kk} Samantha Bail, Bijan Parsia, and Ulrike Sattler. Extracting finite sets of entailments from OWL ontologies. In \emph{Proceedings of the 24th International Workshop on Description Logics (DL-11)}, 2011.
+
+\item \cite{bail10kb} Samantha Bail, Bijan Parsia, and Ulrike Sattler. The justificatory structure of OWL ontologies. In \emph{Proceedings of the 7th International Workshop on OWL: Experiences and Directions (OWLED-10)}, 2010.
+
+\item \cite{bail11jm} Samantha Bail, Matthew Horridge, Bijan Parsia, and Ulrike Sattler. The justificatory structure of the NCBO Bioportal ontologies. In \emph{Proceedings of the 10th International Semantic Web Conference (ISWC-11)}, 2011.
+
+\item \cite{bail12aa} Samantha Bail, Bijan Parsia, and Ulrike Sattler. Diversity of reason: Equivalence relations over description logic explanations. In \emph{Proceedings of the 25th International Workshop on Description Logics (DL-12)}, 2012.
+
+\item \cite{bail12ab} Samantha Bail, Bijan Parsia, and Ulrike Sattler. Declutter Your Justifications: Determining Similarity Between OWL Explanations. In \emph{Proceedings of the First International Workshop on Debugging Ontologies and Ontology Mappings (WoDOOM-12)}, 2012.
+
+\item \cite{horridge11si} Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler. The cognitive complexity of OWL justifications. In \emph{Proceedings of the 24th International Workshop on Description Logics (DL-11)}, 2011.
+
+\item \cite{horridge11gj} Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler. The cognitive complexity of OWL justifications. In \emph{Proceedings of the 10th International Semantic Web Conference (ISWC-11)}, 2011.
+
+\item \cite{horridge13aa} Matthew Horridge, Samantha Bail, Bijan Parsia, and Ulrike Sattler. Toward cognitive support for OWL justifications. \emph{Submitted to: Knowledge-Based Systems}, 2013.
+
+\end{compactenum}
+
+
+
+

@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+  [scale=1,->,auto=left]
+
+\node (root) at (3.5,9) {\J};
+  
+\node (ax1) at (0,8)  {$\sqsubseteq$};
+\node (ax2) at (3.5,8) {$\sqsubseteq$};
+\node (ax3) at (7,8)  {$\sqsubseteq$};
+
+\node (ax1lhs) at (-1,7.25)  {$A$};
+\node (ax1rhs) at (1,7.25)  {$\exists$};
+\node (ax1rhslhs) at (0.5,6.5)  {$r$};
+\node (ax1rhsrhs) at (1.5,6.5)  {$B$};
+
+\node (ax2lhs) at (2.5,7.25) {$B$};
+\node (ax2rhs) at (4.5,7.25)  {$C$};
+ 
+\node (ax3lhs) at (6,7.25)  {$\exists$};
+\node (ax3lhslhs) at (5.5,6.5)  {$r$};
+\node (ax3lhsrhs) at (6.5,6.5)  {$C$};
+\node (ax3rhs) at (8,7.25)  {$D$};
+
+\draw (root) to node {} (ax1);
+\draw (root) to node {} (ax2);
+\draw (root) to node {} (ax3);
+
+\draw (ax1) to node {} (ax1lhs);
+\draw (ax1) to node {} (ax1rhs);
+\draw (ax1rhs) to node {} (ax1rhslhs);
+\draw (ax1rhs) to node {} (ax1rhsrhs);
+
+\draw (ax2) to node {} (ax2lhs);
+\draw (ax2) to node {} (ax2rhs);
+ 
+\draw (ax3) to node {} (ax3lhs);
+\draw (ax3lhs) to node {} (ax3lhslhs);
+\draw (ax3lhs) to node {} (ax3lhsrhs);
+\draw (ax3) to node {} (ax3rhs);
+
+    
+\end{tikzpicture}

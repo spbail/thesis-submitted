@@ -1,0 +1,47 @@
+ digraph jgraph {
+node [style=rounded];
+
+blind3 [color=white, label = "..."];
+blind4 [color=white, label = "..."];
+
+a0;
+
+blind1 [label="...", color=white];
+blind2 [color=white, label = "..."];
+
+j5 [shape=box, label="...", color=white];
+j1 [shape=box];
+j2 [shape=box];
+j3 [shape=box];
+j4 [shape=box];
+
+
+a1;
+a5 [label = "a5"];
+a6 [label = "a3"];
+a2;
+a4;
+
+a0 -> j1;
+a0 -> j2;
+a0 -> j3;
+a0 -> j4;
+
+j1 -> a1 [style=dashed];
+j1 -> a5 [style=dashed];
+j1 -> a6 [style=dashed];
+
+j2 -> a2 [style=dashed];
+j3 -> a2 [style=dashed];
+j4 -> a4 [style=dashed];
+
+j5 -> a5 [style=dashed];
+
+
+blind1 -> a4 [style=dashed];
+blind2 -> j3;
+blind3 -> j4;
+blind4 -> j1;
+
+
+}

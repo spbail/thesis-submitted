@@ -1,0 +1,55 @@
+ digraph jgraph {
+node [style=rounded];
+
+a0 [shape=box];
+
+j1 [shape=box];
+j2 [shape=box];
+j3 [shape=box];
+j4 [shape=box];
+j5 [label = "...", color=white, shape=box];
+jn [shape=box];
+
+j11 [label = "j1'", shape=box];
+j21 [label = "j2'", shape=box];
+j31 [label = "j3'", shape=box];
+j41 [label = "j4'", shape=box];
+j51 [label = "j5'", label = "...", color=white];
+jn1 [label = "jn'", shape=box];
+
+a1 [shape=box];
+a2 [shape=box];
+a3 [shape=box];
+a4 [shape=box];
+a5 [shape=box, color=white, label = "..."];
+an [shape=box];
+
+a0 -> j1;
+a0 -> j2;
+a0 -> j3;
+a0 -> j4;
+a0 -> j5;
+a0 -> jn;
+
+j1 -> a1 [style=dashed];
+j2 -> a2 [style=dashed];
+j3 -> a3 [style=dashed];
+j4 -> a4 [style=dashed];
+j5 -> a5 [style=invis];
+jn -> an [style=dashed];
+
+
+j11 -> a1 [style=dashed];
+j21 -> a2 [style=dashed];
+j31 -> a3 [style=dashed];
+j41 -> a4 [style=dashed];
+j51 -> a5 [style=invis];
+jn1 -> an [style=dashed];
+
+a1 -> j11;
+a2 -> j21;
+a3 -> j31;
+a4 -> j41;
+a5 -> j51 [style = invis];
+an -> jn1;
+}
